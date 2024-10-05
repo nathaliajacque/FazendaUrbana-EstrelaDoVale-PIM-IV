@@ -13,12 +13,16 @@ class Cliente(StatusModel):
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     nome_fantasia = models.CharField(max_length=255)
     razao_social = models.CharField(max_length=255)
-    cnpj = models.CharField(max_length=18, unique=True, validators=[validate_cnpj])
+    cnpj = models.CharField(max_length=14, unique=True, validators=[validate_cnpj])
     ie = models.CharField(max_length=20, blank=True, null=True)
     im = models.CharField(max_length=20, blank=True, null=True)
     contato = models.CharField(max_length=255)
     email_1 = models.EmailField(max_length=255)
     email_2 = models.EmailField(max_length=255, blank=True, null=True)
+    usuario = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, editable=False
+    )
+    data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
@@ -34,7 +38,39 @@ class Cliente(StatusModel):
     cep = models.CharField(max_length=9, validators=[cep_validator])
     complemento = models.CharField(max_length=255, blank=True, null=True)
     cidade = models.CharField(max_length=255)
-    uf = models.CharField(max_length=2)
+    uf = models.CharField(
+        max_length=2,
+        default="SP",
+        choices=(
+            ("AC", "Acre"),
+            ("AL", "Alagoas"),
+            ("AP", "Amapá"),
+            ("AM", "Amazonas"),
+            ("BA", "Bahia"),
+            ("CE", "Ceará"),
+            ("DF", "Distrito Federal"),
+            ("ES", "Espírito Santo"),
+            ("GO", "Goiás"),
+            ("MA", "Maranhão"),
+            ("MT", "Mato Grosso"),
+            ("MS", "Mato Grosso do Sul"),
+            ("MG", "Minas Gerais"),
+            ("PA", "Pará"),
+            ("PB", "Paraíba"),
+            ("PR", "Paraná"),
+            ("PE", "Pernambuco"),
+            ("PI", "Piauí"),
+            ("RJ", "Rio de Janeiro"),
+            ("RN", "Rio Grande do Norte"),
+            ("RS", "Rio Grande do Sul"),
+            ("RO", "Rondônia"),
+            ("RR", "Roraima"),
+            ("SC", "Santa Catarina"),
+            ("SP", "São Paulo"),
+            ("SE", "Sergipe"),
+            ("TO", "Tocantins"),
+        ),
+    )
 
     def __str__(self):
         return self.nome_fantasia
