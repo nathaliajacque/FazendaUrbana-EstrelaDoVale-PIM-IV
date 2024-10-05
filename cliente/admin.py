@@ -15,5 +15,9 @@ class ClienteAdmin(admin.ModelAdmin):
             obj.usuario = request.user
         super().save_model(request, obj, form, change)
 
+    class Meta:
+        verbose_name = "Cliente"
+        verbose_name_plural = "Clientes"
+
 
 admin.site.register(Cliente, ClienteAdmin)

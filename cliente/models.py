@@ -4,12 +4,10 @@ from utils.statusmodel import StatusModel
 from utils.validatorcnpj import validate_cnpj
 from django.core.validators import RegexValidator
 
-# Remova a importação da classe Endereco
-# from cliente.models import Endereco
-
 
 class Cliente(StatusModel):
     UF_CHOICES = [
+        ("", "Selecione o estado"),
         ("AC", "Acre"),
         ("AL", "Alagoas"),
         ("AP", "Amapá"),
@@ -48,7 +46,6 @@ class Cliente(StatusModel):
     contato = models.CharField(max_length=255)
     email_1 = models.EmailField(max_length=255)
     email_2 = models.EmailField(max_length=255, blank=True, null=True)
-    observacao = models.TextField(max_length=255, blank=True)
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
@@ -73,6 +70,7 @@ class Cliente(StatusModel):
         default="SP",
         choices=(UF_CHOICES),
     )
+    observacao = models.TextField(max_length=255, blank=True)
 
     def __str__(self):
         return self.nome_fantasia

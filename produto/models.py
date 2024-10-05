@@ -9,14 +9,14 @@ CATEGORIA_CHOICES: Uma lista de tuplas onde cada tupla contém duas strings. A p
 """
 
 from django.db import models
-from django.utils import timezone
-import os
 from django.contrib.auth.models import User
 from utils.statusmodel import StatusModel
+from fornecedor.models import Fornecedor
 
 
 class Produto(StatusModel):
     CATEGORIA_CHOICES = [
+        ("", "Selecione a categoria"),
         ("Hortaliça de Flor", "Hortaliça de Flor"),
         ("Hortaliça de Folha", "Hortaliça de Folha"),
         ("Tubérculo", "Tubérculo"),
@@ -26,7 +26,7 @@ class Produto(StatusModel):
     id_produto = models.AutoField(primary_key=True)
     descricao = models.CharField(max_length=255)
     categoria = models.CharField(max_length=255, choices=CATEGORIA_CHOICES)
-    fornecedor = models.CharField(max_length=255)
+    fornecedor = models.ForeignKey(Fornecedor, models.CASCADE)
     grupo = models.CharField(max_length=255)
     temperatura = models.FloatField()
     umidade = models.FloatField()
@@ -83,6 +83,9 @@ class Produto(StatusModel):
             return produto
         except cls.DoesNotExist:
             return None
+
+    def calcular_prazo_entrega(self):
+        return self.fornecedor.prazo_entrega_dias + self.crescimento
 
     def __self__(self):
         return self.descricao

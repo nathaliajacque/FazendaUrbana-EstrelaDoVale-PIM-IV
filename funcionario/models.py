@@ -7,6 +7,7 @@ from django.core.validators import RegexValidator
 class Funcionario(models.Model):
     CARGO_CHOICES = sorted(
         [
+            ("", "Selecione o cargo"),
             ("Gerente de Produção Agrícola", "Gerente de Produção Agrícola"),
             ("Vendas e Marketing", "Vendas e Marketing"),
             ("Analista de Recursos Humanos", "Analista de Recursos Humanos"),
@@ -24,6 +25,7 @@ class Funcionario(models.Model):
     )
 
     UF_CHOICES = [
+        ("", "Selecione o estado"),
         ("AC", "Acre"),
         ("AL", "Alagoas"),
         ("AP", "Amapá"),
@@ -54,6 +56,7 @@ class Funcionario(models.Model):
     ]
 
     ORGAO_CHOICES = [
+        ("", "Selecione o órgão emissor"),
         ("SSP/AC", "SSP/AC"),
         ("SSP/AL", "SSP/AL"),
         ("SSP/AP", "SSP/AP"),
@@ -88,10 +91,11 @@ class Funcionario(models.Model):
     cargo = models.CharField(max_length=50, choices=CARGO_CHOICES)
     cpf = models.CharField(max_length=11, unique=True, validators=[validate_cpf])
     rg = models.CharField(max_length=10)
-    orgao = models.CharField(max_length=10, choices=ORGAO_CHOICES)
+    orgao_emissor = models.CharField(
+        max_length=10, choices=ORGAO_CHOICES, default="SSP"
+    )
     contato = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
-    observacao = models.TextField(max_length=255, blank=True)
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
@@ -113,6 +117,11 @@ class Funcionario(models.Model):
         blank=True,
         choices=(UF_CHOICES),
     )
+    observacao = models.TextField(max_length=255, blank=True)
 
     def __str__(self):
         return self.nome
+
+    class Meta:
+        verbose_name = "Funcionário"
+        verbose_name_plural = "Funcionários"

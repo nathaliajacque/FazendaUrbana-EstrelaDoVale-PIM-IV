@@ -5,6 +5,7 @@ from django.db import models
 
 class StatusModel(models.Model):
     STATUS_CHOICES = [
+        ("", "Selecione o status"),
         ("Ativo", "Ativo"),
         ("Inativo", "Inativo"),
     ]

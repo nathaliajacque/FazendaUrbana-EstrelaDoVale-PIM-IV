@@ -21,9 +21,9 @@ cancelar_pedido_venda: Método de instância para cancelar um pedido de venda.
 
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import date
 from cliente.models import Cliente
 from produto.models import Produto
+from datetime import timedelta
 import os
 
 # TODO: Fazer com que o pedido gere um prazo de acordo com o tempo de entrega do fornecedor + dias
@@ -79,12 +79,22 @@ class PedidoVenda(models.Model):
         except cls.DoesNotExist:
             return None
 
-    def concluir_pedido_venda(self):
-        self.status = "Em andamento"
+    # def concluir_pedido_venda(self):
+    #     self.status = "Em andamento"
+    #     self.save()
+
+    # def concluir_pedido_venda(self):
+    #     self.status = "Concluído"
+    #     self.save()
+
+    def calcular_prazo_entrega(self):
+        self.prazo_entrega = self.produto.calcular_prazo_entrega()
         self.save()
 
-    def concluir_pedido_venda(self):
-        self.status = "Concluído"
+    def calcular_data_entrega(self):
+        produto = Produto.objects.get(id=self.produto_id)
+        prazo_entrega_dias = produto.calcular_prazo_entrega()
+        self.prazo_entrega = self.data_venda + timedelta(days=prazo_entrega_dias)
         self.save()
 
     def cancelar_pedido_venda(self):

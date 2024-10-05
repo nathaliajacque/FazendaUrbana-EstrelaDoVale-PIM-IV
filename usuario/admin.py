@@ -14,7 +14,7 @@ class UsuarioAdmin(admin.ModelAdmin):
     )
     list_filter = ("data_cadastro", "deve_redefinir_senha")
     search_fields = ("nome", "login")
-    readonly_fields = ("id_usuario", "data_cadastro")
+    readonly_fields = ("id_usuario", "data_cadastro", "usuario")
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:

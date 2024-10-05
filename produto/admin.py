@@ -6,6 +6,7 @@ class ProdutoAdmin(admin.ModelAdmin):
     list_display = (
         "id_produto",
         "status",
+        "fornecedor",
         "descricao",
         "categoria",
         "fornecedor",

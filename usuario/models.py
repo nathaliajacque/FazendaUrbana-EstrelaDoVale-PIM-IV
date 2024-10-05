@@ -33,6 +33,7 @@ from django.conf import settings
 
 class Usuario(StatusModel):
     PERFIL_CHOICES = [
+        ("", "Selecione o acesso"),
         ("administrador", "Administrador"),
         ("gerente", "Gerente"),
         ("funcionario", "Funcionário"),
