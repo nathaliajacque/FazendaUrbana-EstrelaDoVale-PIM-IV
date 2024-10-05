@@ -1,0 +1,28 @@
+from django.contrib import admin
+from .models import Cliente, Endereco
+
+
+from django.contrib import admin
+from .models import Cliente, Endereco
+
+
+class EnderecoInline(admin.StackedInline):
+    model = Endereco
+    extra = 1
+
+
+class ClienteAdmin(admin.ModelAdmin):
+    list_filter = (
+        "data_cadastro",
+        "usuario",
+    )
+    search_fields = ("nome_fantasia", "razao_social", "cnpj", "email_1", "contato")
+    readonly_fields = ("id_cliente", "data_cadastro", "usuario")
+
+    def save_model(self, request, obj, form, change):
+        if not obj.pk:
+            obj.usuario = request.user
+        super().save_model(request, obj, form, change)
+
+
+admin.site.register(Cliente, ClienteAdmin)
