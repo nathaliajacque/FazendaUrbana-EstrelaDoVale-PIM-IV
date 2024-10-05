@@ -9,6 +9,35 @@ from django.core.validators import RegexValidator
 
 
 class Cliente(StatusModel):
+    UF_CHOICES = [
+        ("AC", "Acre"),
+        ("AL", "Alagoas"),
+        ("AP", "Amapá"),
+        ("AM", "Amazonas"),
+        ("BA", "Bahia"),
+        ("CE", "Ceará"),
+        ("DF", "Distrito Federal"),
+        ("ES", "Espírito Santo"),
+        ("GO", "Goiás"),
+        ("MA", "Maranhão"),
+        ("MT", "Mato Grosso"),
+        ("MS", "Mato Grosso do Sul"),
+        ("MG", "Minas Gerais"),
+        ("PA", "Pará"),
+        ("PB", "Paraíba"),
+        ("PR", "Paraná"),
+        ("PE", "Pernambuco"),
+        ("PI", "Piauí"),
+        ("RJ", "Rio de Janeiro"),
+        ("RN", "Rio Grande do Norte"),
+        ("RS", "Rio Grande do Sul"),
+        ("RO", "Rondônia"),
+        ("RR", "Roraima"),
+        ("SC", "Santa Catarina"),
+        ("SP", "São Paulo"),
+        ("SE", "Sergipe"),
+        ("TO", "Tocantins"),
+    ]
     id_cliente = models.AutoField(primary_key=True)
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     nome_fantasia = models.CharField(max_length=255)
@@ -19,6 +48,7 @@ class Cliente(StatusModel):
     contato = models.CharField(max_length=255)
     email_1 = models.EmailField(max_length=255)
     email_2 = models.EmailField(max_length=255, blank=True, null=True)
+    observacao = models.TextField(max_length=255, blank=True)
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
@@ -32,44 +62,16 @@ class Cliente(StatusModel):
     )
 
     # Atributos do endereço diretamente na classe Cliente
-    logradouro = models.CharField(max_length=255)
-    bairro = models.CharField(max_length=255)
-    numero = models.CharField(max_length=10)
+    logradouro = models.CharField(max_length=50)
+    bairro = models.CharField(max_length=50)
+    numero = models.CharField(max_length=5)
     cep = models.CharField(max_length=9, validators=[cep_validator])
-    complemento = models.CharField(max_length=255, blank=True, null=True)
-    cidade = models.CharField(max_length=255)
+    complemento = models.CharField(max_length=30, blank=True, null=True)
+    cidade = models.CharField(max_length=30)
     uf = models.CharField(
         max_length=2,
         default="SP",
-        choices=(
-            ("AC", "Acre"),
-            ("AL", "Alagoas"),
-            ("AP", "Amapá"),
-            ("AM", "Amazonas"),
-            ("BA", "Bahia"),
-            ("CE", "Ceará"),
-            ("DF", "Distrito Federal"),
-            ("ES", "Espírito Santo"),
-            ("GO", "Goiás"),
-            ("MA", "Maranhão"),
-            ("MT", "Mato Grosso"),
-            ("MS", "Mato Grosso do Sul"),
-            ("MG", "Minas Gerais"),
-            ("PA", "Pará"),
-            ("PB", "Paraíba"),
-            ("PR", "Paraná"),
-            ("PE", "Pernambuco"),
-            ("PI", "Piauí"),
-            ("RJ", "Rio de Janeiro"),
-            ("RN", "Rio Grande do Norte"),
-            ("RS", "Rio Grande do Sul"),
-            ("RO", "Rondônia"),
-            ("RR", "Roraima"),
-            ("SC", "Santa Catarina"),
-            ("SP", "São Paulo"),
-            ("SE", "Sergipe"),
-            ("TO", "Tocantins"),
-        ),
+        choices=(UF_CHOICES),
     )
 
     def __str__(self):
