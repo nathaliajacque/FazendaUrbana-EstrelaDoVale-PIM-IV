@@ -26,6 +26,9 @@ from cliente.models import Cliente
 from produto.models import Produto
 import os
 
+# TODO: Fazer com que o pedido gere um prazo de acordo com o tempo de entrega do fornecedor + dias
+# do crescimento do insumo
+
 
 class PedidoVenda(models.Model):
     STATUS_CHOICES = [

@@ -90,6 +90,3 @@ class Produto(StatusModel):
     class Meta:
         verbose_name = "Produto"
         verbose_name_plural = "Produtos"
-
-
-# parei no 38:25 / 43:46, terminar de fazer o CRUD de produto

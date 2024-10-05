@@ -8,30 +8,27 @@ Uso nas Views:
 Usamos os decoradores de permissão nas views para garantir que apenas usuários com o nível de acesso apropriado possam acessar determinadas funções.
 """
 
-from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import User
 from utils.statusmodel import StatusModel
 from django.db import models
-from django.utils import timezone
 from PIL import Image
 import os
 from django.conf import settings
-from utils.statusmodel import StatusModel
 
 
-class UsuarioManager(BaseUserManager):
-    def create_user(self, login, nome, password=None, **extra_fields):
-        if not login:
-            raise ValueError("O campo login deve ser preenchido")
-        usuario = self.model(login=login, nome=nome, **extra_fields)
-        usuario.set_password(password)
-        usuario.save(using=self._db)
-        return usuario
+# class UsuarioManager(BaseUserManager):
+#     def create_user(self, login, nome, password=None, **extra_fields):
+#         if not login:
+#             raise ValueError("O campo login deve ser preenchido")
+#         usuario = self.model(login=login, nome=nome, **extra_fields)
+#         usuario.set_password(password)
+#         usuario.save(using=self._db)
+#         return usuario
 
-    def create_superuser(self, login, nome, password=None, **extra_fields):
-        extra_fields.setdefault("is_staff", True)
-        extra_fields.setdefault("is_superuser", True)
-        return self.create_user(login, nome, password, **extra_fields)
+#     def create_superuser(self, login, nome, password=None, **extra_fields):
+#         extra_fields.setdefault("is_staff", True)
+#         extra_fields.setdefault("is_superuser", True)
+#         return self.create_user(login, nome, password, **extra_fields)
 
 
 class Usuario(StatusModel):
@@ -45,6 +42,7 @@ class Usuario(StatusModel):
     # cpf = models.CharField(max_length=11, unique=True)
     # rg = models.CharField(max_length=20, unique=True)
     id_usuario = models.AutoField(primary_key=True)
+    usuario = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
     nome = models.CharField(max_length=255)
     login = models.EmailField(max_length=255, unique=True)
     senha = models.CharField(max_length=255)
@@ -92,15 +90,6 @@ class Usuario(StatusModel):
         except cls.DoesNotExist:
             return None
 
-    @classmethod
-    def delete_usuario(cls, id_usuario):
-        try:
-            usuario = cls.objects.get(id_usuario=id_usuario)
-            usuario.delete()
-            return True
-        except cls.DoesNotExist:
-            return False
-
     # Método para redimensionar a imagem do usuário
     @staticmethod
     def resize_image(img, new_width=800):
@@ -125,7 +114,10 @@ class Usuario(StatusModel):
             self.resize_image(self.imagem.path, max_image_size)
 
     def __self__(self):
-        return self.nome
+        return f"{self.usuario}"
+
+    def clean(self):
+        pass
 
     class Meta:
         verbose_name = "Usuário"

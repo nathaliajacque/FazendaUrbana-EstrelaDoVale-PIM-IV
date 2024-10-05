@@ -1,14 +1,9 @@
 from django.contrib import admin
-from .models import Cliente, Endereco
+from .models import Cliente
 
 
 from django.contrib import admin
-from .models import Cliente, Endereco
-
-
-class EnderecoInline(admin.StackedInline):
-    model = Endereco
-    extra = 1
+from .models import Cliente
 
 
 class ClienteAdmin(admin.ModelAdmin):
