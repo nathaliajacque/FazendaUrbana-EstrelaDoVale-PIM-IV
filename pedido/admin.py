@@ -6,6 +6,8 @@ from .models import ItemPedido
 class ItemPedidoInline(admin.TabularInline):
     model = ItemPedido
     extra = 1
+    fields = ("produto", "descricao", "quantidade")  # Adicione o campo descricao
+    readonly_fields = ("descricao",)  # Torne o campo descricao somente leitura
 
 
 class PedidoVendaAdmin(admin.ModelAdmin):

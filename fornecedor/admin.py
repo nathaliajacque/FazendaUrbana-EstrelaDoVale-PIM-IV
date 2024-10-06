@@ -6,11 +6,13 @@ class FornecedorAdmin(admin.ModelAdmin):
     list_display = (
         "nome_fantasia",
         "razao_social",
+        "contato",
         "cnpj",
         "prazo_entrega_dias",
         "observacao",
         "cidade",
         "uf",
+        "status",
         "data_cadastro",
         "usuario",
     )

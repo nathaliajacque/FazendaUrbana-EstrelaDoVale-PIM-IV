@@ -1,7 +1,7 @@
 """
 Campos da Classe PedidoVenda:
 
-id_venda: Chave primária para identificar o pedido de venda.
+num_pedido: Chave primária para identificar o pedido de venda.
 num_pedido: Número do pedido.
 status: Campo de escolha para o status do pedido.
 data_venda: Data da venda.
@@ -24,7 +24,6 @@ from django.contrib.auth.models import User
 from cliente.models import Cliente
 from produto.models import Produto
 from datetime import timedelta
-import os
 
 # TODO: Fazer com que o pedido gere um prazo de acordo com o tempo de entrega do fornecedor + dias
 # do crescimento do insumo
@@ -42,17 +41,17 @@ class PedidoVenda(models.Model):
         max_length=20, choices=STATUS_CHOICES, default="Em andamento"
     )
     # adicionado total
-    total = models.FloatField(default=1)
+    total = models.FloatField(default=0)
     data_venda = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, default=1)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, blank=True)
     prazo_entrega = models.DateField()
 
     def __str__(self):
-        return f"Pedido {self.num_pedido} - {self.cliente.nome}"
+        return f"Pedido n° {self.num_pedido} - {self.cliente.nome_fantasia}"
 
     @classmethod
     def create_pedido_venda(cls, **kwargs):
@@ -61,17 +60,17 @@ class PedidoVenda(models.Model):
         return pedido
 
     @classmethod
-    def get_pedido_venda(cls, id_venda):
+    def get_pedido_venda(cls, num_pedido):
         try:
-            pedido = cls.objects.get(id_venda=id_venda)
+            pedido = cls.objects.get(num_pedido=num_pedido)
             return pedido
         except cls.DoesNotExist:
             return None
 
     @classmethod
-    def update_pedido_venda(cls, id_venda, **kwargs):
+    def update_pedido_venda(cls, num_pedido, **kwargs):
         try:
-            pedido = cls.objects.get(id_venda=id_venda)
+            pedido = cls.objects.get(num_pedido=num_pedido)
             for key, value in kwargs.items():
                 setattr(pedido, key, value)
             pedido.save()
@@ -114,25 +113,31 @@ class PedidoVenda(models.Model):
 
 
 class ItemPedido(models.Model):
-    descricao = models.CharField(max_length=255)  # nome do produto
-    id_produto = models.ForeignKey(Produto, on_delete=models.CASCADE)  # id do produto
-    pedido = models.ForeignKey(PedidoVenda, on_delete=models.CASCADE)
+    produto = models.ForeignKey(
+        Produto, on_delete=models.CASCADE, related_name="itens_pedido"
+    )
     quantidade = models.PositiveIntegerField()
-    pedido = models.ForeignKey(PedidoVenda, on_delete=models.CASCADE)
+    pedido = models.ForeignKey(
+        PedidoVenda, on_delete=models.CASCADE, related_name="itens"
+    )
+    descricao = models.CharField(max_length=255, editable=False)
 
-    def __str__(self):
-        return f"{self.produto.descricao} - {self.quantidade} unidade(s)"
+    def save(self, *args, **kwargs):
+        self.descricao = (
+            self.produto.descricao
+        )  # Preenche a descrição com a descrição do produto
+        super().save(*args, **kwargs)
 
     @classmethod
-    def create_item(cls, **kwargs):
-        item = cls(**kwargs)
+    def create_item(cls, produto, pedido, quantidade):
+        item = cls(produto=produto, pedido=pedido, quantidade=quantidade)
         item.save()
         return item
 
     @classmethod
     def get_item(cls, id_item):
         try:
-            item = cls.objects.get(id_item=id_item)
+            item = cls.objects.get(id=id_item)
             return item
         except cls.DoesNotExist:
             return None
@@ -140,13 +145,30 @@ class ItemPedido(models.Model):
     @classmethod
     def update_item(cls, id_item, **kwargs):
         try:
-            item = cls.objects.get(id_item=id_item)
+            item = cls.objects.get(id=id_item)
             for key, value in kwargs.items():
                 setattr(item, key, value)
             item.save()
             return item
         except cls.DoesNotExist:
             return None
+
+    @classmethod
+    def add_item(cls, produto, pedido, quantidade):
+        return cls.create_item(produto, pedido, quantidade)
+
+    @classmethod
+    def remove_item(cls, item_id, pedido):
+        try:
+            item = cls.objects.get(id=item_id, pedido=pedido)
+            item.delete()
+            return True
+        except cls.DoesNotExist:
+            return False
+
+    @classmethod
+    def list_items(cls, pedido):
+        return cls.objects.filter(pedido=pedido)
 
     def calcular_valor_total(self):
         self.valor_total = self.quantidade * self.valor_unitario

@@ -58,7 +58,6 @@ class Cliente(StatusModel):
         regex=r"^\d{5}-\d{3}$", message="CEP deve estar no formato XXXXX-XXX"
     )
 
-    # Atributos do endereço diretamente na classe Cliente
     logradouro = models.CharField(max_length=50)
     bairro = models.CharField(max_length=50)
     numero = models.CharField(max_length=5)

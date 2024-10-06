@@ -26,8 +26,8 @@ class Produto(StatusModel):
     id_produto = models.AutoField(primary_key=True)
     descricao = models.CharField(max_length=255)
     categoria = models.CharField(max_length=255, choices=CATEGORIA_CHOICES)
-    fornecedor = models.ForeignKey(Fornecedor, models.CASCADE)
-    grupo = models.CharField(max_length=255)
+    fornecedor = models.ForeignKey(Fornecedor, models.CASCADE, null=True, blank=True)
+    grupo = models.CharField(max_length=255, blank=True)
     temperatura = models.FloatField()
     umidade = models.FloatField()
     iluminacao = models.FloatField()
@@ -51,24 +51,7 @@ class Produto(StatusModel):
     def get_produto(cls, id_produto):
         try:
             produto = cls.objects.get(id_produto=id_produto)
-            return {
-                "id_produto": produto.id_produto,
-                "status": produto.status,
-                "fornecedor": produto.fornecedor,
-                "usuario": produto.usuario.username,
-                "data_cadastro": produto.data_cadastro,
-                "descricao": produto.descricao,
-                "categoria": produto.categoria,
-                "grupo": produto.grupo,
-                "temperatura": produto.temperatura,
-                "umidade": produto.umidade,
-                "iluminacao": produto.iluminacao,
-                "intensidade_led": produto.intensidade_led,
-                "nivel_agua": produto.nivel_agua,
-                "crescimento": produto.crescimento,
-                "solucao_nutritiva": produto.solucao_nutritiva,
-                "observacao": produto.observacao,
-            }
+            return produto
         except cls.DoesNotExist:
             return None
 
@@ -87,8 +70,8 @@ class Produto(StatusModel):
     def calcular_prazo_entrega(self):
         return self.fornecedor.prazo_entrega_dias + self.crescimento
 
-    def __self__(self):
-        return self.descricao
+    def __str__(self):
+        return f"{self.descricao}"
 
     class Meta:
         verbose_name = "Produto"
