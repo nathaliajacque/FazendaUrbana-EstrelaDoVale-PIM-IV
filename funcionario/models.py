@@ -99,6 +99,7 @@ class Funcionario(models.Model):
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
+    data_admissao = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
 
     cep_validator = RegexValidator(

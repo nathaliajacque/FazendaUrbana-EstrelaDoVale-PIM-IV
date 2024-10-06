@@ -3,7 +3,7 @@ from .models import Cliente
 
 
 class ClienteAdmin(admin.ModelAdmin):
-    list_filter = (
+    list_display = (
         "id_cliente",
         "status",
         "nome_fantasia",
@@ -21,6 +21,7 @@ class ClienteAdmin(admin.ModelAdmin):
         "email_1",
         "contato",
     )
+    list_filter = ("nome_fantasia", "cidade", "uf")
     readonly_fields = ("id_cliente", "data_cadastro", "usuario")
 
     def save_model(self, request, obj, form, change):

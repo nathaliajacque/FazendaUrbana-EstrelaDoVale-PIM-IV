@@ -3,7 +3,14 @@ from .models import Funcionario
 
 
 class FuncionarioAdmin(admin.ModelAdmin):
-    list_display = ("id_funcionario", "nome", "cargo", "email", "data_cadastro")
+    list_display = (
+        "id_funcionario",
+        "nome",
+        "cargo",
+        "email",
+        "data_admissao",
+        "data_cadastro",
+    )
     search_fields = (
         "id_funcionario",
         "nome",

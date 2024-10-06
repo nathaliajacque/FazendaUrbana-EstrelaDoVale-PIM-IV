@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "cliente",
     "fornecedor",
     "funcionario",
+    "relatorio",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

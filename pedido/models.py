@@ -78,6 +78,10 @@ class PedidoVenda(models.Model):
         except cls.DoesNotExist:
             return None
 
+    def cancelar_pedido_venda(self):
+        self.status = "Cancelado"
+        self.save()
+
     # def concluir_pedido_venda(self):
     #     self.status = "Em andamento"
     #     self.save()
@@ -96,13 +100,11 @@ class PedidoVenda(models.Model):
         self.prazo_entrega = self.data_venda + timedelta(days=prazo_entrega_dias)
         self.save()
 
-    def cancelar_pedido_venda(self):
-        self.status = "Cancelado"
+    # Método para recalcular o total do pedido com base nas quantidades dos itens
+    def calcular_total(self):
+        total_quantidade = sum(item.quantidade for item in self.itens.all())
+        self.total = total_quantidade
         self.save()
-
-    def validar_dados(self):
-        # Adicione a lógica de validação aqui
-        pass
 
     @property
     def prazo_entrega_data(self):
@@ -117,6 +119,10 @@ class PedidoVenda(models.Model):
             )
         return self.data_pedido + timedelta(days=prazo_entrega_dias)
 
+    def validar_dados(self):
+        # Adicione a lógica de validação aqui
+        pass
+
     def __str__(self):
         return f"Pedido n° {self.num_pedido} - {self.cliente.nome_fantasia}"
 
@@ -129,10 +135,11 @@ class ItemPedido(models.Model):
     produto = models.ForeignKey(
         Produto, on_delete=models.CASCADE, related_name="itens_pedido"
     )
-    quantidade = models.PositiveIntegerField()
+    fornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE, editable=False)
     pedido = models.ForeignKey(
         PedidoVenda, on_delete=models.CASCADE, related_name="itens"
     )
+    quantidade = models.PositiveIntegerField()
     descricao = models.CharField(max_length=255, editable=False)
     prazo_entrega = models.DateField(editable=False)
 
@@ -140,7 +147,7 @@ class ItemPedido(models.Model):
         # Salvar o pedido antes de calcular o prazo de entrega
         if not self.pedido.pk:
             self.pedido.save()
-
+        self.fornecedor = self.produto.fornecedor
         self.descricao = self.produto.descricao
         fornecedor = (
             self.produto.fornecedor
@@ -149,6 +156,7 @@ class ItemPedido(models.Model):
         # Use o campo correto para data do pedido, provavelmente `data_venda`
         self.prazo_entrega = self.pedido.data_venda + timedelta(days=prazo_entrega_dias)
         super().save(*args, **kwargs)
+        self.pedido.calcular_total()  # Atualizar o pedido para recalcular o total
 
     @classmethod
     def create_item(cls, produto, pedido, quantidade):
@@ -175,15 +183,12 @@ class ItemPedido(models.Model):
         except cls.DoesNotExist:
             return None
 
-    @classmethod
-    def add_item(cls, produto, pedido, quantidade):
-        return cls.create_item(produto, pedido, quantidade)
-
-    @classmethod
     def remove_item(cls, item_id, pedido):
         try:
             item = cls.objects.get(id=item_id, pedido=pedido)
             item.delete()
+            # Recalcular o total do pedido após remover o item
+            pedido.calcular_total()
             return True
         except cls.DoesNotExist:
             return False

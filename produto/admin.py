@@ -8,7 +8,7 @@ class ProdutoAdmin(admin.ModelAdmin):
         "status",
         "descricao",
         "categoria",
-        "observacao",
+        "crescimento",
         "data_cadastro",
     )
     search_fields = ("id_produto", "descricao", "status", "categoria")
