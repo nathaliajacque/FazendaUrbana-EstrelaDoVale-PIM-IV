@@ -4,19 +4,23 @@ from .models import Fornecedor
 
 class FornecedorAdmin(admin.ModelAdmin):
     list_display = (
+        "id_fornecedor",
+        "status",
         "nome_fantasia",
         "razao_social",
-        "contato",
         "cnpj",
+        "contato",
         "prazo_entrega_dias",
-        "observacao",
-        "cidade",
-        "uf",
-        "status",
         "data_cadastro",
-        "usuario",
     )
-    search_fields = ("nome_fantasia", "razao_social", "cnpj")
+    search_fields = (
+        "id_fornecedor",
+        "nome_fantasia",
+        "razao_social",
+        "cnpj",
+        "contato",
+        "id_fornecedor",
+    )
     list_filter = ("prazo_entrega_dias", "cidade", "uf")
     readonly_fields = ("data_cadastro", "usuario", "id_fornecedor")
 

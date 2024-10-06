@@ -23,6 +23,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cliente.models import Cliente
 from produto.models import Produto
+from fornecedor.models import Fornecedor
 from datetime import timedelta
 
 # TODO: Fazer com que o pedido gere um prazo de acordo com o tempo de entrega do fornecedor + dias
@@ -48,7 +49,6 @@ class PedidoVenda(models.Model):
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, blank=True)
-    prazo_entrega = models.DateField()
 
     def __str__(self):
         return f"Pedido n° {self.num_pedido} - {self.cliente.nome_fantasia}"
@@ -104,8 +104,21 @@ class PedidoVenda(models.Model):
         # Adicione a lógica de validação aqui
         pass
 
+    @property
+    def prazo_entrega_data(self):
+        # Calcula a data de entrega com base nos itens do pedido
+        prazo_entrega_dias = 0
+        for item in self.itens.all():
+            fornecedor = (
+                item.produto.fornecedor
+            )  # Supondo que Produto tem um campo fornecedor
+            prazo_entrega_dias += (
+                item.produto.tempo_crescimento + fornecedor.prazo_entrega_dias
+            )
+        return self.data_pedido + timedelta(days=prazo_entrega_dias)
+
     def __str__(self):
-        return f"Pedido n° {self.num_pedido} - {self.cliente.nome}"
+        return f"Pedido n° {self.num_pedido} - {self.cliente.nome_fantasia}"
 
     class Meta:
         verbose_name = "Pedido"
@@ -121,11 +134,20 @@ class ItemPedido(models.Model):
         PedidoVenda, on_delete=models.CASCADE, related_name="itens"
     )
     descricao = models.CharField(max_length=255, editable=False)
+    prazo_entrega = models.DateField(editable=False)
 
     def save(self, *args, **kwargs):
-        self.descricao = (
-            self.produto.descricao
-        )  # Preenche a descrição com a descrição do produto
+        # Salvar o pedido antes de calcular o prazo de entrega
+        if not self.pedido.pk:
+            self.pedido.save()
+
+        self.descricao = self.produto.descricao
+        fornecedor = (
+            self.produto.fornecedor
+        )  # Supondo que Produto tem um campo fornecedor
+        prazo_entrega_dias = self.produto.crescimento + fornecedor.prazo_entrega_dias
+        # Use o campo correto para data do pedido, provavelmente `data_venda`
+        self.prazo_entrega = self.pedido.data_venda + timedelta(days=prazo_entrega_dias)
         super().save(*args, **kwargs)
 
     @classmethod

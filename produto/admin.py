@@ -11,6 +11,8 @@ class ProdutoAdmin(admin.ModelAdmin):
         "observacao",
         "data_cadastro",
     )
+    search_fields = ("id_produto", "descricao", "status", "categoria")
+    list_filter = ("id_produto", "descricao", "status", "categoria")
     readonly_fields = ("usuario", "data_cadastro", "id_produto")
 
     def save_model(self, request, obj, form, change):

@@ -7,12 +7,13 @@ class UsuarioAdmin(admin.ModelAdmin):
     form = UsuarioAdminForm
     list_display = (
         "id_usuario",
+        "status",
         "nome",
         "login",
+        "nivel_acesso",
         "data_cadastro",
-        "deve_redefinir_senha",
     )
-    list_filter = ("data_cadastro", "deve_redefinir_senha")
+    list_filter = ("id_usuario", "data_cadastro", "deve_redefinir_senha")
     search_fields = ("nome", "login")
     readonly_fields = ("id_usuario", "data_cadastro", "usuario")
 
