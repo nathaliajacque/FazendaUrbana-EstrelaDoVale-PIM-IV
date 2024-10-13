@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PedidoVenda
+from .models import Pedido
 from .models import ItemPedido
 from .models import Fornecedor
 
@@ -16,10 +16,10 @@ class ItemPedidoInline(admin.TabularInline):
     readonly_fields = ("prazo_entrega", "fornecedor")
 
 
-class PedidoVendaAdmin(admin.ModelAdmin):
+class PedidoAdmin(admin.ModelAdmin):
     inlines = [ItemPedidoInline]
     list_display = (
-        "num_pedido",
+        "id",
         "status",
         "cliente",
         "data_venda",
@@ -30,8 +30,8 @@ class PedidoVendaAdmin(admin.ModelAdmin):
         # "usuario",
     )
     list_filter = ("status", "data_venda", "data_cadastro")
-    search_fields = ("num_pedido", "cliente__nome_fantasia", "cliente__razao_social")
-    readonly_fields = ("num_pedido", "usuario", "data_cadastro", "total")
+    search_fields = ("id", "cliente__nome_fantasia", "cliente__razao_social")
+    readonly_fields = ("id", "usuario", "data_cadastro", "total")
 
     def get_fornecedores(self, obj):
         return ", ".join(set(item.fornecedor.nome_fantasia for item in obj.itens.all()))
@@ -46,5 +46,5 @@ class PedidoVendaAdmin(admin.ModelAdmin):
     get_prazo_entrega.short_description = "Prazo Entrega"  # Título da coluna
 
 
-admin.site.register(PedidoVenda, PedidoVendaAdmin)
+admin.site.register(Pedido, PedidoAdmin)
 admin.site.register(ItemPedido)

@@ -1,15 +1,15 @@
 """
-Campos da Classe PedidoVenda:
+Campos da Classe Pedido:
 
-num_pedido: Chave primária para identificar o pedido de venda.
-num_pedido: Número do pedido.
+id_pedido: Chave primária para identificar o pedido de venda.
+id_pedido: Número do pedido.
 status: Campo de escolha para o status do pedido.
 data_venda: Data da venda.
 data_cadastro: Data de cadastro do pedido (preenchida automaticamente).
 usuario: Chave estrangeira para o usuário que criou o pedido.
 cliente: Chave estrangeira para o cliente associado ao pedido.
 prazo_entrega: Prazo de entrega do pedido.
-Métodos da Classe PedidoVenda:
+Métodos da Classe Pedido:
 
 create_pedido_venda: Método de classe para criar um novo pedido de venda.
 get_pedido_venda: Método de classe para obter um pedido de venda pelo ID.
@@ -30,14 +30,12 @@ from datetime import timedelta
 # do crescimento do insumo
 
 
-class PedidoVenda(models.Model):
+class Pedido(models.Model):
     STATUS_CHOICES = [
         ("Em andamento", "Em andamento"),
         ("Concluído", "Concluído"),
         ("Cancelado", "Cancelado"),
     ]
-
-    num_pedido = models.AutoField(primary_key=True)
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default="Em andamento"
     )
@@ -51,26 +49,26 @@ class PedidoVenda(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, blank=True)
 
     def __str__(self):
-        return f"Pedido n° {self.num_pedido} - {self.cliente.nome_fantasia}"
+        return f"Pedido n° {self.id_pedido} - {self.cliente.nome_fantasia}"
 
     @classmethod
-    def create_pedido_venda(cls, **kwargs):
+    def create_pedido(cls, **kwargs):
         pedido = cls(**kwargs)
         pedido.save()
         return pedido
 
     @classmethod
-    def get_pedido_venda(cls, num_pedido):
+    def get_pedido(cls, id_pedido):
         try:
-            pedido = cls.objects.get(num_pedido=num_pedido)
+            pedido = cls.objects.get(id_pedido=id_pedido)
             return pedido
         except cls.DoesNotExist:
             return None
 
     @classmethod
-    def update_pedido_venda(cls, num_pedido, **kwargs):
+    def update_pedido(cls, id_pedido, **kwargs):
         try:
-            pedido = cls.objects.get(num_pedido=num_pedido)
+            pedido = cls.objects.get(id_pedido=id_pedido)
             for key, value in kwargs.items():
                 setattr(pedido, key, value)
             pedido.save()
@@ -90,9 +88,10 @@ class PedidoVenda(models.Model):
     #     self.status = "Concluído"
     #     self.save()
 
-    def calcular_prazo_entrega(self):
-        self.prazo_entrega = self.produto.calcular_prazo_entrega()
-        self.save()
+    # REMOVIDO
+    # def calcular_prazo_entrega(self):
+    #   self.prazo_entrega = self.produto.calcular_prazo_entrega()
+    #   self.save()
 
     def calcular_data_entrega(self):
         produto = Produto.objects.get(id=self.produto_id)
@@ -124,7 +123,7 @@ class PedidoVenda(models.Model):
         pass
 
     def __str__(self):
-        return f"Pedido n° {self.num_pedido} - {self.cliente.nome_fantasia}"
+        return f"Pedido n° {self.id_pedido} - {self.cliente.nome_fantasia}"
 
     class Meta:
         verbose_name = "Pedido"
@@ -136,8 +135,9 @@ class ItemPedido(models.Model):
         Produto, on_delete=models.CASCADE, related_name="itens_pedido"
     )
     fornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE, editable=False)
-    pedido = models.ForeignKey(
-        PedidoVenda, on_delete=models.CASCADE, related_name="itens"
+    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name="itens")
+    producao = models.ForeignKey(
+        "producao.Producao", on_delete=models.CASCADE, null=True, blank=True
     )
     quantidade = models.PositiveIntegerField()
     descricao = models.CharField(max_length=255, editable=False)

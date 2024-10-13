@@ -1,59 +1,58 @@
 from django.db import models
-from funcionario.models import Funcionario
 from django.contrib.auth.models import User
-from django.core.validators import RegexValidator
 
 
 class RelatorioFuncionario(models.Model):
-    id_funcionario = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length=255)
-    cargo = models.CharField(max_length=50)
-    cpf = models.CharField(max_length=11)
-    rg = models.CharField(max_length=10)
-    orgao_emissor = models.CharField(max_length=10)
-    contato = models.CharField(max_length=255)
-    email = models.EmailField(max_length=255)
-    usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
+    funcionario = models.OneToOneField(
+        "funcionario.Funcionario", on_delete=models.CASCADE
     )
-    data_admissao = models.DateField()
-    data_cadastro = models.DateTimeField()
-    logradouro = models.CharField(max_length=50)
-    bairro = models.CharField(max_length=50)
-    numero = models.CharField(max_length=5)
-    cep = models.CharField(max_length=9)
-    complemento = models.CharField(max_length=30, blank=True, null=True)
-    cidade = models.CharField(max_length=30)
-    uf = models.CharField(max_length=2)
+    data_relatorio = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Relatório de {self.nome} - {self.data_geracao.strftime('%d/%m/%Y')}"
+        return f"Relatório do funcionário: {self.funcionario.nome}"
 
-    @classmethod
-    def gerar_relatorio(cls, id_funcionario):
-        try:
-            funcionario = Funcionario.objects.get(id_funcionario=id_funcionario)
-            relatorio = cls(
-                id_funcionario=funcionario.id_funcionario,
-                nome=funcionario.nome,
-                cargo=funcionario.cargo,
-                cpf=funcionario.cpf,
-                rg=funcionario.rg,
-                orgao_emissor=funcionario.orgao_emissor,
-                contato=funcionario.contato,
-                email=funcionario.email,
-                usuario=funcionario.usuario,
-                data_admissao=funcionario.data_admissao,
-                data_cadastro=funcionario.data_cadastro,
-                logradouro=funcionario.logradouro,
-                bairro=funcionario.bairro,
-                numero=funcionario.numero,
-                cep=funcionario.cep,
-                complemento=funcionario.complemento,
-                cidade=funcionario.cidade,
-                uf=funcionario.uf,
-            )
-            relatorio.save()
-            return relatorio
-        except Funcionario.DoesNotExist:
-            return None
+    class Meta:
+        verbose_name = "Relatório de Funcionário"
+        verbose_name_plural = "Relatório de Funcionários"
+
+    def obter_dados_funcionario(self):
+        from funcionario.models import Funcionario
+
+        """Retorna os dados completos do funcionário no relatório"""
+        dados_funcionario = {
+            "Nome": self.funcionario.nome,
+            "Cargo": self.funcionario.cargo,
+            "CPF": self.funcionario.cpf,
+            "RG": self.funcionario.rg,
+            "Órgão Emissor": self.funcionario.orgao_emissor,
+            "Contato": self.funcionario.contato,
+            "Email": self.funcionario.email,
+            "Data de Admissão": self.funcionario.data_admissao,
+            "Data de Cadastro": self.funcionario.data_cadastro,
+            "Endereço": {
+                "Logradouro": self.funcionario.logradouro,
+                "Bairro": self.funcionario.bairro,
+                "Número": self.funcionario.numero,
+                "CEP": self.funcionario.cep,
+                "Complemento": self.funcionario.complemento,
+                "Cidade": self.funcionario.cidade,
+                "Estado (UF)": self.funcionario.uf,
+            },
+            "Observação": self.funcionario.observacao,
+        }
+        return dados_funcionario
+
+    def exportar_relatorio(self):
+        """Exemplo simples de como exportar o relatório em formato de texto"""
+        dados = self.obter_dados_funcionario()
+        relatorio = f"Relatório do Funcionário: {dados['Nome']}\n"
+        relatorio += f"Cargo: {dados['Cargo']}\n"
+        relatorio += f"CPF: {dados['CPF']}\n"
+        relatorio += f"RG: {dados['RG']} ({dados['Órgão Emissor']})\n"
+        relatorio += f"Contato: {dados['Contato']}\n"
+        relatorio += f"Email: {dados['Email']}\n"
+        relatorio += f"Usuário: {dados['Usuário']}\n"
+        relatorio += f"Data de Admissão: {dados['Data de Admissão']}\n"
+        relatorio += f"Endereço: {dados['Endereço']['Logradouro']}, {dados['Endereço']['Número']}, {dados['Endereço']['Bairro']}, {dados['Endereço']['Cidade']}-{dados['Endereço']['Estado (UF)']}, CEP: {dados['Endereço']['CEP']}\n"
+        relatorio += f"Observação: {dados['Observação']}\n"
+        return relatorio
