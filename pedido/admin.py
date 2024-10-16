@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Pedido
 from .models import ItemPedido
-from .models import Fornecedor
 
 
 class ItemPedidoInline(admin.TabularInline):
@@ -26,22 +25,26 @@ class PedidoAdmin(admin.ModelAdmin):
         "total",
         "get_fornecedores",  # Adiciona o método para exibir fornecedores e prazo entrega
         "get_prazo_entrega",
-        # "data_cadastro",
-        # "usuario",
+        "data_cadastro",
     )
     list_filter = ("status", "data_venda", "data_cadastro")
-    search_fields = ("id", "cliente__nome_fantasia", "cliente__razao_social")
+    search_fields = ("id", "cliente", "prazo_entrega")
     readonly_fields = ("id", "usuario", "data_cadastro", "total")
+
+    def save_model(self, request, obj, form, change):
+        if not change:  # Se for uma nova instância
+            obj.usuario = request.user  # Atribui o usuário logado
+        super().save_model(request, obj, form, change)
 
     def get_fornecedores(self, obj):
         return ", ".join(set(item.fornecedor.nome_fantasia for item in obj.itens.all()))
-
-    get_fornecedores.short_description = "Fornecedor"  # Título da coluna
 
     def get_prazo_entrega(self, obj):
         return ", ".join(
             set(item.prazo_entrega.strftime("%d/%m/%Y") for item in obj.itens.all())
         )
+
+    get_fornecedores.short_description = "Fornecedor"  # Título da coluna
 
     get_prazo_entrega.short_description = "Prazo Entrega"  # Título da coluna
 

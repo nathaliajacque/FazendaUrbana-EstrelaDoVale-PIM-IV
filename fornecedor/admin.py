@@ -4,7 +4,7 @@ from .models import Fornecedor
 
 class FornecedorAdmin(admin.ModelAdmin):
     list_display = (
-        "id_fornecedor",
+        "id",
         "status",
         "nome_fantasia",
         "razao_social",
@@ -14,15 +14,15 @@ class FornecedorAdmin(admin.ModelAdmin):
         "data_cadastro",
     )
     search_fields = (
-        "id_fornecedor",
+        "id",
         "nome_fantasia",
         "razao_social",
         "cnpj",
         "contato",
-        "id_fornecedor",
+        "id",
     )
     list_filter = ("prazo_entrega_dias", "cidade", "uf")
-    readonly_fields = ("data_cadastro", "usuario", "id_fornecedor")
+    readonly_fields = ("data_cadastro", "usuario", "id")
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:

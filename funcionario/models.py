@@ -86,7 +86,6 @@ class Funcionario(models.Model):
         ("SSP/TO", "SSP/TO"),
     ]
 
-    id_funcionario = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=255)
     cargo = models.CharField(max_length=50, choices=CARGO_CHOICES)
     cpf = models.CharField(max_length=11, unique=True, validators=[validate_cpf])
@@ -121,7 +120,7 @@ class Funcionario(models.Model):
     observacao = models.TextField(max_length=255, blank=True)
 
     def __str__(self):
-        return self.nome
+        return self.nome + " - " + self.cargo
 
     class Meta:
         verbose_name = "Funcionário"

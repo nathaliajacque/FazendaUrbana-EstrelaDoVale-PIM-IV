@@ -14,8 +14,6 @@ class Producao(models.Model):
         ("Concluído", "Concluído"),
         ("Cancelado", "Cancelado"),
     ]
-
-    id_producao = models.AutoField(primary_key=True)
     pedido = models.ForeignKey(
         Pedido, on_delete=models.CASCADE, related_name="producoes"
     )
@@ -23,11 +21,13 @@ class Producao(models.Model):
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default="Em planejamento"
     )
+    prazo_entrega = models.DateField(null=True, blank=True)
     data_inicio = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
-    prazo_entrega = models.DateField()
     controle_ambiente = models.BooleanField(default=False)
-    usuario = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    usuario = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, editable=False
+    )
 
     def clean(self):
         if self.status == "Em planejamento" and not self.controle_ambiente:
@@ -39,19 +39,19 @@ class Producao(models.Model):
         return self.pedido.produto.all()  # relação ManyToMany em Pedido
 
     def get_codigo_pedido(self):
-        return self.pedido.id_pedido if self.pedido else None
+        return self.pedido.id if self.pedido else None
 
     def get_prazo_entrega(self):
         return self.pedido.prazo_entrega if self.pedido else None
 
-    def get_produtos(self):
-        return self.pedido.itens.all() if self.pedido else None
-
     def get_clientes(self):
         return self.pedido.cliente.all() if self.pedido else None
 
+    # def get_produtos(self):
+    #    return self.pedido.itens.all() if self.pedido else None
+
     def __str__(self):
-        return f"Produção n° {self.id_producao} - Pedido n° {self.get_codigo_pedido()}"
+        return f"Produção n° {self.id} - Pedido n° {self.get_codigo_pedido()}"
 
     class Meta:
         verbose_name = "Produção"

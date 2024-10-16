@@ -36,7 +36,6 @@ class Fornecedor(StatusModel):
         ("SE", "Sergipe"),
         ("TO", "Tocantins"),
     ]
-    id_fornecedor = models.AutoField(primary_key=True)
     prazo_entrega_dias = models.IntegerField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     nome_fantasia = models.CharField(max_length=255)

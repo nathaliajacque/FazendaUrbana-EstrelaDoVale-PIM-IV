@@ -4,7 +4,7 @@ from .models import Funcionario
 
 class FuncionarioAdmin(admin.ModelAdmin):
     list_display = (
-        "id_funcionario",
+        "id",
         "nome",
         "cargo",
         "email",
@@ -12,7 +12,7 @@ class FuncionarioAdmin(admin.ModelAdmin):
         "data_cadastro",
     )
     search_fields = (
-        "id_funcionario",
+        "id",
         "nome",
         "cargo",
         "cpf",
@@ -22,7 +22,7 @@ class FuncionarioAdmin(admin.ModelAdmin):
         "uf",
     )
     list_filter = ("cargo", "cidade", "uf")
-    readonly_fields = ("usuario", "data_cadastro", "id_funcionario")
+    readonly_fields = ("usuario", "data_cadastro", "id")
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:

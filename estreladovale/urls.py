@@ -24,6 +24,11 @@ from django.conf.urls.static import static
 # TODO: Remover debug toolbar
 
 urlpatterns = [
+    path(
+        "", include("produto.urls")
+    ),  # O caracter "" indica que a URL raiz será a URL do app produto
+    path("usuario/", include("usuario.urls")),
+    path("pedido/", include("pedido.urls")),
     path("admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

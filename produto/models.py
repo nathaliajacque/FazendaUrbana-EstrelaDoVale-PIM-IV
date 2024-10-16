@@ -1,10 +1,10 @@
 """
 create_produto: Cria um novo produto com os atributos fornecidos e salva no banco de dados.
-get_produto: Retorna um dicionário com os atributos do produto especificado pelo id_produto.
-update_produto: Atualiza os atributos do produto especificado pelo id_produto com os valores fornecidos.
-delete_produto: Exclui o produto especificado pelo id_produto.
-inativar_produto: Define o status do produto especificado pelo id_produto como "Inativo".
-ativar_produto: Define o status do produto especificado pelo id_produto como "Ativo".
+get_produto: Retorna um dicionário com os atributos do produto especificado pelo id.
+update_produto: Atualiza os atributos do produto especificado pelo id com os valores fornecidos.
+delete_produto: Exclui o produto especificado pelo id.
+inativar_produto: Define o status do produto especificado pelo id como "Inativo".
+ativar_produto: Define o status do produto especificado pelo id como "Ativo".
 CATEGORIA_CHOICES: Uma lista de tuplas onde cada tupla contém duas strings. A primeira string é o valor armazenado no banco de dados e a segunda string é a opção legível que será exibida nos formulários.
 """
 
@@ -23,7 +23,6 @@ class Produto(StatusModel):
     ]
 
     # TODO: Inserir fornecedor
-    id_produto = models.AutoField(primary_key=True)
     descricao = models.CharField(max_length=255)
     categoria = models.CharField(max_length=255, choices=CATEGORIA_CHOICES)
     fornecedor = models.ForeignKey(Fornecedor, models.CASCADE)
@@ -48,17 +47,17 @@ class Produto(StatusModel):
         return produto
 
     @classmethod
-    def get_produto(cls, id_produto):
+    def get_produto(cls, id):
         try:
-            produto = cls.objects.get(id_produto=id_produto)
+            produto = cls.objects.get(id=id)
             return produto
         except cls.DoesNotExist:
             return None
 
     @classmethod
-    def update_produto(cls, id_produto, **kwargs):
+    def update_produto(cls, id, **kwargs):
         try:
-            produto = cls.objects.get(id_produto=id_produto)
+            produto = cls.objects.get(id=id)
             for key, value in kwargs.items():
                 if key != "usuario":  # Impede a alteração do usuário
                     setattr(produto, key, value)

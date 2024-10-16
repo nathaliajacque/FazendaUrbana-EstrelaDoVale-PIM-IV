@@ -39,17 +39,15 @@ class Usuario(StatusModel):
         ("funcionario", "Funcionário"),
     ]
 
-    # Removido CPF e RG do campo de login
-    # cpf = models.CharField(max_length=11, unique=True)
-    # rg = models.CharField(max_length=20, unique=True)
-    id_usuario = models.AutoField(primary_key=True)
-    usuario = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
     nome = models.CharField(max_length=255)
     login = models.EmailField(max_length=255, unique=True)
     senha = models.CharField(max_length=255)
     nivel_acesso = models.CharField(max_length=20, choices=PERFIL_CHOICES)
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     deve_redefinir_senha = models.BooleanField(default=False)
+    usuario = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, editable=False
+    )
 
     @classmethod
     def create_usuario(cls, **kwargs):
@@ -58,11 +56,11 @@ class Usuario(StatusModel):
         return usuario
 
     @classmethod
-    def get_usuario(cls, id_usuario):
+    def get_usuario(cls, id):
         try:
-            usuario = cls.objects.get(id_usuario=id_usuario)
+            usuario = cls.objects.get(id=id)
             return {
-                "id_usuario": usuario.id_usuario,
+                "id": usuario.id,
                 "data_cadastro": usuario.data_cadastro,
                 "nome": usuario.nome,
                 "login": usuario.login,
@@ -81,9 +79,9 @@ class Usuario(StatusModel):
         return self.nivel_acesso == "funcionario"
 
     @classmethod
-    def update_usuario(cls, id_usuario, **kwargs):
+    def update_usuario(cls, id, **kwargs):
         try:
-            usuario = cls.objects.get(id_usuario=id_usuario)
+            usuario = cls.objects.get(id=id)
             for key, value in kwargs.items():
                 setattr(usuario, key, value)
             usuario.save()
@@ -115,7 +113,7 @@ class Usuario(StatusModel):
     #         self.resize_image(self.imagem.path, max_image_size)
 
     def __str__(self):
-        return f"{self.usuario}"
+        return f"{self.nome} - {self.login}"
 
     # def clean(self):
     #     pass

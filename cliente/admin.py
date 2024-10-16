@@ -4,7 +4,7 @@ from .models import Cliente
 
 class ClienteAdmin(admin.ModelAdmin):
     list_display = (
-        "id_cliente",
+        "id",
         "status",
         "nome_fantasia",
         "razao_social",
@@ -13,7 +13,7 @@ class ClienteAdmin(admin.ModelAdmin):
         "data_cadastro",
     )
     search_fields = (
-        "id_cliente",
+        "id",
         "status",
         "nome_fantasia",
         "razao_social",
@@ -22,7 +22,7 @@ class ClienteAdmin(admin.ModelAdmin):
         "contato",
     )
     list_filter = ("nome_fantasia", "cidade", "uf")
-    readonly_fields = ("id_cliente", "data_cadastro", "usuario")
+    readonly_fields = ("id", "data_cadastro", "usuario")
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:

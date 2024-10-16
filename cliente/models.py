@@ -36,7 +36,6 @@ class Cliente(StatusModel):
         ("SE", "Sergipe"),
         ("TO", "Tocantins"),
     ]
-    id_cliente = models.AutoField(primary_key=True)
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     nome_fantasia = models.CharField(max_length=255)
     razao_social = models.CharField(max_length=255)
@@ -50,10 +49,6 @@ class Cliente(StatusModel):
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
-    usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
-    )
-
     cep_validator = RegexValidator(
         regex=r"^\d{5}-\d{3}$", message="CEP deve estar no formato XXXXX-XXX"
     )
@@ -81,27 +76,23 @@ class Cliente(StatusModel):
         return cliente
 
     @classmethod
-    def get_cliente(cls, id_cliente):
+    def get_cliente(cls, id):
         try:
-            cliente = cls.objects.get(id_cliente=id_cliente)
+            cliente = cls.objects.get(id=id)
             return cliente
         except cls.DoesNotExist:
             return None
 
     @classmethod
-    def atualizar_cliente(cls, id_cliente, **kwargs):
+    def atualizar_cliente(cls, id, **kwargs):
         try:
-            cliente = cls.objects.get(id_cliente=id_cliente)
+            cliente = cls.objects.get(id=id)
             for key, value in kwargs.items():
                 setattr(cliente, key, value)
             cliente.save()
             return cliente
         except cls.DoesNotExist:
             return None
-
-    def validar_dados(self):
-        # Adicione a lógica de validação aqui
-        pass
 
     class Meta:
         verbose_name = "Cliente"

@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# TODO remover os ids de todas os models
+
 INSTALLED_APPS = [
     "produto",
     "usuario",
