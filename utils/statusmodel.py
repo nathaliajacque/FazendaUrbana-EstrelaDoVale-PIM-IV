@@ -5,9 +5,8 @@ from django.db import models
 
 class StatusModel(models.Model):
     STATUS_CHOICES = [
-        ("", "Selecione o status"),
-        ("Ativo", "Ativo"),
-        ("Inativo", "Inativo"),
+        ("ATIVO", "Ativo"),
+        ("INATIVO", "Inativo"),
     ]
 
     status = models.CharField(max_length=7, choices=STATUS_CHOICES, default="Ativo")
