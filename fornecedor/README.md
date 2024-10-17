@@ -114,7 +114,7 @@ Envie um JSON no corpo da requisição com os campos que deseja atualizar. Somen
   {
       "id": 1
   }
-        ```
+```
 
 - **Código 400 (Bad Request):** O corpo da requisição está inválido ou contém dados não válidos.  
   **Exemplos de Resposta:**
@@ -122,7 +122,7 @@ Envie um JSON no corpo da requisição com os campos que deseja atualizar. Somen
   {
       "erro": "Corpo da requisição inválido"
   }
-              ```
+```
 ```json
   {
       "erro": {
