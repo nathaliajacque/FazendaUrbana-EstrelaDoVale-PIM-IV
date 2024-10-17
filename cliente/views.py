@@ -1,3 +1,19 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from django.views import View
 
-# Create your views here.
+
+class ListaCliente(ListView):
+    pass
+
+
+class DetalheCliente(View):
+    pass
+
+
+class CriaCliente(View):
+    pass
+
+
+class EditaCliente(View):
+    pass

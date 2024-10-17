@@ -16,13 +16,11 @@ from fornecedor.models import Fornecedor
 
 class Produto(StatusModel):
     CATEGORIA_CHOICES = [
-        ("", "Selecione a categoria"),
-        ("Hortaliça de Flor", "Hortaliça de Flor"),
-        ("Hortaliça de Folha", "Hortaliça de Folha"),
-        ("Tubérculo", "Tubérculo"),
+        ("HORTALICA_DE_FLOR", "Hortaliça de Flor"),
+        ("HORTALICA_DE_FOLHA", "Hortaliça de Folha"),
+        ("TUBERCULO", "Tubérculo"),
     ]
 
-    # TODO: Inserir fornecedor
     descricao = models.CharField(max_length=255)
     categoria = models.CharField(max_length=255, choices=CATEGORIA_CHOICES)
     fornecedor = models.ForeignKey(Fornecedor, models.CASCADE)
@@ -33,7 +31,7 @@ class Produto(StatusModel):
     crescimento = models.IntegerField()
     intensidade_led = models.FloatField()
     nivel_agua = models.FloatField()
-    solucao_nutritiva = models.TextField(max_length=255)
+    solucao_nutritiva = models.TextField()
     observacao = models.TextField(max_length=255, blank=True)
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     usuario = models.ForeignKey(

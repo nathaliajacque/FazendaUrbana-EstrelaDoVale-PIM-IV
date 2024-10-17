@@ -1,0 +1,1 @@
+web: gunicorn estreladovale.wsgi:application --preload --log-file -

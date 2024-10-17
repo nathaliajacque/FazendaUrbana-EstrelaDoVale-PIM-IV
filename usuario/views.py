@@ -1,5 +1,33 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import user_passes_test
+from django.views.generic import ListView
+from django.views.generic import DetailView
+from django.views import View
+from . import models
+
+
+class ListaUsuario(ListView):
+    model = models.Usuario
+
+
+class DetalheUsuario(DetailView):
+    pass
+
+
+class CriaUsuario(View):
+    pass
+
+
+class EditaUsuario(View):
+    pass
+
+
+class Login(View):
+    pass
+
+
+class Logout(View):
+    pass
 
 
 def administrador_required(view_func):
