@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from utils.middlewares import Middlewares
 
 
-def get_list(request):
+def get_lista(request):
     try:
         filters = Middlewares.build_filters(Produto, request.GET)
         querySet = Produto.objects.filter(filters)
@@ -16,7 +16,7 @@ def get_list(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
-def get_detail(request, pk):
+def get_detalhe(request, pk):
     data = Produto.objects.get(pk=pk)
     data = data.__dict__
     data.pop("_state")
@@ -24,7 +24,7 @@ def get_detail(request, pk):
 
 
 @csrf_exempt
-def criar_produto(request):
+def post_criar(request):
     if request.method != "POST":
         return HttpResponseNotAllowed(["POST"], "Método não permitido")
 
@@ -48,7 +48,7 @@ def criar_produto(request):
 
 
 @csrf_exempt
-def editar_produto(request, pk):
+def put_editar(request, pk):
     if request.method != "PUT":
         return HttpResponseNotAllowed(["PUT"], "Método não permitido")
 

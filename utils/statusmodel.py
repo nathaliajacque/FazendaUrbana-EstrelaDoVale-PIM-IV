@@ -9,7 +9,7 @@ class StatusModel(models.Model):
         ("INATIVO", "Inativo"),
     ]
 
-    status = models.CharField(max_length=7, choices=STATUS_CHOICES, default="Ativo")
+    status = models.CharField(max_length=7, choices=STATUS_CHOICES, default="ATIVO")
 
     class Meta:
         abstract = True

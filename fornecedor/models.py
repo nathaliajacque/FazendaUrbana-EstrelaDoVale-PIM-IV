@@ -7,7 +7,6 @@ from django.core.validators import RegexValidator
 
 class Fornecedor(StatusModel):
     UF_CHOICES = [
-        ("", "Selecione o estado"),
         ("AC", "Acre"),
         ("AL", "Alagoas"),
         ("AP", "Amapá"),
@@ -49,15 +48,9 @@ class Fornecedor(StatusModel):
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, editable=False
     )
-    data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
-    usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
-    )
-
     cep_validator = RegexValidator(
         regex=r"^\d{5}-\d{3}$", message="CEP deve estar no formato XXXXX-XXX"
     )
-
     logradouro = models.CharField(max_length=50)
     bairro = models.CharField(max_length=50)
     numero = models.CharField(max_length=5)
@@ -67,7 +60,7 @@ class Fornecedor(StatusModel):
     uf = models.CharField(
         max_length=2,
         default="SP",
-        choices=(UF_CHOICES),
+        choices=UF_CHOICES,
     )
     observacao = models.TextField(max_length=255, blank=True)
 

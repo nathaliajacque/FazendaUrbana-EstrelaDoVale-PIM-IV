@@ -4,8 +4,8 @@ from . import views
 app_name = "fornecedor"
 
 urlpatterns = [
-    path("", views.ListaFornecedor.as_view(), name="lista"),
-    path("<int:pk>/", views.DetalheFornecedor.as_view(), name="detalhe"),
-    path("cria/", views.CriaFornecedor.as_view(), name="criar"),
-    path("<int:pk>/", views.EditaFornecedor.as_view(), name="editar"),
+    path("", views.get_lista, name='get_lista'),
+    path("<int:pk>/", views.get_detalhe, name='get_detalhe'),
+    path("criar/", views.post_criar, name='post_criar'),
+    path("editar/<int:pk>/", views.put_editar, name='put_editar')
 ]
