@@ -25,7 +25,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path(
-        "", include("produto.urls")
+        "produto/", include("produto.urls")
     ),  # O caracter "" indica que a URL raiz será a URL do app produto
     path("usuario/", include("usuario.urls")),
     path("pedido/", include("pedido.urls")),
