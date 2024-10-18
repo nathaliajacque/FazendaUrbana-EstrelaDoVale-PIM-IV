@@ -18,7 +18,7 @@ class StatusModel(models.Model):
     def inativar(cls, id_obj):
         try:
             obj = cls.objects.get(pk=id_obj)
-            obj.status = "Inativo"
+            obj.status = "INATIVO"
             obj.save()
             return obj
         except cls.DoesNotExist:
@@ -28,7 +28,7 @@ class StatusModel(models.Model):
     def ativar(cls, id_obj):
         try:
             obj = cls.objects.get(pk=id_obj)
-            obj.status = "Ativo"
+            obj.status = "ATIVO"
             obj.save()
             return obj
         except cls.DoesNotExist:

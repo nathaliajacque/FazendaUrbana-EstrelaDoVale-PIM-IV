@@ -1,10 +1,9 @@
 from django.db.models import Q
 from rest_framework import serializers
+from django.http import JsonResponse
 
 
-class Middlewares:
-
-    def build_filters(model, query_params):
+def build_filters(model, query_params):
         filters = Q()
 
         for key, value in query_params.items():
@@ -13,7 +12,7 @@ class Middlewares:
 
         return filters
 
-    def serialize_queryset(model, queryset):
+def serialize_queryset(model, queryset):
         GenericSerializer = type(
             "GenericSerializer",
             (serializers.ModelSerializer,),
@@ -22,3 +21,12 @@ class Middlewares:
 
         serializer = GenericSerializer(queryset, many=True)
         return serializer.data
+
+def login_required_middleware(get_response):
+    def middleware(request):
+        if request.path in ["/login/", "/logout/"]:
+            return get_response(request)
+        if not request.user.is_authenticated:
+            return JsonResponse({"erro": "Usuário não autenticado"}, status=401)
+        return get_response(request)
+    return middleware

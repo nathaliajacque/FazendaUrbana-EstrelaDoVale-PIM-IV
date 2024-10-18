@@ -4,12 +4,12 @@ from . import views
 
 app_name = "usuario"
 
-
 urlpatterns = [
-    path("", views.ListaUsuario.as_view(), name="lista"),
-    path("<int:pk>/", views.DetalheUsuario.as_view(), name="detalhe"),
-    path("cria/", views.CriaUsuario.as_view(), name="criar"),
-    path("<int:pk>/", views.EditaUsuario.as_view(), name="editar"),
-    path("login/", views.Login.as_view, name="login"),
-    path("logout/", views.Logout.as_view, name="logout"),
+    path("", views.get_lista, name='get_lista'),
+    path("<int:pk>/", views.get_detalhe, name='get_detalhe'),
+    path("criar/", views.post_criar, name='post_criar'),
+    path("editar/<int:pk>/", views.put_editar, name='put_editar'),
+    path("login/", views.user_login, name="login"),
+    path("logout/", views.user_logout, name="logout"),
 ]
+

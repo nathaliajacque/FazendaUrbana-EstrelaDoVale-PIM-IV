@@ -8,7 +8,7 @@ Uso nas Views:
 Usamos os decoradores de permissão nas views para garantir que apenas usuários com o nível de acesso apropriado possam acessar determinadas funções.
 """
 
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser, Permission, Group
 from utils.statusmodel import StatusModel
 from django.db import models
 from PIL import Image
@@ -31,43 +31,30 @@ from django.conf import settings
 #         return self.create_user(login, nome, password, **extra_fields)
 
 
-class Usuario(StatusModel):
+class Usuario(StatusModel, AbstractUser):
     PERFIL_CHOICES = [
-        ("", "Selecione o acesso"),
-        ("administrador", "Administrador"),
-        ("gerente", "Gerente"),
-        ("funcionario", "Funcionário"),
+        ("ADMINISTRADOR", "Administrador"),
+        ("GERENTE", "Gerente"),
+        ("FUNCIONARIO", "Funcionário"),
     ]
 
-    nome = models.CharField(max_length=255)
-    login = models.EmailField(max_length=255, unique=True)
-    senha = models.CharField(max_length=255)
-    nivel_acesso = models.CharField(max_length=20, choices=PERFIL_CHOICES)
-    data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
+    nivel_acesso = models.CharField(max_length=20, choices=PERFIL_CHOICES, default='FUNCIONARIO')
     deve_redefinir_senha = models.BooleanField(default=False)
-    usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
+
+    groups = models.ManyToManyField(
+        Group,
+        related_name='usuario_set',  # Add related_name to avoid clashes
+        blank=True,
+        help_text='The groups this user belongs to.',
+        verbose_name='groups'
     )
-
-    @classmethod
-    def create_usuario(cls, **kwargs):
-        usuario = cls(**kwargs)
-        usuario.save()
-        return usuario
-
-    @classmethod
-    def get_usuario(cls, id):
-        try:
-            usuario = cls.objects.get(id=id)
-            return {
-                "id": usuario.id,
-                "data_cadastro": usuario.data_cadastro,
-                "nome": usuario.nome,
-                "login": usuario.login,
-                "nivel_acesso": usuario.nivel_acesso,
-            }
-        except cls.DoesNotExist:
-            return None
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name='usuario_set',  # Add related_name to avoid clashes
+        blank=True,
+        help_text='Specific permissions for this user.',
+        verbose_name='user permissions'
+    )
 
     def is_administrador(self):
         return self.nivel_acesso == "administrador"
@@ -78,16 +65,6 @@ class Usuario(StatusModel):
     def is_funcionario(self):
         return self.nivel_acesso == "funcionario"
 
-    @classmethod
-    def update_usuario(cls, id, **kwargs):
-        try:
-            usuario = cls.objects.get(id=id)
-            for key, value in kwargs.items():
-                setattr(usuario, key, value)
-            usuario.save()
-            return usuario
-        except cls.DoesNotExist:
-            return None
 
     # Método para redimensionar a imagem do usuário
     # @staticmethod

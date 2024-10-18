@@ -3,14 +3,14 @@ import json
 from .models import Produto, Fornecedor, User
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
-from utils.middlewares import Middlewares
+from utils.middlewares import build_filters, serialize_queryset
 
 
 def get_lista(request):
     try:
-        filters = Middlewares.build_filters(Produto, request.GET)
+        filters = build_filters(Produto, request.GET)
         querySet = Produto.objects.filter(filters)
-        serialized_data = Middlewares.serialize_queryset(Produto, querySet)
+        serialized_data = serialize_queryset(Produto, querySet)
         return JsonResponse(serialized_data, safe=False)
     except Exception as e:
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)

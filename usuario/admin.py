@@ -7,15 +7,11 @@ class UsuarioAdmin(admin.ModelAdmin):
     form = UsuarioAdminForm
     list_display = (
         "id",
-        "status",
-        "nome",
-        "login",
-        "nivel_acesso",
-        "data_cadastro",
+        "nivel_acesso"
     )
-    list_filter = ("id", "data_cadastro", "deve_redefinir_senha")
-    search_fields = ("nome", "login")
-    readonly_fields = ("id", "data_cadastro", "usuario")
+    list_filter = ("id", "deve_redefinir_senha")
+    search_fields = ("full_name", "email")
+    readonly_fields = ("id", "date_joined", "username")
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:

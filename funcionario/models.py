@@ -7,7 +7,6 @@ from django.core.validators import RegexValidator
 class Funcionario(models.Model):
     CARGO_CHOICES = sorted(
         [
-            ("", "Selecione o cargo"),
             ("Gerente de Produção Agrícola", "Gerente de Produção Agrícola"),
             ("Vendas e Marketing", "Vendas e Marketing"),
             ("Analista de Recursos Humanos", "Analista de Recursos Humanos"),
@@ -25,7 +24,6 @@ class Funcionario(models.Model):
     )
 
     UF_CHOICES = [
-        ("", "Selecione o estado"),
         ("AC", "Acre"),
         ("AL", "Alagoas"),
         ("AP", "Amapá"),
@@ -56,7 +54,6 @@ class Funcionario(models.Model):
     ]
 
     ORGAO_CHOICES = [
-        ("", "Selecione o órgão emissor"),
         ("SSP/AC", "SSP/AC"),
         ("SSP/AL", "SSP/AL"),
         ("SSP/AP", "SSP/AP"),
