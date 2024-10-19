@@ -54,7 +54,7 @@ Retorna os detalhes de um produto específico.
 {
     "id": 1,
     "descricao": "Produto Teste",
-    "categoria": "Categoria Teste",
+    "categoria": "TUBERCULO",
     "fornecedor": 1,
     "grupo": "Grupo Teste",
     "temperatura": 25.0,
