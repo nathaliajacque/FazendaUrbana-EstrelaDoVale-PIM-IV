@@ -90,6 +90,9 @@ Envie um JSON no corpo da requisição com os seguintes campos:
     "id": 1
 }
 ```
+
+---
+
 ## 4. Editar Fornecedor
 
 **Método:** `PUT`  
