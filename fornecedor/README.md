@@ -5,7 +5,7 @@ A API para gerenciar fornecedores está hospedada em `http://localhost:8000/forn
 ## 1. Listar Fornecedores
 
 **Método:** `GET`  
-**URL:** `/fornecedor/`
+**URL:** `/fornecedores/`
 
 ### Descrição:
 Retorna uma lista de todos os fornecedores cadastrados.
@@ -30,7 +30,7 @@ Retorna uma lista de todos os fornecedores cadastrados.
 ## 2. Detalhe do Fornecedor
 
 **Método:** `GET`  
-**URL:** `/fornecedor/<id>/` (substitua `<id>` pelo ID do fornecedor)
+**URL:** `/fornecedores/<id>/` (substitua `<id>` pelo ID do fornecedor)
 
 ### Descrição:
 Retorna os detalhes de um fornecedor específico.
@@ -53,7 +53,7 @@ Retorna os detalhes de um fornecedor específico.
 ## 3. Criar Fornecedor
 
 **Método:** `POST`  
-**URL:** `/fornecedor/criar/`
+**URL:** `/fornecedores/criar/`
 
 ### Descrição:
 Cria um novo fornecedor.
@@ -93,7 +93,7 @@ Envie um JSON no corpo da requisição com os seguintes campos:
 ## 4. Editar Fornecedor
 
 **Método:** `PUT`  
-**URL:** `/fornecedor/editar/<id>/` (substitua `<id>` pelo ID do fornecedor)
+**URL:** `/fornecedores/editar/<id>/` (substitua `<id>` pelo ID do fornecedor)
 
 ### Descrição:
 Atualiza os dados de um fornecedor existente.
