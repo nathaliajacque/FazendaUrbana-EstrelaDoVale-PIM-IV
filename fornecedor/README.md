@@ -1,6 +1,6 @@
 # Documentação da API de Fornecedores
 
-A API para gerenciar fornecedores está hospedada em `http://localhost:8000/fornecedor/`. Esta API permite realizar operações de CRUD (Criar, Ler e Atualizar) sobre o modelo `Fornecedor`.
+A API para gerenciar fornecedores está hospedada em `http://localhost:8000/fornecedores/`. Esta API permite realizar operações de CRUD (Criar, Ler e Atualizar) sobre o modelo `Fornecedor`.
 
 ## 1. Listar Fornecedores
 
