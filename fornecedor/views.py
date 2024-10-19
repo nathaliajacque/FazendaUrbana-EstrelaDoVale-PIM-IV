@@ -26,7 +26,7 @@ def get_lista(request):
 
 
 @login_required_middleware
-def get_detalhe(pk):
+def get_detalhe(request, pk):
     try:
         fornecedor = Fornecedor.objects.get(pk=pk)  # Tenta obter o fornecedor
     except Fornecedor.DoesNotExist:

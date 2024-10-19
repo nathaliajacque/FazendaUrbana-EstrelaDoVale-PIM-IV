@@ -1,32 +1,35 @@
 from django.db.models import Q
 from rest_framework import serializers
 from django.http import JsonResponse
+from functools import wraps
 
 
 def build_filters(model, query_params):
-        filters = Q()
+    filters = Q()
 
-        for key, value in query_params.items():
-            if hasattr(model, key):
-                filters &= Q(**{f"{key}__icontains": value})
+    for key, value in query_params.items():
+        if hasattr(model, key):
+            filters &= Q(**{f"{key}__icontains": value})
 
-        return filters
+    return filters
+
 
 def serialize_queryset(model, queryset):
-        GenericSerializer = type(
-            "GenericSerializer",
-            (serializers.ModelSerializer,),
-            {"Meta": type("Meta", (object,), {"model": model, "fields": "__all__"})},
-        )
+    GenericSerializer = type(
+        "GenericSerializer",
+        (serializers.ModelSerializer,),
+        {"Meta": type("Meta", (object,), {"model": model, "fields": "__all__"})},
+    )
 
-        serializer = GenericSerializer(queryset, many=True)
-        return serializer.data
+    serializer = GenericSerializer(queryset, many=True)
+    return serializer.data
 
-def login_required_middleware(get_response):
-    def middleware(request):
-        if request.path in ["/login/", "/logout/"]:
-            return get_response(request)
+
+def login_required_middleware(view_func):
+    @wraps(view_func)
+    def middleware(request, *args, **kwargs):
         if not request.user.is_authenticated:
-            return JsonResponse({"erro": "Usuário não autenticado"}, status=401)
-        return get_response(request)
+            return JsonResponse({"erro": "Autenticação necessária"}, status=401)
+        return view_func(request, *args, **kwargs)
+
     return middleware

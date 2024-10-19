@@ -20,6 +20,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from usuario.views import user_login, user_logout
+
 
 # TODO: Remover debug toolbar
 
@@ -28,6 +30,8 @@ urlpatterns = [
         "produtos/", include("produto.urls")
     ),  # O caracter "" indica que a URL raiz será a URL do app produto
     path("usuarios/", include("usuario.urls")),
+    path("login/", user_login, name="login"),
+    path("logout/", user_logout, name="logout"),
     path("pedidos/", include("pedido.urls")),
     path("producoes/", include("producao.urls")),
     # path("relatorios/", include("relatorio.urls")),
