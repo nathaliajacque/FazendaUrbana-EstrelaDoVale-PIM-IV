@@ -1,16 +1,18 @@
 from django.db import models
-from django.contrib.auth.models import User
+from usuario.models import Usuario
 from cliente.models import Cliente
 from produto.models import Produto
 from fornecedor.models import Fornecedor
 from datetime import timedelta
 
+# TODO fazer com que ao finalizar um pedido é encaminhado um e-mail para o fornecedor https://temp-mail.org/pt/
+
 
 class Pedido(models.Model):
     STATUS_CHOICES = [
-        ("Em andamento", "Em andamento"),
-        ("Concluído", "Concluído"),
-        ("Cancelado", "Cancelado"),
+        ("EM_ANDAMENTO", "Em andamento"),
+        ("CONCLUIDO", "Concluído"),
+        ("CANCELADO", "Cancelado"),
     ]
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default="Em andamento"
@@ -20,7 +22,7 @@ class Pedido(models.Model):
     data_venda = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
+        Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, blank=True)
 

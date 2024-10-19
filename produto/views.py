@@ -1,6 +1,6 @@
-from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotAllowed
+from django.http import JsonResponse, HttpResponseNotAllowed
 import json
-from .models import Produto, Fornecedor, User
+from .models import Produto, Fornecedor
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from utils.middlewares import build_filters, serialize_queryset

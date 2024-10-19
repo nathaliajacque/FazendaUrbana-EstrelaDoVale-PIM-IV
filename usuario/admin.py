@@ -1,22 +1,17 @@
 from django.contrib import admin
 from .models import Usuario
-from utils.forms import UsuarioAdminForm
 
 
-class UsuarioAdmin(admin.ModelAdmin):
-    form = UsuarioAdminForm
-    list_display = (
-        "id",
-        "nivel_acesso"
-    )
-    list_filter = ("id", "deve_redefinir_senha")
-    search_fields = ("full_name", "email")
-    readonly_fields = ("id", "date_joined", "username")
+# class UsuarioAdmin(admin.ModelAdmin):
+#     list_display = ("id",)
+#     list_filter = "id"
+#     search_fields = ""
+#     readonly_fields = "id"
 
-    def save_model(self, request, obj, form, change):
-        if not obj.pk:
-            obj.usuario = request.user
-        super().save_model(request, obj, form, change)
+#     def save_model(self, request, obj, form, change):
+#         if not obj.pk:
+#             obj.usuario = request.usuario
+#         super().save_model(request, obj, form, change)
 
 
-admin.site.register(Usuario, UsuarioAdmin)
+# admin.site.register(Usuario, UsuarioAdmin)

@@ -1,18 +1,16 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.contrib.auth.models import User
+from usuario.models import Usuario
 from cliente.models import Cliente
 from pedido.models import Pedido
 
 
-# Ver aula 567. Projeto e-commerce - Criando os models Produto e Variação, usar variação para associar o pedido
-# a produção, talvez
 class Producao(models.Model):
     STATUS_CHOICES = [
-        ("Em planejamento", "Em planejamento"),
-        ("Em produção", "Em produção"),
-        ("Concluído", "Concluído"),
-        ("Cancelado", "Cancelado"),
+        ("EM_PLANEJAMENTO", "Em planejamento"),
+        ("EM_PRODUCAO", "Em produção"),
+        ("CONCLUIDO", "Concluído"),
+        ("CANCELADO", "Cancelado"),
     ]
     pedido = models.ForeignKey(
         Pedido, on_delete=models.CASCADE, related_name="producoes"
@@ -26,7 +24,7 @@ class Producao(models.Model):
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     controle_ambiente = models.BooleanField(default=False)
     usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
+        Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
 
     def clean(self):

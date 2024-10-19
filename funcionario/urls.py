@@ -4,8 +4,8 @@ from . import views
 app_name = "funcionario"
 
 urlpatterns = [
-    path("", views.ListaFuncionario.as_view(), name="lista"),
-    path("<int:pk>/", views.DetalheFuncionario.as_view(), name="detalhe"),
-    path("cria/", views.CriaFuncionario.as_view(), name="criar"),
-    path("<int:pk>/", views.EditaFuncionario.as_view(), name="editar"),
+    path("", views.get_lista, name="get_lista"),
+    path("<int:pk>/", views.get_detalhe, name="get_detalhe"),
+    path("criar/", views.post_criar, name="post_criar"),
+    path("editar/<int:pk>/", views.put_editar, name="put_editar"),
 ]

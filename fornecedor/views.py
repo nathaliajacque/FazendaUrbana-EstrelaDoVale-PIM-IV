@@ -1,11 +1,20 @@
-from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotAllowed
+from django.http import JsonResponse, HttpResponseNotAllowed
 import json
-from .models import  Fornecedor, User
+from .models import Fornecedor
+from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
-from django.core.exceptions import ValidationError, ObjectDoesNotExist
-from utils.middlewares import build_filters, serialize_queryset
+from django.core.exceptions import ValidationError
+from utils.middlewares import (
+    build_filters,
+    serialize_queryset,
+    login_required_middleware,
+)
 
 
+Usuario = get_user_model()
+
+
+@login_required_middleware
 def get_lista(request):
     try:
         filters = build_filters(Fornecedor, request.GET)
@@ -15,7 +24,9 @@ def get_lista(request):
     except Exception as e:
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
-def get_detalhe(request, pk):
+
+@login_required_middleware
+def get_detalhe(pk):
     try:
         fornecedor = Fornecedor.objects.get(pk=pk)  # Tenta obter o fornecedor
     except Fornecedor.DoesNotExist:
@@ -27,6 +38,7 @@ def get_detalhe(request, pk):
 
 
 @csrf_exempt
+@login_required_middleware
 def post_criar(request):
     if request.method != "POST":
         return HttpResponseNotAllowed(["POST"], "Método não permitido")
@@ -47,6 +59,7 @@ def post_criar(request):
 
 
 @csrf_exempt
+@login_required_middleware
 def put_editar(request, pk):
     if request.method != "PUT":
         return HttpResponseNotAllowed(["PUT"], "Método não permitido")

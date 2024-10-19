@@ -1,15 +1,5 @@
-"""
-create_produto: Cria um novo produto com os atributos fornecidos e salva no banco de dados.
-get_produto: Retorna um dicionário com os atributos do produto especificado pelo id.
-update_produto: Atualiza os atributos do produto especificado pelo id com os valores fornecidos.
-delete_produto: Exclui o produto especificado pelo id.
-inativar_produto: Define o status do produto especificado pelo id como "Inativo".
-ativar_produto: Define o status do produto especificado pelo id como "Ativo".
-CATEGORIA_CHOICES: Uma lista de tuplas onde cada tupla contém duas strings. A primeira string é o valor armazenado no banco de dados e a segunda string é a opção legível que será exibida nos formulários.
-"""
-
 from django.db import models
-from django.contrib.auth.models import User
+from usuario.models import Usuario
 from utils.statusmodel import StatusModel
 from fornecedor.models import Fornecedor
 
@@ -35,7 +25,7 @@ class Produto(StatusModel):
     observacao = models.TextField(max_length=255, blank=True)
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
+        Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
 
     @classmethod

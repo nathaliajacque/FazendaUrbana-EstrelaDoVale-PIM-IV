@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from usuario.models import Usuario
 from utils.statusmodel import StatusModel
 from utils.validatorcnpj import validate_cnpj
 from django.core.validators import RegexValidator
@@ -46,7 +46,7 @@ class Fornecedor(StatusModel):
     email_1 = models.EmailField(max_length=255)
     email_2 = models.EmailField(max_length=255, blank=True, null=True)
     usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
+        Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
     cep_validator = RegexValidator(
         regex=r"^\d{5}-\d{3}$", message="CEP deve estar no formato XXXXX-XXX"

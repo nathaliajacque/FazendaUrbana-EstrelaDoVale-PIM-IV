@@ -1,70 +1,74 @@
-"""
-Classe Usuario:
-Adicionamos o campo nivel_acesso com as opções PERFIL_CHOICES.
-Adicionamos métodos is_administrador, is_gerente e is_funcionario para verificar o nível de acesso do usuário.
-Decoradores de Permissão:
-Criamos decoradores administrador_required, gerente_required e funcionario_required para controlar o acesso às views com base no nível de acesso do usuário.
-Uso nas Views:
-Usamos os decoradores de permissão nas views para garantir que apenas usuários com o nível de acesso apropriado possam acessar determinadas funções.
-"""
-
-from django.contrib.auth.models import User, AbstractUser, Permission, Group
 from utils.statusmodel import StatusModel
+from django.contrib.auth.models import (
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
+)
 from django.db import models
 from PIL import Image
 import os
 from django.conf import settings
 
 
-# class UsuarioManager(BaseUserManager):
-#     def create_user(self, login, nome, password=None, **extra_fields):
-#         if not login:
-#             raise ValueError("O campo login deve ser preenchido")
-#         usuario = self.model(login=login, nome=nome, **extra_fields)
-#         usuario.set_password(password)
-#         usuario.save(using=self._db)
-#         return usuario
+class CustomUserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError("O email deve ser preenchido")
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
 
-#     def create_superuser(self, login, nome, password=None, **extra_fields):
-#         extra_fields.setdefault("is_staff", True)
-#         extra_fields.setdefault("is_superuser", True)
-#         return self.create_user(login, nome, password, **extra_fields)
+    # super usuário para acessar o django admin
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser deve ter is_staff=True.")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser deve ter is_superuser=True.")
+
+        return self.create_user(email, password, **extra_fields)
 
 
-class Usuario(StatusModel, AbstractUser):
+class Usuario(StatusModel, AbstractBaseUser, PermissionsMixin):
     PERFIL_CHOICES = [
         ("ADMINISTRADOR", "Administrador"),
         ("GERENTE", "Gerente"),
         ("FUNCIONARIO", "Funcionário"),
     ]
 
-    nivel_acesso = models.CharField(max_length=20, choices=PERFIL_CHOICES, default='FUNCIONARIO')
+    name = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(unique=True)
+    nivel_acesso = models.CharField(
+        max_length=20, choices=PERFIL_CHOICES, default="FUNCIONARIO"
+    )
+    data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     deve_redefinir_senha = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
-    groups = models.ManyToManyField(
-        Group,
-        related_name='usuario_set',  # Add related_name to avoid clashes
-        blank=True,
-        help_text='The groups this user belongs to.',
-        verbose_name='groups'
-    )
-    user_permissions = models.ManyToManyField(
-        Permission,
-        related_name='usuario_set',  # Add related_name to avoid clashes
-        blank=True,
-        help_text='Specific permissions for this user.',
-        verbose_name='user permissions'
-    )
+    objects = CustomUserManager()
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
 
     def is_administrador(self):
-        return self.nivel_acesso == "administrador"
+        return self.nivel_acesso == "ADMINISTRADOR"
 
     def is_gerente(self):
-        return self.nivel_acesso == "gerente"
+        return self.nivel_acesso == "GERENTE"
 
     def is_funcionario(self):
-        return self.nivel_acesso == "funcionario"
+        return self.nivel_acesso == "FUNCIONARIO"
 
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name = "Usuário"
+        verbose_name_plural = "Usuários"
 
     # Método para redimensionar a imagem do usuário
     # @staticmethod
@@ -88,13 +92,3 @@ class Usuario(StatusModel, AbstractUser):
 
     #     if self.imagem:
     #         self.resize_image(self.imagem.path, max_image_size)
-
-    def __str__(self):
-        return f"{self.nome} - {self.login}"
-
-    # def clean(self):
-    #     pass
-
-    class Meta:
-        verbose_name = "Usuário"
-        verbose_name_plural = "Usuários"

@@ -29,7 +29,11 @@ urlpatterns = [
     ),  # O caracter "" indica que a URL raiz será a URL do app produto
     path("usuarios/", include("usuario.urls")),
     path("pedidos/", include("pedido.urls")),
+    path("producoes/", include("producao.urls")),
+    # path("relatorios/", include("relatorio.urls")),
     path("fornecedores/", include("fornecedor.urls")),
+    path("clientes/", include("cliente.urls")),
+    path("funcionarios/", include("funcionario.urls")),
     path("admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # TODO: Remover debug toolbar
     "debug_toolbar",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "estreladovale.urls"
+
+# Modelo de usuário personalizado
+AUTH_USER_MODEL = "usuario.Usuario"
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+]
 
 TEMPLATES = [
     {

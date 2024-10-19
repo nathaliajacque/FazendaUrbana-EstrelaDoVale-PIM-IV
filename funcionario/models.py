@@ -1,24 +1,24 @@
 from django.db import models
 from utils.validatorcpf import validate_cpf
-from django.contrib.auth.models import User
+from usuario.models import Usuario
 from django.core.validators import RegexValidator
 
 
 class Funcionario(models.Model):
     CARGO_CHOICES = sorted(
         [
-            ("Gerente de Produção Agrícola", "Gerente de Produção Agrícola"),
-            ("Vendas e Marketing", "Vendas e Marketing"),
-            ("Analista de Recursos Humanos", "Analista de Recursos Humanos"),
-            ("Auxiliar de Produção Agrícola", "Auxiliar de Produção Agrícola"),
-            ("Auxiliar de Limpeza e Manutenção", "Auxiliar de Limpeza e Manutenção"),
-            ("Assistente Administrativo", "Assistente Administrativo"),
-            ("Analista de Sustentabilidade", "Analista de Sustentabilidade"),
-            ("Técnico em Meio Ambiente", "Técnico em Meio Ambiente"),
-            ("Engenheiro Agrônomo", "Engenheiro Agrônomo"),
-            ("Agrônomo", "Agrônomo"),
-            ("Técnico em Agricultura", "Técnico em Agricultura"),
-            ("Especialista em Hidroponia", "Especialista em Hidroponia"),
+            ("GERENTE_DE_PRODUCAO_AGRICOLA", "Gerente de Produção Agrícola"),
+            ("VENDAS_E_MARKETING", "Vendas e Marketing"),
+            ("ANALISTA_DE_RECURSOS_HUMANOS", "Analista de Recursos Humanos"),
+            ("AUXILIAR_DE_PRODUCAO_AGRICOLA", "Auxiliar de Produção Agrícola"),
+            ("AUXILIAR_DE_LIMPEZA_E_MANUTENCAO", "Auxiliar de Limpeza e Manutenção"),
+            ("ASSISTENTE_ADMINISTRATIVO", "Assistente Administrativo"),
+            ("ANALISTA_DE_SUSTENTABILIDADE", "Analista de Sustentabilidade"),
+            ("TECNICO_EM_MEIO_AMBIENTE", "Técnico em Meio Ambiente"),
+            ("ENGENHEIRO_AGRONOMO", "Engenheiro Agrônomo"),
+            ("AGRONOMO", "Agrônomo"),
+            ("TECNICO_EM_AGRICULTURA", "Técnico em Agricultura"),
+            ("ESPECIALISTA_EM_HIDROPONIA", "Especialista em Hidroponia"),
         ],
         key=lambda x: x[0],
     )
@@ -93,7 +93,7 @@ class Funcionario(models.Model):
     contato = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     usuario = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, editable=False
+        Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
     data_admissao = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
