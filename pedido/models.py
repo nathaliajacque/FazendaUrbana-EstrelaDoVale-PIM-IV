@@ -4,6 +4,10 @@ from cliente.models import Cliente
 from produto.models import Produto
 from fornecedor.models import Fornecedor
 from datetime import timedelta
+from django.template.loader import render_to_string
+from django.conf import settings
+from django.core.mail import send_mail
+
 
 # TODO fazer com que ao finalizar um pedido é encaminhado um e-mail para o fornecedor https://temp-mail.org/pt/
 
@@ -77,6 +81,34 @@ class Pedido(models.Model):
             )  # Atualiza o prazo do item
             item.save()  # Salva o item do pedido com o novo prazo de entrega
             self.save()  # Salva o pedido após atualizar os itens
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Salva o objeto Pedido primeiro
+        for item in self.itens.all():
+            produto = item.produto
+            fornecedor = produto.fornecedor
+            subject = f"Solicitação de insumo: {produto.descricao}"
+            message = render_to_string(
+                "email_template.html",
+                {
+                    "fornecedor": fornecedor,
+                    "produto": produto,
+                    "quantidade": item.quantidade,
+                    "data_venda": self.data_venda,
+                },
+            )
+            recipient_list = [
+                fornecedor.email
+            ]  # O campo `email` precisa estar no fornecedor
+
+            # Envia o e-mail
+            send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                recipient_list,
+                fail_silently=False,
+            )
 
     def __str__(self):
         return f"Pedido n° {self.id} - {self.cliente.nome_fantasia}"

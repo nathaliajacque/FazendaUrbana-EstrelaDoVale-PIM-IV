@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Insumo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f8f3;
+            color: #2e4a3b;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #e6f0eb;
+            border: 1px solid #b5cbb7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3e6b58;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #d8e6de;
+            border: 1px solid #a2b8a3;
+            border-radius: 8px;
+        }
+
+        .details strong {
+            color: #2e4a3b;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #2e4a3b;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Prezado(a) {{ fornecedor.nome }},</h2>
+
+        <p>Gostaríamos de informar que o seguinte insumo foi solicitado:</p>
+
+        <div class="details">
+            <p><strong>Produto:</strong> {{ produto.descricao }}</p>
+            <p><strong>Quantidade:</strong> {{ quantidade }}</p>
+            <p><strong>Data da solicitação:</strong> {{ data_venda }}</p>
+        </div>
+
+        <p>Solicitamos, por gentileza, que providencie o envio deste produto com a maior brevidade possível. Agradecemos pela atenção e estamos à disposição para qualquer esclarecimento.</p>
+
+        <div class="footer">
+            <p>Atenciosamente,</p>
+            <p><strong>Setor de Vendas e Marketing</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>
