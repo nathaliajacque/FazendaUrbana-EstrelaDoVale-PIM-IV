@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
-# TODO remover os ids de todas os models
 
 INSTALLED_APPS = [
     "produto",
@@ -48,8 +47,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # TODO: Remover debug toolbar
-    "debug_toolbar",
     "rest_framework",
 ]
 
@@ -61,8 +58,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # TODO: Remover debug toolbar
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "estreladovale.urls"

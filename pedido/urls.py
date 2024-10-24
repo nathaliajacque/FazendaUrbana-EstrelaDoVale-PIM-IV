@@ -6,8 +6,8 @@ app_name = "pedido"
 
 
 urlpatterns = [
-    path("", views.ListaPedido.as_view(), name="lista"),
-    path("<int:pk>/", views.DetalhePedido.as_view(), name="detalhe"),
-    path("cria/", views.CriaPedido.as_view(), name="criar"),
-    path("<int:pk>/", views.EditaPedido.as_view(), name="editar"),
+    path("", views.get_lista, name="get_lista"),
+    path("<int:pk>/", views.get_detalhe, name="get_detalhe"),
+    path("criar/", views.post_criar, name="post_criar"),
+    path("editar/<int:pk>/", views.put_editar, name="put_editar"),
 ]

@@ -10,9 +10,7 @@ from utils.middlewares import (
     login_required_middleware,
 )
 
-
 Usuario = get_user_model()
-
 
 @login_required_middleware
 def get_lista(request):
@@ -45,9 +43,24 @@ def post_criar(request):
 
     try:
         data = json.loads(request.body)
-        fornecedor = Fornecedor(**data)  # instancia um objeto do tipo Produto
-        fornecedor.full_clean()  # valida os dados do objeto
-        fornecedor.save()  # salva o objeto no banco de dados
+
+        # Pega o ID do usuário
+        usuario_id = data.pop("usuario", None)
+
+        if not usuario_id:
+            return JsonResponse({"erro": "Usuário não informado"}, status=400)
+
+        try:
+            # Busca a instância do usuário pelo ID
+            usuario = Usuario.objects.get(id=usuario_id)
+        except Usuario.DoesNotExist:
+            return JsonResponse({"erro": "Usuário não encontrado"}, status=400)
+
+        # Instancia um objeto do tipo Fornecedor, agora com a instância de usuario
+        fornecedor = Fornecedor(usuario=usuario, **data)
+
+        fornecedor.full_clean()  # Valida os dados do objeto
+        fornecedor.save()  # Salva o objeto no banco de dados
         return JsonResponse({"id": fornecedor.id}, status=201)
 
     except json.JSONDecodeError:
@@ -69,7 +82,13 @@ def put_editar(request, pk):
         fornecedor = Fornecedor.objects.get(pk=pk)
 
         for key, value in data.items():
-            setattr(fornecedor, key, value)
+            if hasattr(fornecedor, key):
+                setattr(fornecedor, key, value)
+            else:
+                return JsonResponse(
+                    {"erro": f"Atributo '{key}' não é válido"}, status=400
+                )
+
         fornecedor.full_clean()
         fornecedor.save()
         return JsonResponse({"id": fornecedor.id}, status=200)
