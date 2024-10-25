@@ -4,9 +4,9 @@ from cliente.models import Cliente
 from produto.models import Produto
 from fornecedor.models import Fornecedor
 from datetime import timedelta
+from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
-from django.core.mail import send_mail
 
 
 # TODO fazer com que ao finalizar um pedido é encaminhado um e-mail para o fornecedor https://temp-mail.org/pt/
@@ -60,10 +60,6 @@ class Pedido(models.Model):
         self.status = "Cancelado"
         self.save()
 
-    # def concluir_pedido_venda(self):
-    #     self.status = "Concluído"
-    #     self.save()
-
     # Método para recalcular o total do pedido com base nas quantidades dos itens
     def calcular_total(self):
         total_quantidade = sum(item.quantidade for item in self.itens.all())
@@ -84,29 +80,37 @@ class Pedido(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)  # Salva o objeto Pedido primeiro
+        itens = []
+        fornecedor = None
         for item in self.itens.all():
             produto = item.produto
             fornecedor = produto.fornecedor
-            subject = f"Solicitação de insumo: {produto.descricao}"
+            itens.append(
+                {
+                    "produto": produto.descricao,
+                    "quantidade": item.quantidade,
+                }
+            )
+
+        if fornecedor:
+            subject = "Solicitação de insumos"
             message = render_to_string(
                 "email_template.html",
                 {
                     "fornecedor": fornecedor,
-                    "produto": produto,
-                    "quantidade": item.quantidade,
+                    "itens": itens,
                     "data_venda": self.data_venda,
                 },
             )
-            recipient_list = [
-                fornecedor.email
-            ]  # O campo `email` precisa estar no fornecedor
+            recipient_list = [fornecedor.email]  # Campo de email do fornecedor
 
             # Envia o e-mail
             send_mail(
                 subject,
-                message,
+                "",  # Corpo do email em texto simples
                 settings.DEFAULT_FROM_EMAIL,
                 recipient_list,
+                html_message=message,  # Corpo do e-mail em HTML
                 fail_silently=False,
             )
 
