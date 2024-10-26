@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import user_passes_test
 def administrador_required(view_func):
     def check_user(user):
         if user.is_superuser:
-            return False
+            return True
         return user.is_authenticated and (user.is_administrador())
 
     def wrapped_view(request, *args, **kwargs):
@@ -18,7 +18,7 @@ def administrador_required(view_func):
 def gerente_required(view_func):
     def check_user(user):
         if user.is_superuser:
-            return False
+            return True
         return user.is_authenticated and (user.is_administrador() or user.is_gerente())
 
     def wrapped_view(request, *args, **kwargs):
@@ -32,7 +32,7 @@ def gerente_required(view_func):
 def funcionario_required(view_func):
     def check_user(user):
         if user.is_superuser:
-            return False
+            return True
         return user.is_authenticated and (user.is_administrador() or user.is_gerente() or user.is_funcionario())
 
     def wrapped_view(request, *args, **kwargs):
