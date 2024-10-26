@@ -40,8 +40,8 @@ def get_detalhe(request, pk):
     return JsonResponse(data, safe=False)
 
 
-@administrador_required  # Apenas administradores podem criar usuários
 @csrf_exempt
+@administrador_required  # Apenas administradores podem criar usuários
 @login_required_middleware
 def post_criar(request):
     if request.method != "POST":
@@ -67,8 +67,8 @@ def post_criar(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
-@administrador_required  # Apenas administradores podem deletar usuários
 @csrf_exempt
+@administrador_required  # Apenas administradores podem deletar usuários
 @login_required_middleware
 def put_editar(request, pk):
     if request.method != "PUT":

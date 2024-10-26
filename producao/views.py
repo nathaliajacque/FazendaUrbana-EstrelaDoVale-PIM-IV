@@ -42,8 +42,8 @@ def get_detalhe(request, pk):
     return JsonResponse(data, safe=False)
 
 
-@gerente_required
 @csrf_exempt
+@gerente_required
 @login_required_middleware
 def post_criar(request):
     if request.method != "POST":
@@ -83,8 +83,8 @@ def post_criar(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
-@funcionario_required
 @csrf_exempt
+@funcionario_required
 @login_required_middleware
 def put_editar(request, pk):
     if request.method != "PUT":
