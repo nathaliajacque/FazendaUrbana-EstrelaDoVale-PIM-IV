@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "django-insecure-4qr^4fwh^gxqojkf+2j#0jdv7oc)jr#99$(ir0nbv*%012jm&s"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 CSP_DEFAULT_SRC = ("'self'",)
@@ -171,13 +171,6 @@ SESSION_SAVE_EVERY_REQUEST = False
 
 # Serializer - Padrão JSON
 # SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
-# TODO: Remover debug toolbar
-
-INTERNAL_IPS = [
-    # ...
-    "127.0.0.1",
-    # ...
-]
 # TODO: Remover debug toolbar
 
 INTERNAL_IPS = [
