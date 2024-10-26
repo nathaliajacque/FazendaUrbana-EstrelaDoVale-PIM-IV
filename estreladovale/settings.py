@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "cliente",
     "fornecedor",
     "funcionario",
-    "relatorio",
     "producao",
     "django.contrib.admin",
     "django.contrib.auth",

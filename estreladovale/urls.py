@@ -31,7 +31,6 @@ urlpatterns = [
     path("logout/", user_logout, name="logout"),
     path("pedidos/", include("pedido.urls")),
     path("producoes/", include("producao.urls")),
-    # path("relatorios/", include("relatorio.urls")),
     path("fornecedores/", include("fornecedor.urls")),
     path("clientes/", include("cliente.urls")),
     path("funcionarios/", include("funcionario.urls")),
