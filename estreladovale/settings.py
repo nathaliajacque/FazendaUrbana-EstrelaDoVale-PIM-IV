@@ -27,7 +27,8 @@ SECRET_KEY = "django-insecure-4qr^4fwh^gxqojkf+2j#0jdv7oc)jr#99$(ir0nbv*%012jm&s
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_CONNECT_SRC = ("'self'", "https://fazenda-pim-iv.onrender.com")
 
 # Application definition
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    'csp',
     "corsheaders"
 ]
 
@@ -58,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'csp.middleware.CSPMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
 
