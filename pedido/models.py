@@ -9,9 +9,6 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 
-# TODO fazer com que ao finalizar um pedido é encaminhado um e-mail para o fornecedor https://temp-mail.org/pt/
-
-
 class Pedido(models.Model):
     STATUS_CHOICES = [
         ("EM_ANDAMENTO", "Em andamento"),
@@ -78,41 +75,52 @@ class Pedido(models.Model):
             item.save()  # Salva o item do pedido com o novo prazo de entrega
             self.save()  # Salva o pedido após atualizar os itens
 
+    # TODO: Arrumar o método para enviar e-mail ao fornecedor
+
     def save(self, *args, **kwargs):
+        if self.pk:  # Verifica se o objeto já existe (ou seja, não é um novo pedido)
+            status_anterior = Pedido.objects.get(pk=self.pk).status
+        else:
+            status_anterior = None
+
         super().save(*args, **kwargs)  # Salva o objeto Pedido primeiro
-        itens = []
-        fornecedor = None
-        for item in self.itens.all():
-            produto = item.produto
-            fornecedor = produto.fornecedor
-            itens.append(
-                {
-                    "produto": produto.descricao,
-                    "quantidade": item.quantidade,
-                }
-            )
 
-        if fornecedor:
-            subject = "Solicitação de insumos"
-            message = render_to_string(
-                "email_template.html",
-                {
-                    "fornecedor": fornecedor,
-                    "itens": itens,
-                    "data_venda": self.data_venda,
-                },
-            )
-            recipient_list = [fornecedor.email]  # Campo de email do fornecedor
+        # Verifica se o status é "CONCLUIDO" antes de salvar
+        if status_anterior != self.status == "CONCLUIDO":
 
-            # Envia o e-mail
-            send_mail(
-                subject,
-                "",  # Corpo do email em texto simples
-                settings.DEFAULT_FROM_EMAIL,
-                recipient_list,
-                html_message=message,  # Corpo do e-mail em HTML
-                fail_silently=False,
-            )
+            itens = []
+            fornecedor = None
+            for item in self.itens.all():
+                produto = item.produto
+                fornecedor = produto.fornecedor
+                itens.append(
+                    {
+                        "produto": produto.descricao,
+                        "quantidade": item.quantidade,
+                    }
+                )
+
+            if fornecedor:
+                subject = "Solicitação de insumos"
+                message = render_to_string(
+                    "email_template.html",
+                    {
+                        "fornecedor": fornecedor,
+                        "itens": itens,
+                        "data_venda": self.data_venda,
+                    },
+                )
+                recipient_list = [fornecedor.email]  # Campo de email do fornecedor
+
+                # Envia o e-mail
+                send_mail(
+                    subject,
+                    "",  # Corpo do email em texto simples
+                    settings.DEFAULT_FROM_EMAIL,
+                    recipient_list,
+                    html_message=message,  # Corpo do e-mail em HTML
+                    fail_silently=False,
+                )
 
     def __str__(self):
         return f"Pedido n° {self.id} - {self.cliente.nome_fantasia}"
@@ -127,7 +135,9 @@ class ItemPedido(models.Model):
         Produto, on_delete=models.CASCADE, related_name="itens_pedido"
     )
     fornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE, editable=False)
-    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name="itens")
+    pedido = models.ForeignKey(
+        Pedido, on_delete=models.CASCADE, related_name="itens"
+    )  # Relacionamento com Pedido
     producao = models.ForeignKey(
         "producao.Producao", on_delete=models.CASCADE, null=True, blank=True
     )

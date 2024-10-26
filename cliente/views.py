@@ -3,6 +3,11 @@ import json
 from .models import Cliente
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
+from utils.decorators import (
+    administrador_required,
+    gerente_required,
+    funcionario_required,
+)
 from django.core.exceptions import ValidationError
 from utils.middlewares import (
     build_filters,
@@ -13,6 +18,7 @@ from utils.middlewares import (
 Usuario = get_user_model()
 
 
+@funcionario_required
 @login_required_middleware
 def get_lista(request):
     try:
@@ -24,6 +30,7 @@ def get_lista(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
+@funcionario_required
 @login_required_middleware
 def get_detalhe(request, pk):
     try:
@@ -36,6 +43,7 @@ def get_detalhe(request, pk):
     return JsonResponse(data, safe=False)
 
 
+@gerente_required
 @csrf_exempt
 @login_required_middleware
 def post_criar(request):
@@ -67,6 +75,7 @@ def post_criar(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
+@gerente_required
 @csrf_exempt
 @login_required_middleware
 def put_editar(request, pk):

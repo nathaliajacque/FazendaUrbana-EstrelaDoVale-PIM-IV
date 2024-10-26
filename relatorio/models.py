@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from producao.models import Producao
 
 
 class RelatorioFuncionario(models.Model):
@@ -56,3 +56,32 @@ class RelatorioFuncionario(models.Model):
         relatorio += f"Endereço: {dados['Endereço']['Logradouro']}, {dados['Endereço']['Número']}, {dados['Endereço']['Bairro']}, {dados['Endereço']['Cidade']}-{dados['Endereço']['Estado (UF)']}, CEP: {dados['Endereço']['CEP']}\n"
         relatorio += f"Observação: {dados['Observação']}\n"
         return relatorio
+
+
+class RelatorioProducao(models.Model):
+    producao = models.OneToOneField(Producao, on_delete=models.CASCADE)
+    data_relatorio = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Relatório da produção: {self.producao.id}"
+
+    class Meta:
+        verbose_name = "Relatório de Produção"
+        verbose_name_plural = "Relatórios de Produção"
+
+    def obter_dados_producao(self):
+        """Retorna os dados completos da produção no relatório"""
+        dados_producao = {
+            "ID": self.producao.id,
+            "Status": self.producao.get_status_display(),
+            "Prazo de Entrega": self.producao.prazo_entrega,
+            "Data de Início": self.producao.data_inicio,
+            "Data de Cadastro": self.producao.data_cadastro,
+            "Controle de Ambiente": self.producao.controle_ambiente,
+            "Pedido": self.producao.pedido.id,
+            "Cliente": self.producao.cliente.nome,
+            "Usuário": (
+                self.producao.usuario.username if self.producao.usuario else "N/A"
+            ),
+        }
+        return dados_producao

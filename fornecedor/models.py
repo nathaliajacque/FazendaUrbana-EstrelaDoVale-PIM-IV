@@ -44,7 +44,6 @@ class Fornecedor(StatusModel):
     im = models.CharField(max_length=20, blank=True, null=True)
     contato = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
-    email = models.EmailField(max_length=255, blank=True, null=True)
     usuario = models.ForeignKey(
         Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )

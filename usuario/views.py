@@ -5,6 +5,7 @@ import json
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ValidationError
+from utils.decorators import administrador_required
 from utils.middlewares import (
     build_filters,
     serialize_queryset,
@@ -14,6 +15,7 @@ from utils.middlewares import (
 Usuario = get_user_model()
 
 
+@administrador_required
 @login_required_middleware
 def get_lista(request):
     try:
@@ -25,10 +27,11 @@ def get_lista(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
+@administrador_required  # Apenas administradores podem consultar usuários
 @login_required_middleware
 def get_detalhe(request, pk):
     try:
-        usuario = Usuario.objects.get(pk=pk)  # Tenta obter o fornecedor
+        usuario = Usuario.objects.get(pk=pk)
     except Usuario.DoesNotExist:
         return JsonResponse({"erro": "Usuário não encontrado"}, status=404)
 
@@ -37,6 +40,7 @@ def get_detalhe(request, pk):
     return JsonResponse(data, safe=False)
 
 
+@administrador_required  # Apenas administradores podem criar usuários
 @csrf_exempt
 @login_required_middleware
 def post_criar(request):
@@ -63,6 +67,7 @@ def post_criar(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
+@administrador_required  # Apenas administradores podem deletar usuários
 @csrf_exempt
 @login_required_middleware
 def put_editar(request, pk):
@@ -133,27 +138,3 @@ def user_logout(request):
         return JsonResponse({"message": "Logout realizado com sucesso"}, status=200)
     except Exception as e:
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
-
-
-def administrador_required(view_func):
-    decorated_view_func = user_passes_test(
-        lambda u: u.is_authenticated and u.is_administrador(), login_url="/login/"
-    )(view_func)
-    return decorated_view_func
-
-
-def gerente_required(view_func):
-    decorated_view_func = user_passes_test(
-        lambda u: u.is_authenticated and (u.is_administrador() or u.is_gerente()),
-        login_url="/login/",
-    )(view_func)
-    return decorated_view_func
-
-
-def funcionario_required(view_func):
-    decorated_view_func = user_passes_test(
-        lambda u: u.is_authenticated
-        and (u.is_administrador() or u.is_gerente() or u.is_funcionario()),
-        login_url="/login/",
-    )(view_func)
-    return decorated_view_func
