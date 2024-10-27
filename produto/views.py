@@ -33,7 +33,7 @@ def get_detalhe(request, pk):
         produto = Produto.objects.get(pk=pk)  # Tenta obter o produto
     except Produto.DoesNotExist:
         return JsonResponse({"erro": "Produto não encontrado"}, status=404)
-    data = data.__dict__
+    data = produto.__dict__
     data.pop("_state")
     return JsonResponse(data, safe=False)
 
@@ -86,7 +86,7 @@ def put_editar(request, pk):
 
     except json.JSONDecodeError:
         return JsonResponse({"erro": "Corpo da requisição inválido"}, status=400)
-    except ObjectDoesNotExist:
+    except Produto.DoesNotExist:
         return JsonResponse({"erro": "Produto não encontrado"}, status=404)
     except ValidationError as e:
         return JsonResponse({"erro": e.message_dict}, status=400)

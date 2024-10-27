@@ -23,9 +23,8 @@ from usuario.views import user_login, user_logout
 
 
 urlpatterns = [
-    path(
-        "produtos/", include("produto.urls")
-    ),  # O caracter "" indica que a URL raiz será a URL do app produto
+    # O caracter "" indica que a URL raiz será a URL do app produto
+    path("produtos/", include("produto.urls")),
     path("usuarios/", include("usuario.urls")),
     path("login/", user_login, name="login"),
     path("logout/", user_logout, name="logout"),
