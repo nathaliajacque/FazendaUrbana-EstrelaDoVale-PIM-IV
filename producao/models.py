@@ -13,7 +13,7 @@ class Producao(models.Model):
         ("CANCELADO", "Cancelado"),
     ]
     pedido = models.ForeignKey(
-        Pedido, on_delete=models.CASCADE, related_name="producoes"
+        Pedido, on_delete=models.CASCADE, related_name="producao_pedido"
     )
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     status = models.CharField(

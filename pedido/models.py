@@ -18,7 +18,8 @@ class Pedido(models.Model):
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default="Em andamento"
     )
-    # adicionado total
+
+    # TODO: Verificar logica do pedido, caso tenha iniciado a produção. Caso cancelado o pedido de venda, deve ser cancelado o pedido de produção
     total = models.FloatField(default=0)
     data_venda = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
@@ -26,31 +27,6 @@ class Pedido(models.Model):
         Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, blank=True)
-
-    @classmethod
-    def create_pedido(cls, **kwargs):
-        pedido = cls(**kwargs)
-        pedido.save()
-        return pedido
-
-    @classmethod
-    def get_pedido(cls, id_pedido):
-        try:
-            pedido = cls.objects.get(id_pedido=id_pedido)
-            return pedido
-        except cls.DoesNotExist:
-            return None
-
-    @classmethod
-    def update_pedido(cls, id_pedido, **kwargs):
-        try:
-            pedido = cls.objects.get(id_pedido=id_pedido)
-            for key, value in kwargs.items():
-                setattr(pedido, key, value)
-            pedido.save()
-            return pedido
-        except cls.DoesNotExist:
-            return None
 
     @classmethod
     def cancelar_pedido_venda(self):
@@ -75,7 +51,7 @@ class Pedido(models.Model):
             item.save()  # Salva o item do pedido com o novo prazo de entrega
             self.save()  # Salva o pedido após atualizar os itens
 
-    # TODO: Arrumar o método para enviar e-mail ao fornecedor
+    # TODO: Arrumar o método para enviar e-mail ao fornecedor, deve enviar quando for cancelado também
 
     def save(self, *args, **kwargs):
         if self.pk:  # Verifica se o objeto já existe (ou seja, não é um novo pedido)
@@ -124,10 +100,6 @@ class Pedido(models.Model):
 
     def __str__(self):
         return f"Pedido n° {self.id} - {self.cliente.nome_fantasia}"
-
-    class Meta:
-        verbose_name = "Pedido"
-        verbose_name_plural = "Pedidos"
 
 
 class ItemPedido(models.Model):
@@ -202,16 +174,9 @@ class ItemPedido(models.Model):
     def list_items(cls, pedido):
         return cls.objects.filter(pedido=pedido)
 
-    # def calcular_valor_total(self):
-    #    return self.quantidade * self.valor_unitario
-
-    # def save(self, *args, **kwargs):
-    #   self.valor_total = self.calcular_valor_total()
-    #    super().save(*args, **kwargs)
-
     def __str__(self):
         return f"{self.produto.descricao} - {self.quantidade} unidade(s)"
 
     class Meta:
-        verbose_name = "Item do pedido"
-        verbose_name_plural = "Itens do pedido"
+        verbose_name = "Pedido"
+        verbose_name_plural = "Pedidos"

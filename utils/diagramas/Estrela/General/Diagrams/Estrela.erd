@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="Estrela.erd">
+	<entities>
+		<data-source id="sqlite_jdbc-192b1c3ff38-252da8ba871643af">
+			<entity id="1" name="auth_group" fq-name="auth_group" order="0" color-bg="106,153,78" x="1347" y="255"/>
+			<entity id="2" name="auth_group_permissions" fq-name="auth_group_permissions" order="1" color-bg="106,153,78" x="1043" y="40"/>
+			<entity id="3" name="auth_permission" fq-name="auth_permission" order="2" color-bg="106,153,78" x="1347" y="71"/>
+			<entity id="4" name="cliente_cliente" fq-name="cliente_cliente" order="3" color-bg="106,153,78" x="1043" y="553"/>
+			<entity id="5" name="fornecedor_fornecedor" fq-name="fornecedor_fornecedor" order="4" color-bg="106,153,78" x="717" y="1099"/>
+			<entity id="6" name="funcionario_funcionario" fq-name="funcionario_funcionario" order="5" color-bg="106,153,78" x="1043" y="1199"/>
+			<entity id="7" name="pedido_itempedido" fq-name="pedido_itempedido" order="6" color-bg="106,153,78" x="40" y="946"/>
+			<entity id="8" name="pedido_pedido" fq-name="pedido_pedido" order="7" color-bg="106,153,78" x="717" y="794"/>
+			<entity id="9" name="producao_producao" fq-name="producao_producao" order="8" color-bg="106,153,78" x="392" y="627"/>
+			<entity id="10" name="produto_produto" fq-name="produto_produto" order="9" color-bg="106,153,78" x="392" y="932"/>
+			<entity id="11" name="relatorio_relatoriofuncionario" fq-name="relatorio_relatoriofuncionario" order="10" color-bg="106,153,78" x="717" y="1623"/>
+			<entity id="12" name="usuario_usuario" fq-name="usuario_usuario" order="11" color-bg="106,153,78" x="1528" y="910"/>
+			<entity id="13" name="usuario_usuario_groups" fq-name="usuario_usuario_groups" order="12" color-bg="106,153,78" x="1043" y="368"/>
+			<entity id="14" name="usuario_usuario_user_permissions" fq-name="usuario_usuario_user_permissions" order="13" color-bg="106,153,78" x="1043" y="204"/>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="FK_auth_group_permissions_auth_group" fq-name="auth_group_permissions.FK_auth_group_permissions_auth_group" type="fk" pk-ref="1" fk-ref="2"/>
+		<relation name="FK_usuario_usuario_groups_auth_group" fq-name="usuario_usuario_groups.FK_usuario_usuario_groups_auth_group" type="fk" pk-ref="1" fk-ref="13"/>
+		<relation name="FK_auth_group_permissions_auth_permission_2" fq-name="auth_group_permissions.FK_auth_group_permissions_auth_permission_2" type="fk" pk-ref="3" fk-ref="2"/>
+		<relation name="FK_usuario_usuario_user_permissions_auth_permission" fq-name="usuario_usuario_user_permissions.FK_usuario_usuario_user_permissions_auth_permission" type="fk" pk-ref="3" fk-ref="14"/>
+		<relation name="FK_pedido_pedido_cliente_cliente" fq-name="pedido_pedido.FK_pedido_pedido_cliente_cliente" type="fk" pk-ref="4" fk-ref="8"/>
+		<relation name="FK_producao_producao_cliente_cliente" fq-name="producao_producao.FK_producao_producao_cliente_cliente" type="fk" pk-ref="4" fk-ref="9"/>
+		<relation name="FK_pedido_itempedido_fornecedor_fornecedor" fq-name="pedido_itempedido.FK_pedido_itempedido_fornecedor_fornecedor" type="fk" pk-ref="5" fk-ref="7"/>
+		<relation name="FK_produto_produto_fornecedor_fornecedor" fq-name="produto_produto.FK_produto_produto_fornecedor_fornecedor" type="fk" pk-ref="5" fk-ref="10"/>
+		<relation name="FK_relatorio_relatoriofuncionario_funcionario_funcionario" fq-name="relatorio_relatoriofuncionario.FK_relatorio_relatoriofuncionario_funcionario_funcionario" type="fk" pk-ref="6" fk-ref="11"/>
+		<relation name="FK_pedido_itempedido_pedido_pedido_2" fq-name="pedido_itempedido.FK_pedido_itempedido_pedido_pedido_2" type="fk" pk-ref="8" fk-ref="7"/>
+		<relation name="FK_producao_producao_pedido_pedido_2" fq-name="producao_producao.FK_producao_producao_pedido_pedido_2" type="fk" pk-ref="8" fk-ref="9"/>
+		<relation name="FK_pedido_itempedido_producao_producao_3" fq-name="pedido_itempedido.FK_pedido_itempedido_producao_producao_3" type="fk" pk-ref="9" fk-ref="7"/>
+		<relation name="FK_pedido_itempedido_produto_produto_4" fq-name="pedido_itempedido.FK_pedido_itempedido_produto_produto_4" type="fk" pk-ref="10" fk-ref="7"/>
+		<relation name="FK_cliente_cliente_usuario_usuario" fq-name="cliente_cliente.FK_cliente_cliente_usuario_usuario" type="fk" pk-ref="12" fk-ref="4"/>
+		<relation name="FK_fornecedor_fornecedor_usuario_usuario" fq-name="fornecedor_fornecedor.FK_fornecedor_fornecedor_usuario_usuario" type="fk" pk-ref="12" fk-ref="5"/>
+		<relation name="FK_funcionario_funcionario_usuario_usuario" fq-name="funcionario_funcionario.FK_funcionario_funcionario_usuario_usuario" type="fk" pk-ref="12" fk-ref="6"/>
+		<relation name="FK_pedido_pedido_usuario_usuario_2" fq-name="pedido_pedido.FK_pedido_pedido_usuario_usuario_2" type="fk" pk-ref="12" fk-ref="8"/>
+		<relation name="FK_producao_producao_usuario_usuario_3" fq-name="producao_producao.FK_producao_producao_usuario_usuario_3" type="fk" pk-ref="12" fk-ref="9">
+			<bend type="abs" x="717" y="502"/>
+			<bend type="abs" x="1043" y="502"/>
+		</relation>
+		<relation name="FK_produto_produto_usuario_usuario_2" fq-name="produto_produto.FK_produto_produto_usuario_usuario_2" type="fk" pk-ref="12" fk-ref="10">
+			<bend type="abs" x="717" y="1048"/>
+			<bend type="abs" x="1043" y="1048"/>
+		</relation>
+		<relation name="FK_usuario_usuario_groups_usuario_usuario_2" fq-name="usuario_usuario_groups.FK_usuario_usuario_groups_usuario_usuario_2" type="fk" pk-ref="12" fk-ref="13"/>
+		<relation name="FK_usuario_usuario_user_permissions_usuario_usuario_2" fq-name="usuario_usuario_user_permissions.FK_usuario_usuario_user_permissions_usuario_usuario_2" type="fk" pk-ref="12" fk-ref="14"/>
+	</relations>
+</diagram>
