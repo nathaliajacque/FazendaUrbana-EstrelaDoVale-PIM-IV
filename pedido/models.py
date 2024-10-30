@@ -19,7 +19,6 @@ class Pedido(models.Model):
         max_length=20, choices=STATUS_CHOICES, default="Em andamento"
     )
 
-    # TODO: Verificar logica do pedido, caso tenha iniciado a produção. Caso cancelado o pedido de venda, deve ser cancelado o pedido de produção
     total = models.FloatField(default=0)
     data_venda = models.DateField()
     data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
@@ -54,52 +53,99 @@ class Pedido(models.Model):
     # TODO: Arrumar o método para enviar e-mail ao fornecedor, deve enviar quando for cancelado também
 
     def save(self, *args, **kwargs):
-        if self.pk:  # Verifica se o objeto já existe (ou seja, não é um novo pedido)
+        is_new = not self.pk
+        status_anterior = None
+
+        if not is_new:
             status_anterior = Pedido.objects.get(pk=self.pk).status
-        else:
-            status_anterior = None
 
-        super().save(*args, **kwargs)  # Salva o objeto Pedido primeiro
+        super().save(*args, **kwargs)
 
-        # Verifica se o status é "CONCLUIDO" antes de salvar
-        if status_anterior != self.status == "CONCLUIDO":
+        if (is_new and self.status == "CONCLUIDO") or (
+            status_anterior != self.status and self.status == "CONCLUIDO"
+        ):
+            self.enviar_email_conclusao()
 
-            itens = []
-            fornecedor = None
-            for item in self.itens.all():
-                produto = item.produto
-                fornecedor = produto.fornecedor
-                itens.append(
-                    {
-                        "produto": produto.descricao,
-                        "quantidade": item.quantidade,
-                    }
-                )
+        if status_anterior != self.status and self.status == "CANCELADO":
+            self.enviar_email_cancelamento()
 
-            if fornecedor:
-                subject = "Solicitação de insumos"
-                message = render_to_string(
-                    "email_template.html",
-                    {
-                        "fornecedor": fornecedor,
-                        "itens": itens,
-                        "data_venda": self.data_venda,
-                    },
-                )
-                recipient_list = [fornecedor.email]  # Campo de email do fornecedor
+    def enviar_email_conclusao(self):
+        itens = []
+        fornecedor = None
+        for item in self.itens.all():
+            produto = item.produto
+            fornecedor = produto.fornecedor
+            itens.append(
+                {
+                    "produto": produto.descricao,
+                    "quantidade": item.quantidade,
+                }
+            )
 
-                # Envia o e-mail
-                send_mail(
-                    subject,
-                    "",  # Corpo do email em texto simples
-                    settings.DEFAULT_FROM_EMAIL,
-                    recipient_list,
-                    html_message=message,  # Corpo do e-mail em HTML
-                    fail_silently=False,
-                )
+        if fornecedor:
+            subject = "Estrela do Vale - Solicitação de insumos"
+            message = render_to_string(
+                "email_template.html",
+                {
+                    "fornecedor": fornecedor,
+                    "itens": itens,
+                    "data_venda": self.data_venda,
+                    "pedido_id": self.id,
+                },
+            )
+            recipient_list = [fornecedor.email]
+
+            send_mail(
+                subject,
+                "",
+                settings.DEFAULT_FROM_EMAIL,
+                recipient_list,
+                html_message=message,
+                fail_silently=False,
+            )
+
+    def enviar_email_cancelamento(self):
+        itens = []
+        fornecedor = None
+        for item in self.itens.all():
+            produto = item.produto
+            fornecedor = produto.fornecedor
+            itens.append(
+                {
+                    "produto": produto.descricao,
+                    "quantidade": item.quantidade,
+                }
+            )
+
+        if fornecedor:
+            subject = "Estrela do Vale - Cancelamento de pedido"
+            message = render_to_string(
+                "email_template_cancelamento.html",
+                {
+                    "fornecedor": fornecedor,
+                    # "pedido_id": self.id,
+                    "itens": itens,
+                    "data_venda": self.data_venda,
+                    "pedido_id": self.id,
+                },
+            )
+            recipient_list = [fornecedor.email]
+
+            send_mail(
+                subject,
+                "",
+                settings.DEFAULT_FROM_EMAIL,
+                recipient_list,
+                html_message=message,
+                fail_silently=False,
+            )
 
     def __str__(self):
         return f"Pedido n° {self.id} - {self.cliente.nome_fantasia}"
+
+    class Meta:
+        verbose_name = "Pedido"
+        verbose_name_plural = "Pedido"
 
 
 class ItemPedido(models.Model):
@@ -129,54 +175,9 @@ class ItemPedido(models.Model):
         super().save(*args, **kwargs)
         self.pedido.calcular_total()
 
-    @classmethod
-    def create_item(cls, produto, pedido, quantidade, producao_instance=None):
-        item = cls(produto=produto, pedido=pedido, quantidade=quantidade)
-        item.fornecedor = produto.fornecedor  # Garante que o fornecedor seja setado
-        item.descricao = produto.descricao  # Garante que a descrição seja setada
-
-        if producao_instance:  # Verifica se a produção foi fornecida
-            item.producao = producao_instance  # Atribui a produção ao item
-
-        item.save()  # Salva o item no banco de dados
-        return item
-
-    @classmethod
-    def get_item(cls, id_item):
-        try:
-            item = cls.objects.get(id=id_item)
-            return item
-        except cls.DoesNotExist:
-            return None
-
-    def update_item(cls, id_item, **kwargs):
-        try:
-            item = cls.objects.get(id=id_item)
-            for key, value in kwargs.items():
-                setattr(item, key, value)
-            item.save()
-            return item
-        except cls.DoesNotExist:
-            return None
-
-    @classmethod
-    def remove_item(cls, item_id, pedido):
-        try:
-            item = cls.objects.get(id=item_id, pedido=pedido)
-            item.delete()
-            # Recalcular o total do pedido após remover o item
-            pedido.calcular_total()
-            return True
-        except cls.DoesNotExist:
-            return False
-
-    @classmethod
-    def list_items(cls, pedido):
-        return cls.objects.filter(pedido=pedido)
-
     def __str__(self):
         return f"{self.produto.descricao} - {self.quantidade} unidade(s)"
 
     class Meta:
-        verbose_name = "Pedido"
-        verbose_name_plural = "Pedidos"
+        verbose_name = "Item do Pedido"
+        verbose_name_plural = "Itens do Pedido"

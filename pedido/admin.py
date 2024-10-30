@@ -19,12 +19,11 @@ class PedidoAdmin(admin.ModelAdmin):
     inlines = [ItemPedidoInline]
     list_display = (
         "id",
-        "status",
         "cliente",
         "data_venda",
         "total",
-        "get_fornecedores",  # Adiciona o método para exibir fornecedores e prazo entrega
-        "get_prazo_entrega",
+        "status",
+        "usuario",
         "data_cadastro",
     )
     list_filter = ("status", "data_venda", "data_cadastro")
@@ -33,7 +32,7 @@ class PedidoAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         if not change:  # Se for uma nova instância
-            obj.usuario = request.user  # Atribui o usuário logado
+            obj.status = "EM_ANDAMENTO"  # Define o status como "EM_ANDAMENTO"
         super().save_model(request, obj, form, change)
 
     def get_fornecedores(self, obj):

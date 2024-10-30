@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrela do Vale - Solicitação de Insumo</title>
+    <title>Estrela do Vale - Cancelamento de Pedido</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,17 +45,17 @@
         .item-produto {
             padding: 10px;
             margin-bottom: 15px;
-            border-left: 4px solid #3e6b58; /* Bordas coloridas para separar os produtos */
+            border-left: 4px solid #6a4c58;
             background-color: #f0f7f3;
         }
 
         .details p {
-            margin-bottom: 10px; /* Aumentar espaçamento entre os parágrafos */
+            margin-bottom: 10px;
         }
 
         .footer {
             margin-top: 30px;
-            padding-top: 20px; /* Adicionar padding no topo para maior separação */
+            padding-top: 20px;
             border-top: 1px solid #b5cbb7;
             font-size: 1em;
             color: #2e4a3b;
@@ -68,7 +68,7 @@
         @media only screen and (max-width: 600px) {
             .container {
                 padding: 10px;
-                box-shadow: none; /* Remover sombras para uma melhor exibição em telas pequenas */
+                box-shadow: none;
             }
             h2 {
                 font-size: 1.2em;
@@ -84,7 +84,7 @@
     <div class="container">
         <h2>Prezado(a) {{ fornecedor.razao_social }},</h2>
 
-        <p>Gostaríamos de informar que o seguinte insumo foi solicitado:</p>
+        <p>Informamos que o pedido abaixo foi cancelado:</p>
 
         <div class="details">
             <p><strong>Número do Pedido:</strong> {{ pedido_id }}</p>
@@ -97,14 +97,13 @@
             <p><strong>Data da Venda:</strong> {{ data_venda }}</p>
         </div>
 
-
-        <p>Solicitamos, por gentileza, que providencie o envio deste produto com a maior brevidade possível. Por favor, confirme o recebimento deste pedido.</p>
-        <p>Agradecemos pela atenção e estamos à disposição para qualquer esclarecimento.</p>
+        <p>Pedimos desculpas por qualquer inconveniente e agradecemos pela compreensão. Em caso de dúvidas ou para mais informações, estamos à disposição.</p>
 
         <div class="footer">
             <p>Atenciosamente,</p>
-            <p><strong>Setor de Vendas e Marketing</strong></p>
+            <p><strong>Setor de Vendas e Marketing  </strong></p>
             <p><img src="morango.svg" alt="Logo da Empresa" style="width: 30px; height: 30px;"></p>
+            
         </div>
     </div>
 

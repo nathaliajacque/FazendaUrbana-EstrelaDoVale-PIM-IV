@@ -63,6 +63,9 @@ def post_criar(request):
         usuario = Usuario.objects.get(id=usuario_id)
         cliente = Cliente.objects.get(id=cliente_id)
 
+        # Forçar o valor do campo `status` como "EM_ANDAMENTO"
+        data["status"] = "EM_ANDAMENTO"
+
         pedido = Pedido.objects.create(usuario=usuario, cliente=cliente, **data)
         return JsonResponse({"id": pedido.id}, status=201)
 
@@ -88,6 +91,19 @@ def put_editar(request, pk):
     try:
         data = json.loads(request.body)
         pedido = Pedido.objects.get(pk=pk)
+
+        # Verificar se o campo `status` está presente e validar o valor
+        if "status" in data and data["status"] not in [
+            "EM_ANDAMENTO",
+            "CONCLUIDO",
+            "CANCELADO",
+        ]:
+            return JsonResponse(
+                {
+                    "erro": "Status inválido. Permitidos apenas 'EM_ANDAMENTO', 'CONCLUIDO' e 'CANCELADO'."
+                },
+                status=400,
+            )
 
         for key, value in data.items():
             if hasattr(pedido, key):
