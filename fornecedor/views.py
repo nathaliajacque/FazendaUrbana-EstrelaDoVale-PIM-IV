@@ -46,6 +46,18 @@ def get_detalhe(request, pk):
 @gerente_required
 @login_required_middleware
 def post_criar(request):
+    """
+    Cria um novo fornecedor.
+
+    Este método cria um novo fornecedor com base nos dados fornecidos na requisição.
+    O ID do usuário deve ser fornecido nos dados da requisição.
+
+    Args:
+        request (HttpRequest): A requisição HTTP.
+
+    Returns:
+        JsonResponse: Uma resposta JSON com o ID do fornecedor criado ou uma mensagem de erro.
+    """
     if request.method != "POST":
         return HttpResponseNotAllowed(["POST"], "Método não permitido")
 
@@ -83,6 +95,19 @@ def post_criar(request):
 @gerente_required
 @login_required_middleware
 def put_editar(request, pk):
+    """
+    Edita um fornecedor existente.
+
+    Este método edita um fornecedor existente com base nos dados fornecidos na requisição.
+    O ID do fornecedor deve ser fornecido na URL.
+
+    Args:
+        request (HttpRequest): A requisição HTTP.
+        pk (int): O ID do fornecedor a ser editado.
+
+    Returns:
+        JsonResponse: Uma resposta JSON com o ID do fornecedor editado ou uma mensagem de erro.
+    """
     if request.method != "PUT":
         return HttpResponseNotAllowed(["PUT"], "Método não permitido")
 

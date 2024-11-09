@@ -10,6 +10,12 @@ import os
 from django.conf import settings
 
 
+""" Usuario é o modelo que representa os usuários no sistema, 
+enquanto CustomUserManager é o gerenciador de modelos que lida com a criação e manipulação 
+de instâncias do modelo Usuario. Eles trabalham juntos para fornecer uma estrutura completa de 
+autenticação e gerenciamento de usuários no Django.	"""
+
+
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:

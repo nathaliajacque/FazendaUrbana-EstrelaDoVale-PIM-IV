@@ -2,9 +2,10 @@ from django.db import models
 from utils.validatorcpf import validate_cpf
 from usuario.models import Usuario
 from django.core.validators import RegexValidator
+from utils.statusmodel import StatusModel
 
 
-class Funcionario(models.Model):
+class Funcionario(StatusModel):
     CARGO_CHOICES = sorted(
         [
             ("GERENTE_DE_PRODUCAO_AGRICOLA", "Gerente de Produção Agrícola"),

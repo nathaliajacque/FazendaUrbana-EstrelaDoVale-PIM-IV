@@ -1,4 +1,3 @@
-from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse, HttpResponseNotAllowed
 import json

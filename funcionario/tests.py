@@ -13,7 +13,9 @@ class FuncionarioAPITests(TestCase):
 
         # Criar um usuário de teste
         self.user = Usuario.objects.create_user(
-            email="testuser@example.com", password="testpassword"
+            email="testuser@example.com",
+            password="testpassword",
+            nivel_acesso="ADMINISTRADOR",
         )
 
         # Autenticar o usuário de teste

@@ -69,31 +69,6 @@ class Cliente(StatusModel):
     def __str__(self):
         return self.nome_fantasia
 
-    @classmethod
-    def create_cliente(cls, **kwargs):
-        cliente = cls(**kwargs)
-        cliente.save()
-        return cliente
-
-    @classmethod
-    def get_cliente(cls, id):
-        try:
-            cliente = cls.objects.get(id=id)
-            return cliente
-        except cls.DoesNotExist:
-            return None
-
-    @classmethod
-    def update_cliente(cls, id, **kwargs):
-        try:
-            cliente = cls.objects.get(id=id)
-            for key, value in kwargs.items():
-                setattr(cliente, key, value)
-            cliente.save()
-            return cliente
-        except cls.DoesNotExist:
-            return None
-
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"

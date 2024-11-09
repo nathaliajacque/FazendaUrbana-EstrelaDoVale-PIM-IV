@@ -16,7 +16,7 @@ class FornecedorAPITests(TestCase):
 
         # Criar um usuário de teste
         self.user = Usuario.objects.create_user(
-            email="testuser@example.com", password="testpassword"
+            email="testuser@example.com", password="testpassword", nivel_acesso="ADMINISTRADOR"
         )
 
         # Autenticar o usuário de teste
@@ -29,8 +29,7 @@ class FornecedorAPITests(TestCase):
             "ie": "1234567890",
             "im": "1234567890",
             "contato": "Contato Teste",
-            "email_1": "contato@test.com",
-            "email_2": "contato2@test.com",
+            "email": "contato@test.com",
             "logradouro": "Rua Teste",
             "bairro": "Bairro Teste",
             "numero": "123",
@@ -48,10 +47,6 @@ class FornecedorAPITests(TestCase):
         response = self.client.get(reverse("fornecedor:get_lista"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.fornecedor.nome_fantasia)
-
-        # self.assertIn(
-        #     "id", response.json()[0]
-        # )  # Verifica se o id está presente na resposta
 
     def test_get_detalhe(self):
         response = self.client.get(
