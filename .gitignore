@@ -132,3 +132,11 @@ $RECYCLE.BIN/
 
 # If you are using dotenv
 .env
+
+#UML
+classes_estreladovale.png
+classes_estreladovale.dot
+packages_estreladovale.png
+packages_estreladovale.dot
+db.json
+pyreverse

@@ -98,10 +98,26 @@ WSGI_APPLICATION = "estreladovale.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {  # Comentado para testar o SQL SERVER
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
+# }
+
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "mssql",
+        "NAME": "EstrelaDoValeBD",
+        "USER": "sa",
+        "PASSWORD": "Totoro836452!",
+        "HOST": "localhost",
+        "PORT": 1433,
+        "OPTIONS": {
+            "driver": "ODBC Driver 17 for SQL Server",
+            "Trusted_Connection": "yes",
+        },
     }
 }
 
@@ -141,6 +157,8 @@ LANGUAGE_CODE = "pt-BR"
 TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
