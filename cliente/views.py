@@ -4,7 +4,6 @@ from .models import Cliente
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from utils.decorators import (
-    administrador_required,
     gerente_required,
     funcionario_required,
 )

@@ -123,7 +123,6 @@ class Pedido(models.Model):
                 "email_template_cancelamento.html",
                 {
                     "fornecedor": fornecedor,
-                    # "pedido_id": self.id,
                     "itens": itens,
                     "data_venda": self.data_venda,
                     "pedido_id": self.id,

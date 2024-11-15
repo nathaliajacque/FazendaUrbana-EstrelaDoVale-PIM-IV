@@ -52,7 +52,7 @@ class Fornecedor(StatusModel):
     )
     logradouro = models.CharField(max_length=50)
     bairro = models.CharField(max_length=50)
-    numero = models.CharField(max_length=5)
+    numero = models.PositiveIntegerField()
     cep = models.CharField(max_length=9, validators=[cep_validator])
     complemento = models.CharField(max_length=30, blank=True, null=True)
     cidade = models.CharField(max_length=30)

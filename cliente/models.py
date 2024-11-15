@@ -48,14 +48,13 @@ class Cliente(StatusModel):
     usuario = models.ForeignKey(
         Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
-    data_cadastro = models.DateTimeField(auto_now_add=True, editable=False)
     cep_validator = RegexValidator(
         regex=r"^\d{5}-\d{3}$", message="CEP deve estar no formato XXXXX-XXX"
     )
 
     logradouro = models.CharField(max_length=50)
     bairro = models.CharField(max_length=50)
-    numero = models.CharField(max_length=5)
+    numero = models.PositiveIntegerField()
     cep = models.CharField(max_length=9, validators=[cep_validator])
     complemento = models.CharField(max_length=30, blank=True, null=True)
     cidade = models.CharField(max_length=30)

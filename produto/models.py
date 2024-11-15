@@ -28,31 +28,6 @@ class Produto(StatusModel):
         Usuario, on_delete=models.SET_NULL, null=True, editable=False
     )
 
-    @classmethod
-    def create_produto(cls, **kwargs):
-        produto = cls(**kwargs)
-        produto.save()
-        return produto
-
-    @classmethod
-    def get_produto(cls, id):
-        try:
-            produto = cls.objects.get(id=id)
-            return produto
-        except cls.DoesNotExist:
-            return None
-
-    @classmethod
-    def update_produto(cls, id, **kwargs):
-        try:
-            produto = cls.objects.get(id=id)
-            for key, value in kwargs.items():
-                if key != "usuario":  # Impede a alteração do usuário
-                    setattr(produto, key, value)
-            produto.save()
-            return produto
-        except cls.DoesNotExist:
-            return None
 
     def calcular_prazo_entrega(self):
         return self.fornecedor.prazo_entrega_dias + self.crescimento

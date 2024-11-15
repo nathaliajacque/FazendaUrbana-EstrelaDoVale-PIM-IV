@@ -17,7 +17,7 @@ class Producao(models.Model):
     )
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     status = models.CharField(
-        max_length=20, choices=STATUS_CHOICES, default="Em planejamento"
+        max_length=20, choices=STATUS_CHOICES, default="EM_PLANEJAMENTO"
     )
     prazo_entrega = models.DateField(null=True, blank=True)
     data_inicio = models.DateField()
@@ -28,7 +28,7 @@ class Producao(models.Model):
     )
 
     def clean(self):
-        if self.status == "Em planejamento" and not self.controle_ambiente:
+        if self.status == "EM_PLANEJAMENTO" and not self.controle_ambiente:
             raise ValidationError(
                 "Controle de ambiente deve ser marcado quando o status é 'Em planejamento'."
             )
@@ -37,16 +37,13 @@ class Producao(models.Model):
         return self.pedido.produto.all()  # relação ManyToMany em Pedido
 
     def get_codigo_pedido(self):
-        return self.pedido.id if self.pedido else None
+        return self.pedido.id if self.pedido else "Pedido não encontrado"
 
     def get_prazo_entrega(self):
-        return self.pedido.prazo_entrega if self.pedido else None
+        return self.pedido.prazo_entrega if self.pedido else "Prazo não encontrado"
 
     def get_clientes(self):
-        return self.pedido.cliente.all() if self.pedido else None
-
-    # def get_produtos(self):
-    #    return self.pedido.itens.all() if self.pedido else None
+        return self.pedido.cliente.all() if self.pedido else "Cliente não encontrado"
 
     def __str__(self):
         return f"Produção n° {self.id} - Pedido n° {self.get_codigo_pedido()}"
