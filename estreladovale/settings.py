@@ -109,10 +109,10 @@ WSGI_APPLICATION = "estreladovale.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "mssql",
-        "NAME": "EstrelaDoValeBD",
+        "NAME": "estrelaDoValeDB",
         "USER": "sa",
-        "PASSWORD": "Totoro836452!",
-        "HOST": "localhost",
+        "PASSWORD": "Nathalia1590!",
+        "HOST": "25.38.153.68",
         "PORT": 1433,
         "OPTIONS": {
             "driver": "ODBC Driver 17 for SQL Server",
