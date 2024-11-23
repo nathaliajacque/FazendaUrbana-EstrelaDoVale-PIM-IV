@@ -49,9 +49,7 @@ db.sqlite3
 # If you are using MySQL as your database
 *.sql
 
-# If you are using Docker
-docker-compose.yml
-Dockerfile
+
 
 # If you are using virtualenv
 venv/
