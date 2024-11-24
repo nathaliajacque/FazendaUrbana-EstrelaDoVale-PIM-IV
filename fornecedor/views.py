@@ -16,9 +16,8 @@ from utils.middlewares import (
 
 Usuario = get_user_model()
 
-
-@funcionario_required
 @login_required_middleware
+@funcionario_required
 def get_lista(request):
     try:
         filters = build_filters(Fornecedor, request.GET)
@@ -28,9 +27,8 @@ def get_lista(request):
     except Exception as e:
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
-
-@funcionario_required
 @login_required_middleware
+@funcionario_required
 def get_detalhe(request, pk):
     try:
         fornecedor = Fornecedor.objects.get(pk=pk)  # Tenta obter o fornecedor
@@ -43,8 +41,8 @@ def get_detalhe(request, pk):
 
 
 @csrf_exempt
-@gerente_required
 @login_required_middleware
+@gerente_required
 def post_criar(request):
     """
     Cria um novo fornecedor.
@@ -92,8 +90,8 @@ def post_criar(request):
 
 
 @csrf_exempt
-@gerente_required
 @login_required_middleware
+@gerente_required
 def put_editar(request, pk):
     """
     Edita um fornecedor existente.

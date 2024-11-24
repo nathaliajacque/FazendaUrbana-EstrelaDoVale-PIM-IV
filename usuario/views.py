@@ -10,12 +10,13 @@ from utils.middlewares import (
     serialize_queryset,
     login_required_middleware,
 )
+from rest_framework_simplejwt.tokens import RefreshToken
 
 Usuario = get_user_model()
 
 
-@administrador_required
 @login_required_middleware
+@administrador_required
 def get_lista(request):
     try:
         filters = build_filters(Usuario, request.GET)
@@ -26,8 +27,8 @@ def get_lista(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
-@administrador_required  # Apenas administradores podem consultar usuários
 @login_required_middleware
+@administrador_required  # Apenas administradores podem consultar usuários
 def get_detalhe(request, pk):
     try:
         usuario = Usuario.objects.get(pk=pk)
@@ -40,8 +41,8 @@ def get_detalhe(request, pk):
 
 
 @csrf_exempt
-@administrador_required  # Apenas administradores podem criar usuários
 @login_required_middleware
+@administrador_required  # Apenas administradores podem criar usuários
 def post_criar(request):
     if request.method != "POST":
         return HttpResponseNotAllowed(["POST"], "Método não permitido")
@@ -67,8 +68,8 @@ def post_criar(request):
 
 
 @csrf_exempt
-@administrador_required  # Apenas administradores podem deletar usuários
 @login_required_middleware
+@administrador_required  # Apenas administradores podem deletar usuários
 def put_editar(request, pk):
     if request.method != "PUT":
         return HttpResponseNotAllowed(["PUT"], "Método não permitido")
@@ -109,7 +110,12 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return JsonResponse({"message": "Login realizado com sucesso"}, status=200)
+            refresh = RefreshToken.for_user(user)
+            return JsonResponse({
+                "message": "Login realizado com sucesso",
+                "access": str(refresh.access_token),
+                "refresh": str(refresh),
+            }, status=200)
         else:
             return JsonResponse({"erro": "Credenciais inválidas"}, status=400)
 
