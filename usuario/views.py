@@ -115,6 +115,7 @@ def user_login(request):
                 "message": "Login realizado com sucesso",
                 "access": str(refresh.access_token),
                 "refresh": str(refresh),
+                "name": user.name,
             }, status=200)
         else:
             return JsonResponse({"erro": "Credenciais inválidas"}, status=400)
