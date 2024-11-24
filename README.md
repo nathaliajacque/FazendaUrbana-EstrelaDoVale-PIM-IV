@@ -41,12 +41,12 @@ Este é um projeto Django para gerenciar uma fazenda urbana chamada Estrela do V
    ```
 
 
-### Uso
+## Uso
 Acesse o servidor de desenvolvimento em `http://127.0.0.1:8000/`.
 Use as URLs configuradas no arquivo `urls.py` para acessar as diferentes funcionalidades do projeto.
 
 
-### Estrutura do Projeto
+## Estrutura do Projeto
 `urls.py:` Configurações de roteamento do projeto.
 `views.py:` Lógica das views do projeto.
 `models.py:` Definições dos modelos de dados.
