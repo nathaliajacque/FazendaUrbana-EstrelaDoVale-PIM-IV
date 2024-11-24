@@ -17,8 +17,8 @@ from utils.middlewares import (
 Usuario = get_user_model()
 
 
-@funcionario_required
 @login_required_middleware
+@funcionario_required
 def get_lista(request):
     try:
         filters = build_filters(Cliente, request.GET)
@@ -29,8 +29,8 @@ def get_lista(request):
         return JsonResponse({"erro": f"Erro inesperado {str(e)}"}, status=500)
 
 
-@funcionario_required
 @login_required_middleware
+@funcionario_required
 def get_detalhe(request, pk):
     try:
         cliente = Cliente.objects.get(pk=pk)
@@ -43,8 +43,8 @@ def get_detalhe(request, pk):
 
 
 @csrf_exempt
-@gerente_required
 @login_required_middleware
+@gerente_required
 def post_criar(request):
     if request.method != "POST":
         return HttpResponseNotAllowed(["POST"], "Método não permitido")
@@ -75,8 +75,8 @@ def post_criar(request):
 
 
 @csrf_exempt
-@gerente_required
 @login_required_middleware
+@gerente_required
 def put_editar(request, pk):
     if request.method != "PUT":
         return HttpResponseNotAllowed(["PUT"], "Método não permitido")
