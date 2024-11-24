@@ -7,7 +7,6 @@ from django.core.validators import RegexValidator
 
 class Cliente(StatusModel):
     UF_CHOICES = [
-        ("", "Selecione o estado"),
         ("AC", "Acre"),
         ("AL", "Alagoas"),
         ("AP", "Amapá"),
