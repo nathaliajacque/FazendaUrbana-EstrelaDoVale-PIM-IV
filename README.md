@@ -9,7 +9,7 @@ Este é um projeto Django para gerenciar uma fazenda urbana chamada Estrela do V
 - **Django**
 - **pyodbc**
 - **SQL Server**
-- **Outras instalações dentro de requirements.txt**
+- **Outras dependências então dentro de requirements.txt**
 
 
 ## Instalação
