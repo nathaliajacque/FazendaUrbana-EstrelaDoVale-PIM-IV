@@ -73,13 +73,22 @@ Acesse o servidor de desenvolvimento em `http://127.0.0.1:8000/`.
 Use as URLs configuradas no arquivo `urls.py` para acessar as diferentes funcionalidades do projeto.
 
 
-## Estrutura do Projeto - (Back-end)
-- `urls.py:` Configurações de roteamento do projeto.
-- `views.py:` Regras de negócio do projeto.
-- `models.py:` Definições dos modelos de dados.
-- `settings.py:` Configurações do projeto.
+## Estrutura do Projeto - Back-end
 
-## Estrutura do Projeto - (Front-end)
+Diretório Principal do Projeto (estreladovale):
+- **`settings.py`**: Configurações globais do projeto Django.
+- **`urls.py`**: Configurações de roteamento globais do projeto.
+
+Cada diretório de aplicação contém os seguintes arquivos principais:
+- **`apps.py`**: Configurações da aplicação.
+- **`models.py`**: Definições dos modelos de dados.
+- **`serializers.py`**: Serializadores para transformar os dados dos modelos em JSON e vice-versa.
+- **`tests.py`**: Testes automatizados para a aplicação.
+- **`urls.py`**: Configurações de roteamento específicas da aplicação.
+- **`views.py`**: Lógica das views da aplicação.
+- **`migrations/`**: Diretório que contém as migrações do banco de dados para a aplicação.
+
+## Estrutura do Projeto - Front-end
 - `src/`: Contém o código-fonte do projeto.
   - `components/`: Componentes reutilizáveis da interface do usuário.
   - `pages/`: Páginas principais da aplicação.
