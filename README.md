@@ -16,7 +16,6 @@ Como alternativa, baixe a documentação de todos os diagramas acima no formato 
 
 
 
-
 ## Requisitos - (Back-end)
 
 - **Python 3.x**
@@ -120,7 +119,7 @@ Para o front-end utilize `http://localhost:3000.`
 ## Funcionalidades
 Abaixo está um exemplo que como utilizar o objeto `Usuário` que segue para todos os outros objetos deste projeto.
 
-## Usuários
+### Usuários
 
 - **Listar Usuários**: Retorna uma lista de todos os usuários cadastrados.
   - **URL**: `usuario`
