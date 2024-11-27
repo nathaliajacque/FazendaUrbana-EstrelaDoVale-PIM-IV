@@ -5,14 +5,14 @@ Este é um projeto para gerenciar uma fazenda urbana chamada Estrela do Vale, de
 
 Os diagramas UML (Unified Modeling Language) são fundamentais em projetos de desenvolvimento de software, pois facilitam a compreensão, promovem a clareza, reduzem riscos de comunicação, melhoram o planejamento, suportam a implementação e facilitam a manutenção do sistema. Eles ajudam a construir um entendimento comum entre a equipe e garantem que o sistema seja desenvolvido de maneira organizada e alinhada com os requisitos e expectativas do cliente.
 
-1. Diagrama de Caso de Uso e de Classe de Implementação: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Caso%20de%20Uso).
-2. Diagrama de Classe: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Classe).
-3. Diagrama de Sequencia: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Sequ%C3%AAncia).
-4. Diagrama de Atividade: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Atividade%20-%20Collection).
-5. Diagrama de Implantação: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Implementa%C3%A7%C3%A3o).
+1. Diagrama de Caso de Uso e de Classe de Implementação: [Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Diagrama%20de%20Caso%20de%20Uso).
+2. Diagrama de Classe: [Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Diagrama%20de%20Classe).
+3. Diagrama de Sequencia: [Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Diagrama%20de%20Sequ%C3%AAncia).
+4. Diagrama de Atividade: [Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Diagrama%20de%20Atividade%20-%20Collection).
+5. Diagrama de Implantação: [Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Diagrama%20de%20Implanta%C3%A7%C3%A3o).
 
 
-Como alternativa, baixe a documentação de todos os diagramas acima no formato .ASTAH [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/blob/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Fazenda%20Urbana%20-%20EstrelaDoVale.asta).
+Como alternativa, baixe a documentação de todos os diagramas acima no formato .ASTAH [Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/blob/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Fazenda%20Urbana%20-%20EstrelaDoVale.asta).
 
 
 
