@@ -16,7 +16,7 @@ Como alternativa, baixe a documentação de todos os diagramas acima no formato 
 
 
 
-## Requisitos - (Back-end)
+## Requisitos - [Back-end](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Projeto)/back-end)
 
 - **Python 3.x**
 - **Django**
@@ -24,7 +24,7 @@ Como alternativa, baixe a documentação de todos os diagramas acima no formato 
 - **SQL Server**
 - **Outras dependências estão dentro de `requirements.txt`**
 
-## Requisitos - (Front-end)
+## Requisitos - [Front-end](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Projeto)/front-end)
 
 - **Node.js**
 - **npm** ou **yarn**
