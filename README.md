@@ -16,7 +16,7 @@ Como alternativa, baixe a documentação de todos os diagramas acima no formato 
 
 
 
-## Requisitos - [Back-end](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Projeto)/back-end)
+## Requisitos - Back-end
 
 - **Python 3.x**
 - **Django**
@@ -24,7 +24,7 @@ Como alternativa, baixe a documentação de todos os diagramas acima no formato 
 - **SQL Server**
 - **Outras dependências estão dentro de `requirements.txt`**
 
-## Requisitos - [Front-end](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Projeto)/front-end)
+## Requisitos - Front-end
 
 - **Node.js**
 - **npm** ou **yarn**
@@ -89,7 +89,7 @@ Use as URLs configuradas no arquivo `urls.py` para acessar as diferentes funcion
 Para o front-end utilize `http://localhost:3000.`
 
 
-## Estrutura do Projeto - Back-end
+## Estrutura do Projeto - [Back-end](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Projeto)/back-end)
 
 ### Diretório Principal do Projeto (estreladovale):
 - `settings.py`: Configurações globais do projeto Django.
@@ -106,7 +106,7 @@ Para o front-end utilize `http://localhost:3000.`
 - `migrations/`: Diretório que contém as migrações do banco de dados para a aplicação.
  
 
-## Estrutura do Projeto - Front-end
+## Estrutura do Projeto - [Front-end](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Projeto)/front-end)
 - `src/`: Contém o código-fonte do projeto.
   - `components/`: Componentes reutilizáveis da interface do usuário.
   - `pages/`: Páginas principais da aplicação.
