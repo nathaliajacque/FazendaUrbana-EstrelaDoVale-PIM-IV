@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="NovoProduto.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" />
+
+	  <style>
+		body, html {
+				   margin: 0;
+				   padding: 0;
+				   overflow: hidden; /* Remove a barra de rolagem */
+				   height: 100%;
+		}
+		   </style>
+  	
+  	
+  	
+</head>
+<body>
+	<div class="container-novo-produtoo">
+  	<div class="novo-produto">
+    		<img class="retangulo-fornecedor-icon" alt="" src="Imagens/Retangulo fornecedor.png">
+    		
+
+    		
+    		<div class="produtos-parent">
+      			<div class="produtos">Produtos</div>
+      			<img class="caixa-aberta-3-icon" alt="" src="Imagens/caixa-aberta 3(usar).png">
+      			
+    		</div>
+    		<div class="novo-produto-child">
+    		</div>
+    		<div class="novo-produto-item">
+    		</div>
+    		<div class="novo-produto-inner">
+    		</div>
+    		<div class="dados-gerais">Dados gerais</div>
+    		<div class="informaes-gerais">Informações gerais</div>
+    		<div class="condies-de-crescimento">Condições de crescimento - Plantio</div>
+    		<div class="descrio">Descrição *</div>
+    		<div class="grupo">Grupo</div>
+    		<!-- <div class="sub-grupo">Sub-grupo</div> -->
+    		<div class="categoria">Categoria</div>
+    		<div class="crescimento-dias">Crescimento (dias)</div>
+			<div class="dados gerais">
+				<form>
+					<!-- <div class="codigo">
+						<input type="number" class="input" id="codigo" required>
+						<label for="codigo"></label>
+					</div> -->
+					<div class="CPF">
+						<input type="text" class="input" id="cpf" required>
+						<label for="CPF"></label>
+					</div>
+					<!-- <div class="IE">
+						<input type="text" class="input" id="ie" required>
+						<label for="IE"></label>
+					</div> -->
+					<div class="Nome-fantasia1">
+						<input type="text" class="input" id="nome-fantasia1" required>
+						<label for="Nome fantasia"></label>
+					</div>
+					<div class="razao-social">
+						<input type="text" class="input" id="razao-social" required>
+						<label for="razao social"></label>
+					</div>
+					<!-- <div class="IM">
+						<input type="text" class="input" id="im" required>
+						<label for="IM"></label>
+					</div> -->
+				</form>
+			</div>
+			<div class="Condições de crescimento - Plantio">
+				<form>
+					<div class="Temperatura">
+						<input type="text" class="input" id="Temperatura" required>
+						<label for="Temperatura"></label>
+					</div>
+					<div class="Umidade">
+						<input type="text" class="input" id="Umidade" required>
+						<label for="Umidade"></label>
+					</div>
+					<div class="Iluminação">
+						<input type="text" class="input" id="Iluminação" required>
+						<label for="Iluminação"></label>
+					</div>
+					<div class="Crescimento">
+						<input type="date" class="input" id="Crescimento" required>
+						<label for="Crescimento"></label>
+					</div>
+					<div class="Solução-nutritiva">
+						<input type="text" class="input" id="Solução-nutritiva" required>
+						<label for="Solução-nutritiva"></label>
+					</div>
+					<div class="Intensidadeled">
+						<input type="text" class="input" id="Intensidade-led" required>
+						<label for="Intensidade-led"></label>
+					</div>
+					<div class="Nívelagua">
+						<input type="text" class="input" id="Nível-agua" required>
+						<label for="Nível-agua"></label>
+					</div>
+				</form>
+			</div>
+			<div class="Informações gerais">
+				<form>
+					<div class="Observação">
+						<input type="text" class="input" id="Observação" required>
+						<label for="Observação"></label>
+					</div>
+					<div class="Usuario_">
+						<input type="text" class="input" id="Usuario" required>
+						<label for="Usuario"></label>
+					</div>
+					<div class="ID produto">
+						<input type="number" class="input" id="ID-produto" required>
+						<label for="ID-produto"></label>
+					</div>
+					<div class="Data-cadastro">
+						<input type="date" class="input" id="Data-cadastro" required>
+						<label for="Data-cadastro"></label>
+					</div>
+				</form>
+			</div>
+
+
+			
+
+
+
+
+
+	
+			<select name="select" class="statusfornecedores">
+				<option value="ativo">Ativo</option>
+				<option value="Inativo">Inativo</option>
+			</select>
+
+			<select name="select" class="categoriaselect">
+				<option value="Verdura">Verdura</option>
+				<option value="Legumes">Legumes</option>
+			</select>
+			
+			
+
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		<div class="data-cadastro">Data cadastro</div>
+			<div class="Usuario">Usuario</div>
+    		<div class="ID-produto">ID produto</div>
+
+    		
+    		<div class="fornecedor">Fornecedor</div>
+    		<div class="observao">Observação</div>
+    		
+    		
+    		<div class="temperatura">Temperatura</div>
+    		<div class="umidade">Umidade</div>
+    		<div class="iluminao">Iluminação</div>
+			<div class="Intensidade-led">Int. led</div>
+			<div class="Nível-agua">Nível agua</div>
+    		<div class="soluo-nutritiva">Solução nutritiva</div>
+    		
+    		<div class="status">Status</div>
+    		
+    		
+    		<div class="disco-1-1-parent" id="salvar">
+      			<img class="disco-1-1" id="salvar" alt="" src="Imagens/disco (1) 1.png">
+      			
+      			<div class="salvar" id="salvar">Salvar</div>
+    		</div>
+    		<div class="sapooooooooo">
+      			<img class="sapoo-1-icon" alt="" src="Imagens/Sapoo 1.png">
+      			
+      			<b class="desenvolvido-por-sapoo">Desenvolvido por SAPOO © </b>
+    		</div>
+		</div>
+	</div>
+    		<div class="novo-bar">
+      			<div class="novo-bar1">
+        				<div class="novo-bar2">
+          					<div class="novo-bar-child">
+          					</div>
+        				</div>
+        				<div class="menu-bar">
+          					<div class="gerenciar">Gerenciar</div>
+          					<div class="profile">
+            						<div class="ol">
+              							<p class="estrela-do-vale">Olá,</p>
+            						</div>
+            						<div class="abigail">
+              							<div class="produtos">
+                								<p class="estrela-do-vale">Abigail</p>
+              							</div>
+            						</div>
+          					</div>
+          					<img class="morango-2-icon" alt="" src="Imagens/morango 2.png">
+          					
+          					<img class="menu-bar-child" alt="" src="Imagens/Line 5.png">
+          					
+          					<div class="estrela-do-vale-wrapper">
+            						<b class="estrela-do-vale-container">
+              							<p class="estrela-do-vale">Estrela do Vale</p>
+            						</b>
+          					</div>
+          					<img class="menu-bar-item" alt="" src="Imagens/Line 4.png">
+          					
+        				</div>
+        				<img class="profile-icon" alt="" src="Imagens/Icone 1.png">
+        				
+      			</div>
+      			<div id="dashboard" class="component-36">
+
+        				
+        				<div class="dashboard-wrapper">
+          					<div class="produtos">Dashboard</div>
+        				</div>
+        				<img class="icone-mao" alt="" src="Imagens/estatisticas (1) 4.png">
+        				
+      			</div>
+      			<div id="produtos" class="component-32">
+
+        				
+        				<img class="vector-icon2" alt="" src="Imagens/Vector(caixa).png">
+        				
+        				<div class="produtos-wrapper">
+          					<div class="produtos">Produtos</div>
+        				</div>
+      			</div>
+      			<div id="producao" class="component-35">
+  
+        				
+        				<div class="produo-wrapper">
+          					<div class="produtos">Produção</div>
+        				</div>
+        				<img class="icone-mao" alt="" src="Imagens/Icone mao.png">
+        				
+      			</div>
+      			<div id="pedidosdevenda" class="component-33">
+
+        				
+        				<div class="pedidos-de-venda-wrapper">
+          					<div class="produtos">Pedidos de venda</div>
+        				</div>
+        				<img class="cesta-de-compras-4-icon" alt="" src="Imagens/cesta-de-compras 4.png">
+        				
+      			</div>
+      			<div id="clientes" class="component-31">
+   
+        				
+        				<div class="clientes-wrapper">
+          					<div class="produtos">Clientes</div>
+        				</div>
+        				<img class="cesta-de-compras-4-icon" alt="" src="Imagens/Icone cliente.png">
+        				
+      			</div>
+      			<div id="fornecedores" class="component-47">
+     
+        				
+        				<div class="fornecedores-wrapper">
+          					<div class="produtos">Fornecedores</div>
+        				</div>
+        				<img class="vector-icon7" alt="" src="Imagens/Vector (caminhao).png">
+        				
+      			</div>
+      			<div id="relatorios" class="component-29">
+
+        				
+        				<div class="relatrios-wrapper">
+          					<div class="produtos">Relatórios</div>
+        				</div>
+        				<img class="contract-fill0-wght400-grad0-o-icon" alt="" src="Imagens/contract_FILL0_wght400_GRAD0_opsz24 5.png">
+        				
+      			</div>
+      			<div id="configuracoes" class="component-40" id="component40Container">
+       
+        				
+        				<div class="configuraes">Configurações</div>
+        				<img class="definicoes-2-icon" alt="" src="Imagens/definicoes 2.png">
+        				
+      			</div>
+    		</div>
+    		<div class="frame-div" id="frameContainer2">
+      			<div id="fechar3" class="fechar-wrapper">
+        				<div class="fechar">Fechar</div>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var cruz1Icon = document.getElementById("cruz1Icon");
+    		if(cruz1Icon) {
+      			cruz1Icon.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var component40Container = document.getElementById("component40Container");
+    		if(component40Container) {
+      			component40Container.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var frameContainer2 = document.getElementById("frameContainer2");
+    		if(frameContainer2) {
+      			frameContainer2.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+			document.getElementById("produtos").addEventListener("click",redirecionar)
+			document.getElementById("relatorios").addEventListener("click",redirecionar)
+			document.getElementById("configuracoes").addEventListener("click",redirecionar)
+			document.getElementById("clientes").addEventListener("click",redirecionar)
+			document.getElementById("fornecedores").addEventListener("click",redirecionar)
+			document.getElementById("producao").addEventListener("click",redirecionar)
+			document.getElementById("pedidosdevenda").addEventListener("click",redirecionar)
+			document.getElementById("dashboard").addEventListener("click",redirecionar)
+			document.getElementById("salvar").addEventListener("click",redirecionar)
+			
+
+			function redirecionar(event){
+				switch(event.target.id){
+					case "salvar":
+						RedirecionarPara("../../PesquisaProduto/PesquisaProduto.html")
+						break
+					case "dashboard":
+						RedirecionarPara("../../Dashboard/Dashboard.html")
+						break
+					case "relatorios":
+						RedirecionarPara("../../Relatorios/Relatorios.html")
+						break
+					case "configuracoes":
+						RedirecionarPara("../../Configuracoes/Configuracoes.html")
+						break
+					case "clientes":
+						RedirecionarPara("../../PesquisaCliente/PesquisaCliente.html")
+						break
+					case "fornecedores":
+						RedirecionarPara("../../PesquisaFornecedor/PesquisaFornecedor.html")
+						break
+					case "produtos":
+						RedirecionarPara("../../PesquisaProduto/PesquisaProduto.html")
+						break
+					case "producao":
+						RedirecionarPara("../../PesquisaProducao/PesquisaProducao.html")
+						break
+					case "pedidosdevenda":
+						RedirecionarPara("../../PesquisaVenda/PesquisaVenda.html")
+						break
+						
+				}
+			}
+			function RedirecionarPara (pagina){
+				location.replace(pagina)
+			}
+			var botao = document.getElementById("fechar3")
+			console.log(botao)
+			botao.addEventListener("click", ()=>{
+				console.log("pudim")
+				location.replace("../../PesquisaProduto/PesquisaProduto.html")
+			})
+			</script></body>
+</html>

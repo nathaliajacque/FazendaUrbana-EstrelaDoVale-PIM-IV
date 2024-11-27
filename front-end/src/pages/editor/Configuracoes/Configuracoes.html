@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+
+	<link rel="stylesheet" href="Configuracoes.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" />
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			/* Remove a barra de rolagem */
+			height: 100%;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container-pesquisa-configuracoes">
+		<div class="configuraes">
+			<img class="retangulo-fornecedor-icon" alt="" src="Imagens/Retangulo fornecedor.png">
+
+			<img class="sapoo-1-icon" alt="" src="Imagens/Sapoo 1.png">
+
+			<b class="desenvolvido-por-sapoo">Desenvolvido por SAPOO © </b>
+
+			<div class="configuraes-parent">
+				<div class="gerenciar-usuarios">Configurações</div>
+				<img class="definicoes-1-icon" alt="" src="Imagens/definicoes 1.png">
+			</div>
+			<div class="gerenciar-usurios-wrapper">
+				<div class="gerenciar-usurios">Gerenciar funcionários</div>
+			</div>
+			<div id="gerenusuario" class="gerenciar-usurios-container">
+				<div class="gerenciar-usurios">Gerenciar usuários</div>
+			</div>
+			<div id="sair" class="sair">
+				<div class="gerenciar-usurios" id="exitButton">sair</div>
+				<!-- Modal somente para versão web -->
+				<div id="confirmationModal" class="modal">
+					<div class="modal-content">
+						<p id="cor-texto">Você tem certeza que deseja sair?</p>
+						<div class="modal-buttons">
+							<button id="confirmExit" class="confirm">Sim</button>
+							<button id="cancelExit" class="cancel">Não</button>
+						</div>
+					</div>
+				</div>
+				<!-- <script src="/script.js"></script> -->
+			</div>
+
+		</div>
+	</div>
+	<div class="novo-bar">
+		<div class="novo-bar1">
+			<div class="novo-bar2">
+				<div class="novo-bar-child">
+				</div>
+			</div>
+			<div class="menu-bar">
+				<div class="gerenciar">Gerenciar</div>
+				<div class="profile">
+					<div class="ol">
+						<p class="estrela-do-vale">Olá,</p>
+					</div>
+					<div class="abigail">
+						<div id="gerenusuario" class="gerenciar-usurios">
+							<p class="estrela-do-vale">Abigail</p>
+						</div>
+					</div>
+				</div>
+				<img class="morango-2-icon" alt="" src="Imagens/morango 2.png">
+
+				<img class="menu-bar-child" alt="" src="Imagens/Line 5.png">
+
+				<div class="estrela-do-vale-wrapper">
+					<b class="estrela-do-vale-container">
+						<p class="estrela-do-vale">Estrela do Vale</p>
+					</b>
+				</div>
+				<img class="menu-bar-item" alt="" src="Imagens/Line 4.png">
+
+			</div>
+			<img class="profile-icon" alt="" src="Imagens/Icone 1.png">
+
+		</div>
+		<div id="dashboard" class="component-36">
+
+			<div class="dashboard-wrapper">
+				<div class="gerenciar-usurios">Dashboard</div>
+			</div>
+			<img class="icone-mao" alt="" src="Imagens/estatisticas (1) 4.png">
+
+		</div>
+		<div id="produtos" class="component-32">
+
+			<img class="vector-icon2" alt="" src="Imagens/Vector(caixa).png">
+
+			<div class="produtos-wrapper">
+				<div class="gerenciar-usurios">Produtos</div>
+			</div>
+		</div>
+		<div id="producao" class="component-35">
+
+			<div class="produo-wrapper">
+				<div class="gerenciar-usurios">Produção</div>
+			</div>
+			<img class="icone-mao" alt="" src="Imagens/Icone mao.png">
+
+		</div>
+		<div id="pedidosdevenda" class="component-33">
+
+			<div class="pedidos-de-venda-wrapper">
+				<div class="gerenciar-usurios">Pedidos de venda</div>
+			</div>
+			<img class="cesta-de-compras-4-icon" alt="" src="Imagens/cesta-de-compras 4.png">
+
+		</div>
+		<div id="clientes" class="component-31">
+
+			<div class="clientes-wrapper">
+				<div class="gerenciar-usurios">Clientes</div>
+			</div>
+			<img class="cesta-de-compras-4-icon" alt="" src="Imagens/Icone cliente.png">
+
+		</div>
+		<div id="fornecedores" class="component-47">
+
+
+			<div class="fornecedores-wrapper">
+				<div class="gerenciar-usurios">Fornecedores</div>
+			</div>
+			<img class="vector-icon7" alt="" src="Imagens/Vector (caminhao).png">
+
+		</div>
+		<div id="relatorios" class="component-29">
+
+
+			<div class="relatrios-wrapper">
+				<div class="gerenciar-usurios">Relatórios</div>
+			</div>
+			<img class="contract-fill0-wght400-grad0-o-icon" alt=""
+				src="Imagens/contract_FILL0_wght400_GRAD0_opsz24 5.png">
+
+		</div>
+		<div id="configuracoes" class="component-40">
+
+
+			<div class="configuraes2">Configurações</div>
+			<img class="definicoes-2-icon" alt="" src="Imagens/definicoes 2.png">
+
+		</div>
+	</div>
+	</div>
+
+
+
+
+	<script>
+		const exitButton = document.getElementById("exitButton");
+		const modal = document.getElementById("confirmationModal");
+		const confirmExit = document.getElementById("confirmExit");
+		const cancelExit = document.getElementById("cancelExit");
+
+		// Exibir o modal ao clicar no botão de sair
+		exitButton.addEventListener("click", () => {
+			modal.style.display = "flex";
+		});
+
+
+		// Fechar o modal ao clicar no botão "Não"
+		cancelExit.addEventListener("click", () => {
+			modal.style.display = "none";
+		});
+
+		// Executar ação ao clicar no botão "Sim"
+		confirmExit.addEventListener("click", () => {
+			modal.style.display = "none";
+			// Aqui você pode redirecionar ou realizar outra ação
+			window.location.href = "../Login/Login.html";
+		});
+
+		// Fechar o modal ao clicar fora do conteúdo
+		window.addEventListener("click", (event) => {
+			if (event.target === modal) {
+				modal.style.display = "none";
+			}
+		});
+		var cruz1Icon = document.getElementById("cruz1Icon");
+		if (cruz1Icon) {
+			cruz1Icon.addEventListener("click", function (e) {
+				// Add your code here
+			});
+		}
+		document.getElementById("produtos").addEventListener("click", redirecionar)
+		document.getElementById("relatorios").addEventListener("click", redirecionar)
+		document.getElementById("configuracoes").addEventListener("click", redirecionar)
+		document.getElementById("clientes").addEventListener("click", redirecionar)
+		document.getElementById("fornecedores").addEventListener("click", redirecionar)
+		document.getElementById("producao").addEventListener("click", redirecionar)
+		document.getElementById("pedidosdevenda").addEventListener("click", redirecionar)
+		document.getElementById("dashboard").addEventListener("click", redirecionar)
+		function redirecionar(event) {
+			switch (event.target.id) {
+				case "dashboard":
+					RedirecionarPara("../Dashboard/Dashboard.html")
+					break
+				case "relatorios":
+					RedirecionarPara("../Relatorios/Relatorios.html")
+					break
+				case "configuracoes":
+					RedirecionarPara("../Configuracoes/Configuracoes.html")
+					break
+				case "clientes":
+					RedirecionarPara("../PesquisaCliente/PesquisaCliente.html")
+					break
+				case "fornecedores":
+					RedirecionarPara("../PesquisaFornecedor/PesquisaFornecedor.html")
+					break
+				case "produtos":
+					RedirecionarPara("../PesquisaProduto/PesquisaProduto.html")
+					break
+				case "producao":
+					RedirecionarPara("../PesquisaProducao/PesquisaProducao.html")
+					break
+				case "pedidosdevenda":
+					RedirecionarPara("../PesquisaVenda/PesquisaVenda.html")
+					break
+
+			}
+		}
+		function RedirecionarPara(pagina) {
+			location.replace(pagina)
+		}
+		var botao = document.getElementById("gerenusuario")
+		console.log(botao)
+		botao.addEventListener("click", () => {
+			console.log("Sapoo")
+			location.replace("../Configuracoes/PesquisaUsuario/PesquisaUsuario.html")
+		})
+	</script>
+</body>
+
+</html>

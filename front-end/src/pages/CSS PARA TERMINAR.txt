@@ -1,0 +1,31 @@
+css novo para hover
+
+Configurações: OK
+
+Dashboard: OK
+
+login: OK
+
+pesquisaCliente:OK
+	NovoCliente: OK
+
+pesquisaFornecedor: OK
+	NovoFornecedor:OK
+		CliqueFornecedor:OK
+
+PesquisaFuncionario: OK
+	NovoFuncionario: OK
+
+PesquisaProducao: OK
+	NovaProducao: OK
+		CliqueEmProducao:OK
+
+PesquisaProduto: OK
+	NovoProduto: OK
+
+Relatorios: OK
+
+PesquisaVenda: OK
+	NovoPedido: OK
+		CliqueEmPedido: OK
+			NovaProducao: OK

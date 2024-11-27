@@ -1,0 +1,1289 @@
+.retangulo-fornecedor-icon {
+    position: absolute;
+    top: 40px;
+    left: 420px;
+    border-radius: 16px;
+    width: 980px;
+    height: 940px;
+}
+.cruz-1-icon {
+    position: absolute;
+    top: 60px;
+    left: 1356px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gerenciar-funcionrios {
+    position: relative;
+    font-weight: 600;
+}
+.icone-cliente {
+    width: 32px;
+    position: relative;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.gerenciar-funcionrios-parent {
+    position: absolute;
+    top: 40px;
+    left: 686px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    font-size: 32px;
+    color: #444;
+}
+.down-arrow-icon {
+    position: absolute;
+    top: 946px;
+    left: 1372px;
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+}
+.usurio {
+    position: absolute;
+    top: 191px;
+    left: 519px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.e-mail {
+    position: absolute;
+    top: 191px;
+    left: 859px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.cargo {
+    position: absolute;
+    top: 191px;
+    left: 1151px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.pesquisa-funcionario-child {
+    position: absolute;
+    top: 231.5px;
+    left: 459.5px;
+    border-top: 1px solid #444;
+    box-sizing: border-box;
+    width: 901px;
+    height: 1px;
+}
+.down-arrow-icon1 {
+    position: absolute;
+    top: 234px;
+    left: 1372px;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+.pesquisa-funcionario-item {
+    position: absolute;
+    top: 113px;
+    left: 580px;
+    border-radius: 8px;
+    background-color: rgba(106, 153, 78, 0.6);
+    width: 300px;
+    height: 47px;
+}
+.pesquisa-funcionario-item:hover{
+    background-color: #6a994e;
+    color: #6a994e;
+    cursor: pointer;
+}
+.adicionar-documento-1-icon {
+    width: 16px;
+    position: relative;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.novo {
+    width: 42px;
+    position: relative;
+    font-weight: 500;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.adicionar-documento-1-parent {
+    position: absolute;
+    top: 113px;
+    left: 460px;
+    border-radius: 8px;
+    background-color: #6a994e;
+    width: 100px;
+    height: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 7px;
+    color: #efffec;
+}
+.adicionar-documento-1-parent:hover{
+    color: #000;
+    background-color: #77b155;
+    cursor: pointer;
+}
+.vector-icon {
+    width: 16px;
+    position: relative;
+    height: 16px;
+}
+.procurar-2-1 {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.pesquise-o-funcionrio {
+    position: relative;
+    font-weight: 500;
+}
+.procurar-2-1-parent {
+    position: absolute;
+    top: 116px;
+    left: 612px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    color: #efffec;
+}
+.nome-do-fornecedor {
+    position: absolute;
+    top: 25%;
+    left: 6.05%;
+    font-weight: 600;
+}
+.div {
+    position: absolute;
+    top: 25%;
+    left: 40.68%;
+    font-weight: 600;
+}
+.div1 {
+    position: absolute;
+    top: 25%;
+    left: 70.8%;
+    font-weight: 600;
+}
+.instance-item {
+    position: absolute;
+    height: 75%;
+    width: 3.07%;
+    top: 12.5%;
+    right: 9.02%;
+    bottom: 12.5%;
+    left: 87.91%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.instance-item:hover{
+    background-color: #6a994e;
+    cursor: pointer;
+}
+.vector-icon1 {
+    position: absolute;
+    height: 40%;
+    width: 1.64%;
+    top: 30%;
+    right: 9.73%;
+    bottom: 30%;
+    left: 88.63%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.rectangle-parent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+}
+.rectangle-parent:hover{
+    background-color: #a6c295;
+}
+.pesquisa-funcionario-inner {
+    position: absolute;
+    top: 254px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.component-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.group-div {
+    position: absolute;
+    top: 259px;
+    left: 1328px;
+    width: 30px;
+    height: 30px;
+}
+.rectangle-div {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 29.3%;
+    right: 5.69%;
+    bottom: 67.77%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.div3 {
+    position: absolute;
+    top: 25%;
+    left: 69.88%;
+    font-weight: 600;
+}
+.pesquisa-funcionario-inner1 {
+    position: absolute;
+    top: 294px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.div5 {
+    position: absolute;
+    top: 25%;
+    left: 74.39%;
+    font-weight: 600;
+}
+.pesquisa-funcionario-inner2 {
+    position: absolute;
+    top: 334px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner3 {
+    position: absolute;
+    top: 375px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner4 {
+    position: absolute;
+    top: 496px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner5 {
+    position: absolute;
+    top: 416px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner6 {
+    position: absolute;
+    top: 537px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner7 {
+    position: absolute;
+    top: 456px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner8 {
+    position: absolute;
+    top: 577px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.div19 {
+    position: absolute;
+    top: 25%;
+    left: 74.69%;
+    font-weight: 600;
+}
+.pesquisa-funcionario-inner9 {
+    position: absolute;
+    top: 617px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner10 {
+    position: absolute;
+    top: 737px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner11 {
+    position: absolute;
+    top: 657px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.div25 {
+    position: absolute;
+    top: 25%;
+    left: 73.77%;
+    font-weight: 600;
+}
+.pesquisa-funcionario-inner12 {
+    position: absolute;
+    top: 777px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner13 {
+    position: absolute;
+    top: 857px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner14 {
+    position: absolute;
+    top: 697px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner15 {
+    position: absolute;
+    top: 817px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-funcionario-inner16 {
+    position: absolute;
+    top: 897px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.sapoo-1-icon {
+    position: absolute;
+    top: 0px;
+    left: 120px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.desenvolvido-por-sapoo {
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+.sapooooooooo {
+    position: absolute;
+    top: 980px;
+    left: 820px;
+    width: 108px;
+    height: 42px;
+    font-size: 8px;
+    color: rgba(68, 68, 68, 0.3);
+}
+.novo-bar-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #6a994e;
+    width: 380px;
+    height: 1040px;
+}
+.novo-bar2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1040px;
+}
+.gerenciar {
+    position: absolute;
+    top: 253px;
+    left: 0px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.53);
+    text-shadow: 1px 0 0 #6a994e, 0 1px 0 #6a994e, -1px 0 0 #6a994e, 0 -1px 0 #6a994e;
+}
+.ol {
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    font-weight: 600;
+    text-shadow: 1px 0 0 #6a994e, 0 1px 0 #6a994e, -1px 0 0 #6a994e, 0 -1px 0 #6a994e;
+}
+.abigail {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-size: 24px;
+}
+.profile {
+    position: absolute;
+    top: 903px;
+    left: 49px;
+    width: 110px;
+    height: 94px;
+}
+.morango-2-icon {
+    position: absolute;
+    top: 19px;
+    left: 13px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+.menu-bar-child {
+    position: absolute;
+    top: 774px;
+    left: 4.5px;
+    max-height: 100%;
+    width: 299.5px;
+}
+.estrela-do-vale {
+    margin: 0;
+}
+.estrela-do-vale-container {
+    position: relative;
+}
+.estrela-do-vale-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-size: 32px;
+}
+.menu-bar-item {
+    position: absolute;
+    top: 69px;
+    left: 1px;
+    max-height: 100%;
+    width: 300px;
+}
+.menu-bar {
+    position: absolute;
+    top: 44px;
+    left: 36px;
+    width: 306px;
+    height: 997px;
+}
+.profile-icon {
+    position: absolute;
+    top: 942px;
+    left: 35px;
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+}
+.profile-icon:hover{
+    cursor: pointer;
+}
+
+.novo-bar1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1041px;
+    font-size: 16px;
+}
+.vector-icon18 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 3.22%;
+    right: 0%;
+    bottom: 1.62%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.dashboard-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 42.97%;
+    top: 0%;
+    right: 43.78%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.component-36 {
+    position: absolute;
+    top: 206px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-36:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+.vector-icon20 {
+    position: absolute;
+    height: 51.45%;
+    width: 8.65%;
+    top: 22.58%;
+    right: 85.14%;
+    bottom: 25.97%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.produtos-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 36.76%;
+    top: 0%;
+    right: 50%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.component-32 {
+    position: absolute;
+    top: 458px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-32:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.produo-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 38.65%;
+    top: 0%;
+    right: 48.11%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.icone-mao {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 24.19%;
+    right: 85.14%;
+    bottom: 24.19%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-35 {
+    position: absolute;
+    top: 338px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-35:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.pedidos-de-venda-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 63.51%;
+    top: 0%;
+    right: 23.24%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.cesta-de-compras-4-icon {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 22.58%;
+    right: 85.14%;
+    bottom: 25.81%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-33 {
+    position: absolute;
+    top: 398px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-33:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.clientes-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 32.97%;
+    top: 0%;
+    right: 53.51%;
+    bottom: 0%;
+    left: 13.51%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.component-31 {
+    position: absolute;
+    top: 518px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-31:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon24 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 3.23%;
+    right: 0%;
+    bottom: 1.61%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.fornecedores-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 32.97%;
+    top: 0%;
+    right: 44.32%;
+    bottom: 0%;
+    left: 22.7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.vector-icon25 {
+    position: absolute;
+    height: 47.26%;
+    width: 8.65%;
+    top: 27.42%;
+    right: 85.14%;
+    bottom: 25.32%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-47 {
+    position: absolute;
+    top: 578px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-47:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon26 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 1.61%;
+    right: 0%;
+    bottom: 3.23%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.relatrios-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 40.54%;
+    top: 0%;
+    right: 45.14%;
+    bottom: 0%;
+    left: 14.32%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.contract-fill0-wght400-grad0-o-icon {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 24.19%;
+    right: 84.32%;
+    bottom: 24.19%;
+    left: 7.03%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-29 {
+    position: absolute;
+    top: 733px;
+    left: 9px;
+    width: 370px;
+    height: 62px;
+}
+.component-29:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon27 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.configuraes {
+    position: absolute;
+    top: 23.73%;
+    left: 18.92%;
+    font-weight: 600;
+}
+.definicoes-2-icon {
+    position: absolute;
+    height: 54.24%;
+    width: 8.65%;
+    top: 23.73%;
+    right: 83.78%;
+    bottom: 22.03%;
+    left: 7.57%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-40 {
+    position: absolute;
+    top: 838px;
+    left: 10px;
+    width: 370px;
+    height: 59px;
+    cursor: pointer;
+}
+.component-40:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.novo-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1041px;
+    text-align: left;
+    font-size: 24px;
+    color: #efffec;
+}
+.pesquisa-funcionario-child1 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 33.11%;
+    right: 5.69%;
+    bottom: 63.96%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child2 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 37.11%;
+    right: 5.69%;
+    bottom: 59.96%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child3 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 41.11%;
+    right: 5.69%;
+    bottom: 55.96%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child4 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 45.02%;
+    right: 5.69%;
+    bottom: 52.05%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child5 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 48.93%;
+    right: 5.69%;
+    bottom: 48.14%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child6 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 52.93%;
+    right: 5.69%;
+    bottom: 44.14%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child7 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 56.84%;
+    right: 5.69%;
+    bottom: 40.23%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child8 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 60.74%;
+    right: 5.69%;
+    bottom: 36.33%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child9 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 64.65%;
+    right: 5.69%;
+    bottom: 32.42%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child10 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 68.55%;
+    right: 5.69%;
+    bottom: 28.52%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child11 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 72.46%;
+    right: 5.69%;
+    bottom: 24.61%;
+    left: 92.22%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child12 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 76.37%;
+    right: 5.56%;
+    bottom: 20.7%;
+    left: 92.36%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child13 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 80.27%;
+    right: 5.56%;
+    bottom: 16.8%;
+    left: 92.36%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child14 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 84.18%;
+    right: 5.56%;
+    bottom: 12.89%;
+    left: 92.36%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.pesquisa-funcionario-child15 {
+    position: absolute;
+    height: 2.93%;
+    width: 2.08%;
+    top: 88.09%;
+    right: 5.56%;
+    bottom: 8.98%;
+    left: 92.36%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.lixeira-de-reciclagem-1-icon {
+    position: absolute;
+    top: 266px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-3-icon {
+    position: absolute;
+    top: 346px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-4-icon {
+    position: absolute;
+    top: 387px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-5-icon {
+    position: absolute;
+    top: 428px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-6-icon {
+    position: absolute;
+    top: 468px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-7-icon {
+    position: absolute;
+    top: 508px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-8-icon {
+    position: absolute;
+    top: 549px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-9-icon {
+    position: absolute;
+    top: 589px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-10-icon {
+    position: absolute;
+    top: 629px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-11-icon {
+    position: absolute;
+    top: 669px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-12-icon {
+    position: absolute;
+    top: 709px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-13-icon {
+    position: absolute;
+    top: 749px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-14-icon {
+    position: absolute;
+    top: 789px;
+    left: 1336px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-15-icon {
+    position: absolute;
+    top: 829px;
+    left: 1336px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-16-icon {
+    position: absolute;
+    top: 869px;
+    left: 1336px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-17-icon {
+    position: absolute;
+    top: 909px;
+    left: 1336px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.lixeira-de-reciclagem-2-icon {
+    position: absolute;
+    top: 307px;
+    left: 1334px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+.pesquisa-funcionario {
+    width: 100%;
+    position: relative;
+    background-color: #efffec;
+    height: 1024px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Quicksand;
+}
+
+
+.group-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 8px;
+    background-color: #def0d3;
+}
+.tem-certeza-que {
+    margin: 0;
+}
+.tem-certeza-que-container {
+    position: absolute;
+    top: 20.77%;
+    left: 13.5%;
+}
+.rectangle-parent15 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #444;
+}
+.no {
+    width: 62px;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.no-wrapper {
+    position: absolute;
+    height: 25.68%;
+    width: 19.01%;
+    top: 60.66%;
+    right: 23.19%;
+    bottom: 13.66%;
+    left: 57.79%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: #9a0000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.sim-wrapper {
+    position: absolute;
+    height: 25.68%;
+    width: 19.01%;
+    top: 60.66%;
+    right: 57.98%;
+    bottom: 13.66%;
+    left: 23%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: #6a994e;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.excluir-funcionario {
+    width: 526px;
+    position: relative;
+    height: 183px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-family: Quicksand;
+}
+

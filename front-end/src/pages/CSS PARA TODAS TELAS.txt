@@ -1,0 +1,147 @@
+css para todas telas:
+
+
+**retirar: <img class="vector-icon" alt="" src="Imagens/Vector(dashboard).png">
+
+dashboard:
+.component-36 {
+    position: absolute;
+    top: 206px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-36:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+produção:
+.component-35 {
+    position: absolute;
+    top: 338px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-35:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+pedidos de venda:
+.component-33 {
+    position: absolute;
+    top: 398px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-33:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+produtos:
+.component-32 {
+    position: absolute;
+    top: 458px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-32:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+clientes:
+.component-31 {
+    position: absolute;
+    top: 518px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-31:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+fornecedores:
+.component-47 {
+    position: absolute;
+    top: 578px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-47:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+relatorios:
+.component-29 {
+    position: absolute;
+    top: 733px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-29:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+configurações:
+.component-40 {
+    position: absolute;
+    top: 838px;
+    left: 10px;
+    width: 370px;
+    height: 59px;
+
+}
+.component-40:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+icone de login:
+.profile-icon {
+    position: absolute;
+    top: 942px;
+    left: 35px;
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+}
+.profile-icon:hover{
+    cursor: pointer;
+}
+

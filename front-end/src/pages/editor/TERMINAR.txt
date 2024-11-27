@@ -1,0 +1,36 @@
+
+Configuracoes: OK
+	PesquisaUsuario:(criado) OK
+		NovoUsuario:(criado) OK
+
+Dashboard: OK
+
+
+Login: OK
+
+
+PesquisaCliente: OK
+	NovoCliente:(criado) OK
+
+PesquisaFornecedor: OK
+	NovoFornecedor:(criado) OK
+		CliqueFornecedor:(criado)OK(bug nos textos)
+
+PesquisaFuncionario:OK (caixas das lixeiras bugadas) - excluir 
+	NovoFuncionario: (criado) OK
+
+PesquisaProducao: OK
+	NovaProducao:(criado) OK (bug na boxlist)
+		CliqueEmProducao:(criado) OK
+
+
+PesquisaProduto: OK
+	NovoProduto:(criado) OK
+
+PesquisaVenda: OK
+	NovoPedido:(criado) OK (pedido para adicionar bugado)
+		CliqueEmPedido:(criado) OK 
+			NovaProducao:(criado)OK
+
+
+Relatorios: OK

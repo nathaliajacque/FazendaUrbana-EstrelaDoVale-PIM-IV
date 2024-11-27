@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="CliqueEmPedido.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" />
+  	
+  	<style>
+		body, html {
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden; /* Remove a barra de rolagem */
+		  height: 100%;
+   }
+	  </style>
+		
+  	
+</head>
+<body>
+	<div class="container-clique-pedido">
+  	<div class="clique-em-pedido">
+    		<img class="retangulo-fornecedor-icon" alt="" src="Imagens/Retangulo fornecedor.png">
+    		
+    		<div class="pedido-de-venda-parent">
+      			<div class="pedido-de-venda">Pedido de venda</div>
+      			<img class="vector-icon" alt="" src="Imagens/Vector.png">
+      			
+    		</div>
+    		<div class="clique-em-pedido-child">
+    		</div>
+    		<div class="produtos-adicionados">Produtos adicionados</div>
+    		<div class="revise-os-itens">Revise os itens antes de confirmar o pedido</div>
+    		<div class="n-pedido">ID Pedido</div>
+    		<div class="cliente">Cliente</div>
+    		<div class="pedido-feito-por">Usuario</div>
+    		<div class="prazo-de-entrega">Total</div>
+    		<div class="data-da-venda">Data da venda</div>
+			<div class="data-cadastro">Data cadastro</div>
+
+
+
+			<div class="pesquise-produto">
+				<input type="text" class="input" id="pesquise-produto" placeholder="Pesquise o produto do pedido para adicionar">
+				<label for="pesquise-produto"></label>
+			</div>
+
+			<select name="select" class="statusfornecedores">
+				<option value="valor1">Em planejamento</option>
+				<option value="valor2">Pronto para entrega</option>
+			</select> 
+			div class="dados gerais">
+				<form>
+					<div class="numero-pedido">
+						<input type="number" class="input" id="numero-pedido" required>
+						<label for="-ID-pedido"></label>
+					</div>
+					<div class="Data-da-venda">
+						<input type="date" class="input" id="Data-da-venda" required>
+						<label for="Data-da-venda"></label>
+					</div>
+					<div class="Prazo-de-entrega">
+						<input type="number" class="input" id="Prazo-de-entrega" required>
+						<label for="Total"></label>
+					</div>
+					<div class="Cliente">
+						<input type="text" class="input" id="Cliente" required>
+						<label for="Cliente"></label>
+					</div>
+					<div class="Pedido-feito-por">
+						<input type="text" class="input" id="Pedido-feito-por" required>
+						<label for="Usuario"></label>
+					</div>
+					<div class="Data-cadastro">
+						<input type="date" class="input" id="Data-cadastro" required>
+						<label for="Data-cadastro"></label>
+					</div>
+
+					<div class="pesquise-produto">
+						<input type="text" class="input" id="pesquise-produto" placeholder="Pesquise o produto do pedido para adicionar">
+						<label for="pesquise-produto"></label>
+					</div>
+				</form>
+			</div>
+
+    		
+    		
+    		
+    		
+    		
+    		<div class="status">Status</div>
+    		
+    		
+    		<div class="frame-div">
+    		</div>
+
+    		<img class="clique-em-pedido-child4" alt="" src="Imagens/Rectangle 79.png">
+    		
+    		<div class="cdigo">Código</div>
+    		<div class="descrio">Descrição</div>
+    		<div class="quantidade">Quantidade</div>
+    		<div class="line-div">
+    		</div>
+    		<div class="group-div">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor">4</div>
+        				<div class="div">     Produto</div>
+        				<div class="div1">                 100</div>
+      			</div>
+    		</div>
+    		<div class="nome-do-fornecedor1"></div>
+    		<div class="em-planejamento"></div>
+    		<div class="nome-do-cliente"></div>
+    		<div class="div2"></div>
+    		<div class="div3"></div>
+    		<div class="abigail-narciso"></div>
+    		<div class="clique-em-pedido-inner1">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor2">1</div>
+        				<div class="div">     Produto</div>
+        				<div class="div1">                 100</div>
+      			</div>
+    		</div>
+    		<div class="clique-em-pedido-inner2">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor">9</div>
+        				<div class="div">     Produto</div>
+        				<div class="div7">            200</div>
+      			</div>
+    		</div>
+    		<div class="clique-em-pedido-inner3">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor">5</div>
+        				<div class="div">     Produto</div>
+        				<div class="div7">            200</div>
+      			</div>
+    		</div>
+    		<div class="clique-em-pedido-inner4">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor">2</div>
+        				<div class="div">     Produto</div>
+        				<div class="div7">            150</div>
+      			</div>
+    		</div>
+    		<div class="clique-em-pedido-inner5">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor6">6</div>
+        				<div class="div">     Produto</div>
+        				<div class="div7">            150</div>
+      			</div>
+    		</div>
+    		<div class="clique-em-pedido-inner6">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor6">3</div>
+        				<div class="div">     Produto</div>
+        				<div class="div7">            150</div>
+      			</div>
+    		</div>
+    		<div class="clique-em-pedido-inner7">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor6">7</div>
+        				<div class="div">     Produto</div>
+        				<div class="div7">            150</div>
+      			</div>
+    		</div>
+    		<div class="clique-em-pedido-inner8">
+      			<div class="rectangle-parent">
+        				<div class="rectangle-parent">
+        				</div>
+        				<div class="nome-do-fornecedor6">7</div>
+        				<div class="div">     Produto</div>
+        				<div class="div7">            150</div>
+      			</div>
+    		</div>
+    		<img class="down-arrow-icon1" alt="" src="Imagens/Down arrow.png">
+    		
+    		<img class="down-arrow-icon2" alt="" src="Imagens/Down arrow.png">
+    		
+    		<div class="salvar-wrapper" id="frameContainer2">
+      			<b class="pesquise-o-produto" id="frameContainer2">Salvar Edição</b>
+    		</div>
+    		<div class="sapooooooooo">
+      			<img class="sapoo-1-icon" alt="" src="Imagens/Sapoo 1.png">
+      			
+      			<b class="desenvolvido-por-sapoo"></b>
+    		</div>
+    		<img class="profile-icon" alt="" src="Imagens/Icone 1.png">
+    		
+		</div>
+	</div>
+    		<div class="novo-bar">
+      			<div class="novo-bar1">
+        				<div class="novo-bar2">
+          					<div class="novo-bar-child">
+          					</div>
+        				</div>
+        				<div class="menu-bar">
+          					<div class="gerenciar">Gerenciar</div>
+          					<div class="profile">
+            						<div class="ol">
+              							<p class="estrela-do-vale">Olá,</p>
+            						</div>
+            						<div class="abigail">
+              							<div class="pedido-de-venda">
+                								<p class="estrela-do-vale">Abigail</p>
+              							</div>
+            						</div>
+          					</div>
+          					<img class="morango-2-icon" alt="" src="Imagens/morango 2.png">
+          					
+          					<img class="menu-bar-child" alt="" src="Imagens/Line 5.png">
+          					
+          					<div class="estrela-do-vale-wrapper">
+            						<b class="pesquise-o-produto">
+              							<p class="estrela-do-vale">Estrela do Vale</p>
+            						</b>
+          					</div>
+          					<img class="menu-bar-item" alt="" src="Imagens/Line 4.png">
+          					
+        				</div>
+        				<img class="profile-icon1" alt="" src="Imagens/Icone 1.png">
+        				
+      			</div>
+      			<div id="dashboard" class="component-36">
+        			
+        				
+        				<div class="dashboard-wrapper">
+          					<div class="pedido-de-venda">Dashboard</div>
+        				</div>
+        				<img class="icone-mao" alt="" src="Imagens/estatisticas (1) 4.png">
+        				
+      			</div>
+      			<div id="produtos" class="component-32">
+        		
+        				
+        				<img class="vector-icon4" alt="" src="Imagens/Vector(caixa).png">
+        				
+        				<div class="produtos-wrapper">
+          					<div class="pedido-de-venda">Produtos</div>
+        				</div>
+      			</div>
+      			<div id="producao" class="component-35">
+        				
+        				
+        				<div class="produo-wrapper">
+          					<div class="pedido-de-venda">Produção</div>
+        				</div>
+        				<img class="icone-mao" alt="" src="Imagens/Icone mao.png">
+        				
+      			</div>
+      			<div id="pedidosdevenda" class="component-33">
+        			
+        				
+        				<div class="pedidos-de-venda-wrapper">
+          					<div class="pedido-de-venda">Pedidos de venda</div>
+        				</div>
+        				<img class="cesta-de-compras-4-icon" alt="" src="Imagens/cesta-de-compras 4.png">
+        				
+      			</div>
+      			<div id="clientes" class="component-31">
+        	
+        				
+        				<div class="clientes-wrapper">
+          					<div class="pedido-de-venda">Clientes</div>
+        				</div>
+        				<img class="cesta-de-compras-4-icon" alt="" src="Imagens/Icone cliente.png">
+        				
+      			</div>
+      			<div id="fornecedores" class="component-47">
+        			
+        				
+        				<div class="fornecedores-wrapper">
+          					<div class="pedido-de-venda">Fornecedores</div>
+        				</div>
+        				<img class="vector-icon9" alt="" src="Imagens/Vector (caminhao).png">
+        				
+      			</div>
+      			<div id="relatorios" class="component-29">
+        			
+        				
+        				<div class="relatrios-wrapper">
+          					<div class="pedido-de-venda">Relatórios</div>
+        				</div>
+        				<img class="contract-fill0-wght400-grad0-o-icon" alt="" src="Imagens/contract_FILL0_wght400_GRAD0_opsz24 5.png">
+        				
+      			</div>
+      			<div id="configuracoes" class="component-40" id="component40Container">
+        			
+        				
+        				<div class="configuraes">Configurações</div>
+        				<img class="definicoes-2-icon" alt="" src="Imagens/definicoes 2.png">
+        				
+      			</div>
+    		</div>
+
+    		<div class="clique-em-pedido-inner9" id="frameContainer4">
+      			<div id="fechar" class="fechar-wrapper">
+					 <div class="fechar" id="fechar">Fechar</div>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+			var cruz1Icon = document.getElementById("cruz1Icon");
+    		if(cruz1Icon) {
+      			cruz1Icon.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var groupContainer = document.getElementById("groupContainer");
+    		if(groupContainer) {
+      			groupContainer.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var component40Container = document.getElementById("component40Container");
+    		if(component40Container) {
+      			component40Container.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+			document.getElementById("produtos").addEventListener("click",redirecionar)
+			document.getElementById("relatorios").addEventListener("click",redirecionar)
+			document.getElementById("configuracoes").addEventListener("click",redirecionar)
+			document.getElementById("clientes").addEventListener("click",redirecionar)
+			document.getElementById("fornecedores").addEventListener("click",redirecionar)
+			document.getElementById("producao").addEventListener("click",redirecionar)
+			document.getElementById("pedidosdevenda").addEventListener("click",redirecionar)
+			document.getElementById("dashboard").addEventListener("click",redirecionar)
+			document.getElementById("fechar").addEventListener("click",redirecionar)
+			document.getElementById("frameContainer2").addEventListener("click",redirecionar)
+			
+
+			
+			function redirecionar(event){
+				switch(event.target.id){
+					case "frameContainer2":
+						RedirecionarPara("../../../PesquisaVenda/PesquisaVenda.html")
+						break					
+					case "fechar":
+						RedirecionarPara("../../../PesquisaVenda/PesquisaVenda.html")
+						break
+					case "dashboard":
+						RedirecionarPara("../../../Dashboard/Dashboard.html")
+						break
+					case "relatorios":
+						RedirecionarPara("../../../Relatorios/Relatorios.html")
+						break
+					case "configuracoes":
+						RedirecionarPara("../../../Configuracoes/Configuracoes.html")
+						break
+					case "clientes":
+						RedirecionarPara("../../../PesquisaCliente/PesquisaCliente.html")
+						break
+					case "fornecedores":
+						RedirecionarPara("../../../PesquisaFornecedor/PesquisaFornecedor.html")
+						break
+					case "produtos":
+						RedirecionarPara("../../../PesquisaProduto/PesquisaProduto.html")
+						break
+					case "producao":
+						RedirecionarPara("../../../PesquisaProducao/PesquisaProducao.html")
+						break
+					case "pedidosdevenda":
+						RedirecionarPara("../../../PesquisaVenda/PesquisaVenda.html")
+						break
+						
+				}
+			}
+			function RedirecionarPara (pagina){
+				location.replace(pagina)
+			}
+			var botao = document.getElementById("addnovo4")
+			console.log(botao)
+			botao.addEventListener("click", ()=>{
+				console.log("pudim")
+				location.replace("../PesquisaVenda/NovoPedido/NovoPedido.html")
+				})
+    		var frameContainer2 = document.getElementById("frameContainer2");
+    		if(frameContainer2) {
+      			frameContainer2.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var cruz1Icon = document.getElementById("cruz1Icon");
+    		if(cruz1Icon) {
+      			cruz1Icon.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var component40Container = document.getElementById("component40Container");
+    		if(component40Container) {
+      			component40Container.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var frameContainer4 = document.getElementById("frameContainer4");
+    		if(frameContainer4) {
+      			frameContainer4.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+</script
+			function RedirecionarPara (pagina){
+				location.replace(pagina)
+			}
+			var botao = document.getElementById("fechar")
+			console.log(botao)
+			botao.addEventListener("click", ()=>{
+				console.log("pudim")
+				location.replace("/src/pages/editor/PesquisaVenda/PesquisaVenda.html")
+			})
+			</script></body>
+</html>

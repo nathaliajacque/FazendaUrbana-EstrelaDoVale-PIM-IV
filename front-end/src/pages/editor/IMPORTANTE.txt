@@ -1,0 +1,10 @@
+componente 29: relatorios --> contract_fill0...png
+componente 36: dashboard --> estatisticas(1)4.png
+componente 31: clientes --> icone cliente.png
+componente 32: produtos --> vector(caixa).png
+componente 33: pedidos de venda --> cesta de compras 4.png
+componente 35: producao --> icone mao.png
+componente 40: configuracoes -> definicoes2.png
+componente 46/47: fornecedores --> vector(caminhao).png
+frame 23/29: novo
+frame 28: pesquisa o cliente

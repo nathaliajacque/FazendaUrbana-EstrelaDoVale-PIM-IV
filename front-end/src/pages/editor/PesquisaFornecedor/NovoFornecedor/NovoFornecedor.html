@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="NovoFornecedor.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" />
+
+	  <style>
+		body, html {
+				   margin: 0;
+				   padding: 0;
+				   overflow: hidden; /* Remove a barra de rolagem */
+				   height: 100%;
+		}
+		   </style>
+  	
+  	
+  	
+</head>
+<body>
+	<div class="container-novo-fornecedor">
+  	<div class="novo-fornecedor">
+    		<img class="retangulo-fornecedor-icon" alt="" src="Imagens/Retangulo fornecedor.png">
+    		
+
+    		
+    		<div class="novo-fornecedor-child">
+    		</div>
+    		<div class="novo-fornecedor-item">
+    		</div>
+    		<div class="novo-fornecedor-inner">
+    		</div>
+    		<div class="dados-gerais">Dados gerais</div>
+    		<div class="endereo">Endereço</div>
+    		<div class="informaes-gerais">Informações gerais</div>
+    		<div class="cdigo">Código</div>
+			
+    		<div class="nome-fantasia">Nome fantasia *</div>
+    		<div class="razo-social">Razão social</div>
+    		<div class="status">Status</div>
+			<div class="Usuario">Usuario</div>
+    		<div class="cpfcnpj">CPF/CNPJ *</div>
+    		<div class="ie">IE</div>
+    		<div class="im">IM</div>
+
+			<div class="dados gerais">
+				<form>
+					<div class="codigo">
+						<input type="number" class="input" id="codigo" required>
+						<label for="codigo"></label>
+					</div>
+					<div class="CPF">
+						<input type="text" class="input" id="cpf" required>
+						<label for="CPF"></label>
+					</div>
+					<div class="IE">
+						<input type="text" class="input" id="ie" required>
+						<label for="IE"></label>
+					</div>
+					<div class="Nome-fantasia1">
+						<input type="text" class="input" id="nome-fantasia1" required>
+						<label for="Nome fantasia"></label>
+					</div>
+					<div class="razao-social">
+						<input type="text" class="input" id="razao-social" required>
+						<label for="razao social"></label>
+					</div>
+					<div class="IM">
+						<input type="text" class="input" id="im" required>
+						<label for="IM"></label>
+					</div>
+				</form>
+			</div>
+
+			<div class="endereco">
+				<form>
+					<div class="CEP">
+						<input type="text" class="input" id="CEP" required>
+						<label for="codigo"></label>
+					</div>
+					<div class="Logradouro">
+						<input type="text" class="input" id="Logradouro" required>
+						<label for="Logradouro"></label>
+					</div>
+					<div class="Numero">
+						<input type="number" class="input" id="Numero" required>
+						<label for="Numero"></label>
+					</div>
+					<div class="Complemento">
+						<input type="text" class="input" id="Complemento" required>
+						<label for="Complemento"></label>
+					</div>
+					<div class="Cidade">
+						<input type="text" class="input" id="Cidade" required>
+						<label for="Cidade"></label>
+					</div>
+					<div class="Bairro">
+						<input type="text" class="input" id="Bairro" required>
+						<label for="Bairro"></label>
+					</div>
+					<div class="UF">
+						<input type="text" class="input" id="UF" required>
+						<label for="UF"></label>
+					</div>
+					<div class="País">
+						<input type="text" class="input" id="País" required>
+						<label for="País"></label>
+					</div>
+				</form>
+			</div>
+
+			<div class="informacoes-gerais">
+				<form>
+					<div class="Contato">
+						<input type="tel" class="input" id="Contato" required>
+						<label for="Contato"></label>
+					</div>
+					<div class="Prazo-de-entrega">
+						<input type="date" class="input" id="Prazo-de-entrega" required>
+						<label for="Prazo-de-entrega"></label>
+					</div>
+					<div class="Data-cadastro">
+						<input type="date" class="input" id="Data-cadastro" required>
+						<label for="Data-cadastro"></label>
+					</div>
+					<div class="E-mail">
+						<input type="email" class="input" id="E-mail" required>
+						<label for="E-mail-1"></label>
+					</div>
+					<div class="E-mail">
+						<input type="email" class="input" id="E-mail2" required>
+						<label for="E-mail-2"></label>
+					</div>
+					<div class="Observação">
+						<input type="text" class="input" id="Observação" required>
+						<label for="Observação"></label>
+					</div>
+					<div class="Observação">
+						<input type="text" class="input" id="Usuario" required>
+						<label for="Usuario"></label>
+					</div>
+				</form>
+			</div>
+			<select name="select" class="statusfornecedores">
+				<option value="valor1">Ativo</option>
+				<option value="valor2">Inativo</option>
+			</select>
+ 
+    		
+    		
+    		
+    		
+    		<div class="cep">CEP</div>
+    		<div class="contato">Contato*</div>
+    		<div class="cidade">Cidade</div>
+    		<div class="observao">Observação</div>
+    		<div class="e-mail">E-mail 1</div>
+			<div class="e-mail2">E-mail 2</div>
+    		<div class="prazo-de-entrega">Prazo de entrega</div>
+    		<div class="uf">UF</div>
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		<div class="logradouro">Logradouro</div>
+    		<div class="n">Nº</div>
+    		<div class="pas">País</div>
+    		
+    		<div class="complemento">Complemento</div>
+    		
+    		
+    		<div class="bairro">Bairro</div>
+    		
+    		
+    		
+    		<div class="data-cadastro">Data cadastro</div>
+    		
+    		
+    		
+    		<div class="fornecedores-parent">
+      			<div class="fornecedores">Fornecedores</div>
+      			<img class="icone-caminhao" alt="" src="Imagens/Icone caminhao(usar).png">
+      			
+    		</div>
+    		
+    		<div class="disco-1-1-parent" id="salvar">
+      			<img class="disco-1-1" id="salvar" alt="" src="Imagens/disco (1) 1.png">
+      			
+      			<div class="salvar" id="salvar">Salvar</div>
+    		</div>
+    		<div class="sapooooooooo">
+      			<img class="sapoo-1-icon" alt="" src="Imagens/Sapoo 1.png">
+      			
+      			<b class="desenvolvido-por-sapoo">Desenvolvido por SAPOO © </b>
+    		</div>
+		</div>
+	</div>
+    		<div class="novo-bar">
+      			<div class="novo-bar1">
+        				<div class="novo-bar2">
+          					<div class="novo-bar-child">
+          					</div>
+        				</div>
+        				<div class="menu-bar">
+          					<div class="gerenciar">Gerenciar</div>
+          					<div class="profile">
+            						<div class="ol">
+              							<p class="estrela-do-vale">Olá,</p>
+            						</div>
+            						<div class="abigail">
+              							<div class="fornecedores">
+                								<p class="estrela-do-vale">Abigail</p>
+              							</div>
+            						</div>
+          					</div>
+          					<img class="morango-2-icon" alt="" src="Imagens/morango 2.png">
+          					
+          					<img class="menu-bar-child" alt="" src="Imagens/Line 5.png">
+          					
+          					<div class="estrela-do-vale-wrapper">
+            						<b class="estrela-do-vale-container">
+              							<p class="estrela-do-vale">Estrela do Vale</p>
+            						</b>
+          					</div>
+          					<img class="menu-bar-item" alt="" src="Imagens/Line 4.png">
+          					
+        				</div>
+        				<img class="profile-icon" alt="" src="Imagens/Icone 1.png">
+        				
+      			</div>
+      			<div id="dashboard" class="component-36">
+
+        				
+        				<div class="dashboard-wrapper">
+          					<div class="fornecedores">Dashboard</div>
+        				</div>
+        				<img class="icone-mao" alt="" src="Imagens/estatisticas (1) 4.png">
+        				
+      			</div>
+      			<div id="produtos" class="component-32">
+
+        				
+        				<img class="vector-icon2" alt="" src="Imagens/Vector(caixa).png">
+        				
+        				<div class="produtos-wrapper">
+          					<div class="fornecedores">Produtos</div>
+        				</div>
+      			</div>
+      			<div id="producao" class="component-35">
+       
+        				<div class="produo-wrapper">
+          					<div class="fornecedores">Produção</div>
+        				</div>
+        				<img class="icone-mao" alt="" src="Imagens/Icone mao.png">
+        				
+      			</div>
+      			<div id="pedidosdevenda" class="component-33">
+    
+        				
+        				<div class="pedidos-de-venda-wrapper">
+          					<div class="fornecedores">Pedidos de venda</div>
+        				</div>
+        				<img class="cesta-de-compras-4-icon" alt="" src="Imagens/cesta-de-compras 4.png">
+        				
+      			</div>
+      			<div id="clientes" class="component-31">
+        	
+        				
+        				<div class="clientes-wrapper">
+          					<div class="fornecedores">Clientes</div>
+        				</div>
+        				<img class="cesta-de-compras-4-icon" alt="" src="Imagens/Icone cliente.png">
+        				
+      			</div>
+      			<div id="fornecedores" class="component-47">
+        
+        				
+        				<div class="fornecedores-wrapper">
+          					<div class="fornecedores">Fornecedores</div>
+        				</div>
+        				<img class="vector-icon7" alt="" src="Imagens/Vector (caminhao).png">
+        				
+      			</div>
+      			<div id="relatorios" class="component-29">
+        		
+        				
+        				<div class="relatrios-wrapper">
+          					<div class="fornecedores">Relatórios</div>
+        				</div>
+        				<img class="contract-fill0-wght400-grad0-o-icon" alt="" src="Imagens/contract_FILL0_wght400_GRAD0_opsz24 5.png">
+        				
+      			</div>
+      			<div id="configuracoes" class="component-40" id="component40Container">
+       
+        				
+        				<div class="configuraes">Configurações</div>
+        				<img class="definicoes-2-icon" alt="" src="Imagens/definicoes 2.png">
+        				
+      			</div>
+    		</div>
+    		<div class="frame-div" id="frameContainer2">
+      			<div id="fechar5" class="fechar-wrapper">
+        				<div class="fechar">Fechar</div>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var cruz1Icon = document.getElementById("cruz1Icon");
+    		if(cruz1Icon) {
+      			cruz1Icon.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var component40Container = document.getElementById("component40Container");
+    		if(component40Container) {
+      			component40Container.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var frameContainer2 = document.getElementById("frameContainer2");
+    		if(frameContainer2) {
+      			frameContainer2.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+			document.getElementById("produtos").addEventListener("click",redirecionar)
+			document.getElementById("relatorios").addEventListener("click",redirecionar)
+			document.getElementById("configuracoes").addEventListener("click",redirecionar)
+			document.getElementById("clientes").addEventListener("click",redirecionar)
+			document.getElementById("fornecedores").addEventListener("click",redirecionar)
+			document.getElementById("producao").addEventListener("click",redirecionar)
+			document.getElementById("pedidosdevenda").addEventListener("click",redirecionar)
+			document.getElementById("dashboard").addEventListener("click",redirecionar)
+			document.getElementById("salvar").addEventListener("click",redirecionar)
+
+
+			function redirecionar(event){
+				switch(event.target.id){
+					case "salvar":
+						RedirecionarPara("../../PesquisaFornecedor/PesquisaFornecedor.html")
+						break
+					case "dashboard":
+						RedirecionarPara("../../Dashboard/Dashboard.html")
+						break
+					case "relatorios":
+						RedirecionarPara("../../Relatorios/Relatorios.html")
+						break
+					case "configuracoes":
+						RedirecionarPara("../../Configuracoes/Configuracoes.html")
+						break
+					case "clientes":
+						RedirecionarPara("../../PesquisaCliente/PesquisaCliente.html")
+						break
+					case "fornecedores":
+						RedirecionarPara("../../PesquisaFornecedor/PesquisaFornecedor.html")
+						break
+					case "produtos":
+						RedirecionarPara("../../PesquisaProduto/PesquisaProduto.html")
+						break
+					case "producao":
+						RedirecionarPara("../../PesquisaProducao/PesquisaProducao.html")
+						break
+					case "pedidosdevenda":
+						RedirecionarPara("../../PesquisaVenda/PesquisaVenda.html")
+						break
+						
+				}
+			}
+			function RedirecionarPara (pagina){
+				location.replace(pagina)
+			}
+			var botao = document.getElementById("fechar5")
+			console.log(botao)
+			botao.addEventListener("click", ()=>{
+				console.log("pudim")
+				location.replace("../../PesquisaFornecedor/PesquisaFornecedor.html")
+			})
+			var botao = document.getElementById("salvar5")
+			console.log(botao)
+			botao.addEventListener("click", ()=>{
+				console.log("pudim")
+				location.replace("../../PesquisaFornecedor/PesquisaFornecedor.html")
+			})
+			</script></body>
+</html>

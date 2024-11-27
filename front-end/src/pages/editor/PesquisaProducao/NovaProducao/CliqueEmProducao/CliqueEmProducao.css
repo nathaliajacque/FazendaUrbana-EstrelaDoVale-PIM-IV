@@ -1,0 +1,1211 @@
+.retangulo-fornecedor-icon {
+    position: absolute;
+    top: 40px;
+    left: 420px;
+    border-radius: 16px;
+    width: 980px;
+    height: 940px;
+}
+.produo {
+    position: relative;
+    font-weight: 600;
+}
+.vector-icon {
+    width: 32px;
+    position: relative;
+    height: 32px;
+}
+.produo-parent {
+    position: absolute;
+    top: 40px;
+    left: 806px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    font-size: 32px;
+    color: #444;
+}
+#numero-pedido {
+    width: 100%; /* Faz o input ocupar toda a largura do seu contêiner */
+    padding: 0.2px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+    position: absolute;
+    position: absolute;
+    top: 189px;
+    left: 500px;
+    width: 140px;
+    height: 32px;
+}
+
+#numero-pedido:hover {
+    border-color: #007BFF; /* Borda azul ao focar */
+    box-shadow: 0 0 17px rgba(0, 123, 255, 0.5); /* Sombras suaves ao redor */
+    border-radius: 12px;
+    transition: border-radius 0.6s ease;
+    transition: border-color 0.6s ease;
+}
+#numero-producao {
+    width: 100%; /* Faz o input ocupar toda a largura do seu contêiner */
+    padding: 0.2px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+    position: absolute;
+    top: 189px;
+    left: 680px;
+    width: 140px;
+    height: 32px;
+}
+
+#numero-producao:hover {
+    border-color: #007BFF; /* Borda azul ao focar */
+    box-shadow: 0 0 17px rgba(0, 123, 255, 0.5); /* Sombras suaves ao redor */
+    border-radius: 12px;
+    transition: border-radius 0.6s ease;
+    transition: border-color 0.6s ease;
+}
+#data-inicio {
+    width: 100%; /* Faz o input ocupar toda a largura do seu contêiner */
+    padding: 0.2px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+    position: absolute;
+    top: 189px;
+    left: 861px;
+    width: 200px;
+    height: 32px;
+}
+
+#data-inicio:hover {
+    border-color: #007BFF; /* Borda azul ao focar */
+    box-shadow: 0 0 17px rgba(0, 123, 255, 0.5); /* Sombras suaves ao redor */
+    border-radius: 12px;
+    transition: border-radius 0.6s ease;
+    transition: border-color 0.6s ease;
+}
+#Data-prevista {
+    width: 100%; /* Faz o input ocupar toda a largura do seu contêiner */
+    padding: 0.2px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+    position: absolute;
+    top: 189px;
+    left: 1100px;
+    width: 220px;
+    height: 32px;
+}
+
+#Data-prevista:hover {
+    border-color: #007BFF; /* Borda azul ao focar */
+    box-shadow: 0 0 17px rgba(0, 123, 255, 0.5); /* Sombras suaves ao redor */
+    border-radius: 12px;
+    transition: border-radius 0.6s ease;
+    transition: border-color 0.6s ease;
+}
+#Cliente {
+    width: 100%; /* Faz o input ocupar toda a largura do seu contêiner */
+    padding: 0.2px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+    position: absolute;
+    top: 268px;
+    left: 500px;
+    width: 320px;
+    height: 32px;
+}
+.statusfornecedores {
+    position: absolute;
+    top: 268px;
+    left: 861px;
+    border-radius: 8px;
+    width: 160px;
+    height: 32px;
+}
+#Cliente:hover {
+    border-color: #007BFF; /* Borda azul ao focar */
+    box-shadow: 0 0 17px rgba(0, 123, 255, 0.5); /* Sombras suaves ao redor */
+    border-radius: 12px;
+    transition: border-radius 0.6s ease;
+    transition: border-color 0.6s ease;
+}
+#Data-cadastro {
+    width: 100%; /* Faz o input ocupar toda a largura do seu contêiner */
+    padding: 0.2px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+    position: absolute;
+    top: 268px;
+    left: 1100px;
+    width: 220px;
+    height: 32px;
+}
+
+#Data-cadastro:hover {
+    border-color: #007BFF; /* Borda azul ao focar */
+    box-shadow: 0 0 17px rgba(0, 123, 255, 0.5); /* Sombras suaves ao redor */
+    border-radius: 12px;
+    transition: border-radius 0.6s ease;
+    transition: border-color 0.6s ease;
+}
+.produtos-do-pedido {
+    position: absolute;
+    top: 345px;
+    left: 797px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.clique-em-produo-child {
+    position: absolute;
+    top: 380px;
+    left: 460px;
+    border-radius: 8px;
+    width: 900px;
+    height: 420px;
+}
+.cdigo {
+    position: absolute;
+    top: 397px;
+    left: 563px;
+    font-weight: 600;
+    color: #444;
+}
+.descrio {
+    position: absolute;
+    top: 397px;
+    left: 872px;
+    font-weight: 600;
+    color: #444;
+}
+.quantidade {
+    position: absolute;
+    top: 397px;
+    left: 1180px;
+    font-weight: 600;
+    color: #444;
+}
+.clique-em-produo-item {
+    position: absolute;
+    top: 419.5px;
+    left: 519.5px;
+    border-top: 1px solid #444;
+    box-sizing: border-box;
+    width: 781px;
+    height: 1px;
+}
+.down-arrow-icon {
+    position: absolute;
+    top: 389px;
+    left: 1332px;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+.down-arrow-icon1 {
+    position: absolute;
+    top: 776px;
+    left: 1332px;
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+}
+.clique-em-produo-inner {
+    position: absolute;
+    top: 140px;
+    left: 460px;
+    border-radius: 8px;
+    background-color: rgba(106, 153, 78, 0.08);
+    border: 2px solid rgba(106, 153, 78, 0.4);
+    box-sizing: border-box;
+    width: 900px;
+    height: 180px;
+}
+.n-pedido {
+    position: absolute;
+    top: 160px;
+    left: 499px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+.n-produo {
+    position: absolute;
+    top: 160px;
+    left: 679px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+.cliente {
+    position: absolute;
+    top: 240px;
+    left: 500px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+.data-do-incio {
+    position: absolute;
+    top: 160px;
+    left: 859px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+.data-prevista {
+    position: absolute;
+    top: 160px;
+    left: 1099px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+.rectangle-icon {
+    position: absolute;
+    top: 189px;
+    left: 1100px;
+    border-radius: 8px;
+    width: 220px;
+    height: 32px;
+}
+.rectangle-icon:hover{
+    cursor: text;
+}
+.clique-em-produo-child1 {
+    position: absolute;
+    top: 188px;
+    left: 500px;
+    border-radius: 8px;
+    width: 140px;
+    height: 32px;
+}
+.clique-em-produo-child1:hover{
+    cursor: text;
+}
+.clique-em-produo-child2 {
+    position: absolute;
+    top: 189px;
+    left: 680px;
+    border-radius: 8px;
+    width: 140px;
+    height: 32px;
+}
+.clique-em-produo-child2:hover{
+    cursor: text;
+}
+.clique-em-produo-child3 {
+    position: absolute;
+    top: 268px;
+    left: 500px;
+    border-radius: 8px;
+    width: 320px;
+    height: 32px;
+}
+.clique-em-produo-child3:hover{
+    cursor: text;
+}
+.clique-em-produo-child4 {
+    position: absolute;
+    top: 189px;
+    left: 860px;
+    border-radius: 8px;
+    width: 200px;
+    height: 32px;
+}
+.clique-em-produo-child4:hover{
+    cursor: text;
+}
+.status {
+    position: absolute;
+    top: 240px;
+    left: 860px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+}
+.clique-em-produo-child5 {
+    position: absolute;
+    top: 268px;
+    left: 860px;
+    border-radius: 8px;
+    width: 200px;
+    height: 32px;
+}
+.clique-em-produo-child5:hover{
+    cursor: pointer;
+}
+.down-arrow-icon2 {
+    position: absolute;
+    top: 278px;
+    left: 1040px;
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+}
+.o-controle-do {
+    position: absolute;
+    top: 847px;
+    left: calc(50% - 61px);
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.component-3-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 2px;
+    background-color: #efffec;
+    border: 1px solid #444;
+    box-sizing: border-box;
+}
+.salvar {
+    position: relative;
+}
+.salvar-wrapper {
+    position: absolute;
+    top: 906px;
+    left: 800px;
+    border-radius: 8px;
+    background-color: #6a994e;
+    width: 220px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #efffec;
+}
+.salvar-wrapper:hover{
+    background-color: #6A994E99;
+    cursor: pointer;
+}
+.sapoo-1-icon {
+    position: absolute;
+    top: 0px;
+    left: 34px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.desenvolvido-por-sapoo {
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+.sapooooooooo {
+    position: absolute;
+    top: 980px;
+    left: 856px;
+    width: 108px;
+    height: 42px;
+    font-size: 8px;
+    color: rgba(68, 68, 68, 0.3);
+}
+.data-cadastro {
+    position: absolute;
+    top: 240px;
+    left: 1099px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    text-align: left;
+    display: inline-block;
+    width: 140px;
+}
+.clique-em-produo-child6 {
+    position: absolute;
+    top: 268px;
+    left: 1100px;
+    border-radius: 8px;
+    width: 220px;
+    height: 32px;
+}
+.clique-em-produo-child6:hover{
+    cursor: text;
+}
+
+.nome-do-fornecedor {
+    position: absolute;
+    top: 25%;
+    left: 13.81%;
+    font-weight: 600;
+}
+.div {
+    position: absolute;
+    top: 25%;
+    left: 43.68%;
+    font-weight: 600;
+    white-space: pre-wrap;
+}
+.div1 {
+    position: absolute;
+    top: 25%;
+    left: 74.58%;
+    font-weight: 600;
+    white-space: pre-wrap;
+}
+.rectangle-parent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+}
+.rectangle-parent:hover{
+    background-color: #a6c295;
+}
+.group-div {
+    position: absolute;
+    top: 420px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.nome-do-fornecedor1 {
+    position: absolute;
+    top: 25%;
+    left: 14.04%;
+    font-weight: 600;
+}
+.clique-em-produo-inner1 {
+    position: absolute;
+    top: 580px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.div5 {
+    position: absolute;
+    top: 25%;
+    left: 77.15%;
+    font-weight: 600;
+    white-space: pre-wrap;
+    text-align: left;
+}
+.clique-em-produo-inner2 {
+    position: absolute;
+    top: 460px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.clique-em-produo-inner3 {
+    position: absolute;
+    top: 620px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.clique-em-produo-inner4 {
+    position: absolute;
+    top: 500px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.nome-do-fornecedor5 {
+    position: absolute;
+    top: 25%;
+    left: 13.93%;
+    font-weight: 600;
+}
+.clique-em-produo-inner5 {
+    position: absolute;
+    top: 660px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.clique-em-produo-inner6 {
+    position: absolute;
+    top: 540px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.clique-em-produo-inner7 {
+    position: absolute;
+    top: 700px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.clique-em-produo-inner8 {
+    position: absolute;
+    top: 740px;
+    left: 462px;
+    width: 896px;
+    height: 40px;
+}
+.cruz-1-icon {
+    position: absolute;
+    top: 60px;
+    left: 1356px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.novo-bar-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #6a994e;
+    width: 380px;
+    height: 1040px;
+}
+.novo-bar2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1040px;
+}
+.gerenciar {
+    position: absolute;
+    top: 253px;
+    left: 0px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.53);
+    text-shadow: 1px 0 0 #6a994e, 0 1px 0 #6a994e, -1px 0 0 #6a994e, 0 -1px 0 #6a994e;
+}
+.ol {
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    font-weight: 600;
+    text-shadow: 1px 0 0 #6a994e, 0 1px 0 #6a994e, -1px 0 0 #6a994e, 0 -1px 0 #6a994e;
+}
+.abigail {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-size: 24px;
+    font-family: Quicksand;
+}
+.profile {
+    position: absolute;
+    top: 903px;
+    left: 49px;
+    width: 110px;
+    height: 94px;
+}
+.morango-2-icon {
+    position: absolute;
+    top: 19px;
+    left: 13px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+.menu-bar-child {
+    position: absolute;
+    top: 774px;
+    left: 4.5px;
+    max-height: 100%;
+    width: 299.5px;
+}
+.estrela-do-vale {
+    margin: 0;
+}
+.estrela-do-vale-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-size: 32px;
+    font-family: Quicksand;
+}
+.menu-bar-item {
+    position: absolute;
+    top: 69px;
+    left: 1px;
+    max-height: 100%;
+    width: 300px;
+}
+.menu-bar {
+    position: absolute;
+    top: 44px;
+    left: 36px;
+    width: 306px;
+    height: 997px;
+}
+.profile-icon {
+    position: absolute;
+    top: 942px;
+    left: 35px;
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+}
+.profile-icon:hover{
+    cursor: pointer;
+}
+.novo-bar1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1041px;
+    font-size: 16px;
+}
+.vector-icon1 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 3.22%;
+    right: 0%;
+    bottom: 1.62%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.dashboard-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 42.97%;
+    top: 0%;
+    right: 43.78%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+.component-36 {
+    position: absolute;
+    top: 206px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-36:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon3 {
+    position: absolute;
+    height: 51.45%;
+    width: 8.65%;
+    top: 22.58%;
+    right: 85.14%;
+    bottom: 25.97%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.produtos-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 36.76%;
+    top: 0%;
+    right: 50%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+.component-32 {
+    position: absolute;
+    top: 458px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-32:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.produo-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 38.65%;
+    top: 0%;
+    right: 48.11%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+.icone-mao {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 24.19%;
+    right: 85.14%;
+    bottom: 24.19%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-35 {
+    position: absolute;
+    top: 338px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-35:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.pedidos-de-venda-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 63.51%;
+    top: 0%;
+    right: 23.24%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+.cesta-de-compras-4-icon {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 22.58%;
+    right: 85.14%;
+    bottom: 25.81%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-33 {
+    position: absolute;
+    top: 398px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-33:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+.clientes-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 32.97%;
+    top: 0%;
+    right: 53.51%;
+    bottom: 0%;
+    left: 13.51%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+.component-31 {
+    position: absolute;
+    top: 518px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-31:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon7 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 3.23%;
+    right: 0%;
+    bottom: 1.61%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.fornecedores-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 32.97%;
+    top: 0%;
+    right: 44.32%;
+    bottom: 0%;
+    left: 22.7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+.vector-icon8 {
+    position: absolute;
+    height: 47.26%;
+    width: 8.65%;
+    top: 27.42%;
+    right: 85.14%;
+    bottom: 25.32%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-47 {
+    position: absolute;
+    top: 578px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-47:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon9 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 1.61%;
+    right: 0%;
+    bottom: 3.23%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.relatrios-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 40.54%;
+    top: 0%;
+    right: 45.14%;
+    bottom: 0%;
+    left: 14.32%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+.contract-fill0-wght400-grad0-o-icon {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 24.19%;
+    right: 84.32%;
+    bottom: 24.19%;
+    left: 7.03%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-29 {
+    position: absolute;
+    top: 733px;
+    left: 9px;
+    width: 370px;
+    height: 62px;
+}
+.component-29:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+.vector-icon10 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.configuraes {
+    position: absolute;
+    top: 23.73%;
+    left: 18.92%;
+    font-weight: 600;
+    font-family: Quicksand;
+}
+.definicoes-2-icon {
+    position: absolute;
+    height: 54.24%;
+    width: 8.65%;
+    top: 23.73%;
+    right: 83.78%;
+    bottom: 22.03%;
+    left: 7.57%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-40 {
+    position: absolute;
+    top: 838px;
+    left: 10px;
+    width: 370px;
+    height: 59px;
+    cursor: pointer;
+}
+.component-40:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.novo-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1041px;
+    text-align: left;
+    font-size: 24px;
+    color: #efffec;
+}
+.vector-icon11 {
+    position: absolute;
+    height: 60%;
+    width: 81.5%;
+    top: 20%;
+    right: 8.5%;
+    bottom: 20%;
+    left: 10%;
+    border-radius: 1px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-2default {
+    position: absolute;
+    top: 852px;
+    left: 1110px;
+    width: 20px;
+    height: 20px;
+}
+.em-produo {
+    position: absolute;
+    top: 26.76%;
+    left: 61.11%;
+    font-weight: 600;
+}
+.div18 {
+    position: absolute;
+    top: 19.04%;
+    left: 36.11%;
+    font-weight: 600;
+}
+.div19 {
+    position: absolute;
+    top: 19.04%;
+    left: 48.61%;
+    font-weight: 600;
+}
+.div20 {
+    position: absolute;
+    top: 19.04%;
+    left: 61.11%;
+    font-weight: 600;
+}
+.div21 {
+    position: absolute;
+    top: 19.04%;
+    left: 77.64%;
+    font-weight: 600;
+}
+.div22 {
+    position: absolute;
+    top: 26.76%;
+    left: 77.64%;
+    font-weight: 600;
+}
+.nome-do-cliente {
+    position: absolute;
+    top: 26.76%;
+    left: 36.11%;
+    font-weight: 600;
+}
+.vector-icon12 {
+    width: 16px;
+    position: relative;
+    height: 16px;
+}
+.editar {
+    width: 48px;
+    position: relative;
+    font-weight: 500;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.vector-parent {
+    position: absolute;
+    top: 73px;
+    left: 460px;
+    border-radius: 8px;
+    background-color: #6a994e;
+    width: 100px;
+    height: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 7px;
+    color: #efffec;
+}
+.vector-parent:hover{
+    background-color: #6A994E99;
+    cursor: pointer;
+}
+.fechar {
+    width: 62px;
+    position: relative;
+    font-weight: 600;
+    display: inline-block;
+    flex-shrink: 0;
+    font-family: Quicksand;
+}
+.fechar-wrapper {
+    width: 100px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    height: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-family: Quicksand;
+}
+.fechar-wrapper:hover{
+    background-color: #d9d9d9;
+}
+.frame-div {
+    position: absolute;
+    top: 913px;
+    left: 1280px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: #444;
+}
+.clique-em-produo {
+    width: 100%;
+    position: relative;
+    background-color: #efffec;
+    height: 1024px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Quicksand;
+}
+.container-clique-producao {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 220px;
+    width: 190%;
+    height: 1024px;
+    font-family: Quicksand;
+    object-fit: cover;
+}

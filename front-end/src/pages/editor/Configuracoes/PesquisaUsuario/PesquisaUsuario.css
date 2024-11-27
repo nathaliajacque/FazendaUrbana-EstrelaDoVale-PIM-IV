@@ -1,0 +1,952 @@
+.retangulo-fornecedor-icon {
+    position: absolute;
+    top: 40px;
+    left: 420px;
+    border-radius: 16px;
+    width: 980px;
+    height: 940px;
+}
+.pesquisa-produo {
+    width: 100%;
+    position: relative;
+    background-color: #efffec;
+    height: 1024px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Quicksand;
+}
+.cruz-1-icon {
+    position: absolute;
+    top: 60px;
+    left: 1356px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.Btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90px;
+    left: 86.42%;
+    height: 30px;
+    border: none;
+    padding: 0px 20px;
+    background-color: green;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgb(108, 165, 108);
+    transition-duration: .3s;
+  }
+  
+  .svg {
+    width: 13px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    fill: white;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover {
+    color: transparent;
+  }
+  
+  .Btn:hover svg {
+    right: 43%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transition-duration: .3s;
+  }
+  
+  .Btn:active {
+    transform: translate(3px , 3px);
+    transition-duration: .3s;
+    box-shadow: 2px 2px 0px rgb(140, 32, 212);
+  }
+.gerenciar-usurios {
+    position: relative;
+    font-weight: 600;
+}
+.icone-usuario {
+    width: 32px;
+    position: relative;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.gerenciar-usurios-parent {
+    position: absolute;
+    top: 40px;
+    left: 736px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    font-size: 32px;
+    color: #444;
+}
+.down-arrow-icon {
+    position: absolute;
+    top: 946px;
+    left: 1372px;
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+}
+.usurio {
+    position: absolute;
+    top: 191px;
+    left: 519px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.e-mail {
+    position: absolute;
+    top: 191px;
+    left: 859px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.acesso {
+    position: absolute;
+    top: 191px;
+    left: 1146px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #444;
+}
+.pesquisa-usuario-child {
+    position: absolute;
+    top: 231.5px;
+    left: 459.5px;
+    border-top: 1px solid #444;
+    box-sizing: border-box;
+    width: 901px;
+    height: 1px;
+}
+.down-arrow-icon1 {
+    position: absolute;
+    top: 234px;
+    left: 1372px;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+.pesquisa-usuario-item {
+    position: absolute;
+    top: 113px;
+    left: 580px;
+    border-radius: 8px;
+    background-color: rgba(106, 153, 78, 0.6);
+    width: 300px;
+    height: 47px;
+}
+.adicionar-documento-1-icon {
+    width: 16px;
+    position: relative;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.novo {
+    width: 42px;
+    position: relative;
+    font-weight: 500;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.adicionar-documento-1-parent {
+    position: absolute;
+    top: 113px;
+    left: 460px;
+    border-radius: 8px;
+    background-color: #6a994e;
+    width: 100px;
+    height: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 7px;
+    color: #efffec;
+}
+.vector-icon {
+    width: 16px;
+    position: relative;
+    height: 16px;
+}
+.procurar-2-1 {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.pesquise-o-usurio {
+    position: relative;
+    font-weight: 500;
+}
+.procurar-2-1-parent {
+    position: absolute;
+    top: 117px;
+    left: 637px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    color: #efffec;
+}
+.nome-do-fornecedor {
+    position: absolute;
+    top: 25%;
+    left: 7.68%;
+    font-weight: 600;
+}
+.div {
+    position: absolute;
+    top: 25%;
+    left: 40.68%;
+    font-weight: 600;
+}
+.div1 {
+    position: absolute;
+    top: 25%;
+    left: 72.64%;
+    font-weight: 600;
+}
+.instance-item {
+    position: absolute;
+    height: 75%;
+    width: 3.07%;
+    top: 12.5%;
+    right: 9.02%;
+    bottom: 12.5%;
+    left: 87.91%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+}
+.vector-icon1 {
+    position: absolute;
+    height: 40%;
+    width: 1.64%;
+    top: 30%;
+    right: 9.73%;
+    bottom: 30%;
+    left: 88.63%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.rectangle-parent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+}
+.pesquisa-usuario-inner {
+    position: absolute;
+    top: 254px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.group-div {
+    position: absolute;
+    top: 294px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner1 {
+    position: absolute;
+    top: 334px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.div7 {
+    position: absolute;
+    top: 25%;
+    left: 74.39%;
+    font-weight: 600;
+}
+.pesquisa-usuario-inner2 {
+    position: absolute;
+    top: 375px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner3 {
+    position: absolute;
+    top: 496px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner4 {
+    position: absolute;
+    top: 416px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner5 {
+    position: absolute;
+    top: 537px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner6 {
+    position: absolute;
+    top: 456px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner7 {
+    position: absolute;
+    top: 577px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.div19 {
+    position: absolute;
+    top: 25%;
+    left: 73.67%;
+    font-weight: 600;
+}
+.pesquisa-usuario-inner8 {
+    position: absolute;
+    top: 617px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner9 {
+    position: absolute;
+    top: 737px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner10 {
+    position: absolute;
+    top: 657px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner11 {
+    position: absolute;
+    top: 777px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner12 {
+    position: absolute;
+    top: 857px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner13 {
+    position: absolute;
+    top: 697px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner14 {
+    position: absolute;
+    top: 817px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.pesquisa-usuario-inner15 {
+    position: absolute;
+    top: 897px;
+    left: 422px;
+    width: 976px;
+    height: 40px;
+}
+.sapoo-1-icon {
+    position: absolute;
+    top: 0px;
+    left: 34px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.desenvolvido-por-sapoo {
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+.sapooooooooo {
+    position: absolute;
+    top: 980px;
+    left: 856px;
+    width: 108px;
+    height: 42px;
+    font-size: 8px;
+    color: rgba(68, 68, 68, 0.3);
+}
+.novo-bar-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #6a994e;
+    width: 380px;
+    height: 1040px;
+}
+.novo-bar2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1040px;
+}
+.gerenciar {
+    position: absolute;
+    top: 253px;
+    left: 0px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.53);
+    text-shadow: 1px 0 0 #6a994e, 0 1px 0 #6a994e, -1px 0 0 #6a994e, 0 -1px 0 #6a994e;
+}
+.ol {
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    font-weight: 600;
+    text-shadow: 1px 0 0 #6a994e, 0 1px 0 #6a994e, -1px 0 0 #6a994e, 0 -1px 0 #6a994e;
+}
+.abigail {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-size: 24px;
+}
+.profile {
+    position: absolute;
+    top: 903px;
+    left: 49px;
+    width: 110px;
+    height: 94px;
+}
+.morango-2-icon {
+    position: absolute;
+    top: 19px;
+    left: 13px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+.menu-bar-child {
+    position: absolute;
+    top: 774px;
+    left: 4.5px;
+    max-height: 100%;
+    width: 299.5px;
+}
+.estrela-do-vale {
+    margin: 0;
+}
+.estrela-do-vale-container {
+    position: relative;
+}
+.estrela-do-vale-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-size: 32px;
+}
+.menu-bar-item {
+    position: absolute;
+    top: 69px;
+    left: 1px;
+    max-height: 100%;
+    width: 300px;
+}
+.menu-bar {
+    position: absolute;
+    top: 44px;
+    left: 36px;
+    width: 306px;
+    height: 997px;
+}
+.profile-icon {
+    position: absolute;
+    top: 942px;
+    left: 35px;
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+}
+.novo-bar1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1041px;
+    font-size: 16px;
+}
+.vector-icon18 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 3.22%;
+    right: 0%;
+    bottom: 1.62%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.dashboard-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 42.97%;
+    top: 0%;
+    right: 43.78%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.component-36 {
+    position: absolute;
+    top: 206px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-36:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+.vector-icon20 {
+    position: absolute;
+    height: 51.45%;
+    width: 8.65%;
+    top: 22.58%;
+    right: 85.14%;
+    bottom: 25.97%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.produtos-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 36.76%;
+    top: 0%;
+    right: 50%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.component-32 {
+    position: absolute;
+    top: 458px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-32:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.produo-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 38.65%;
+    top: 0%;
+    right: 48.11%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.icone-mao {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 24.19%;
+    right: 85.14%;
+    bottom: 24.19%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-35 {
+    position: absolute;
+    top: 338px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-35:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.pedidos-de-venda-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 63.51%;
+    top: 0%;
+    right: 23.24%;
+    bottom: 0%;
+    left: 13.24%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.cesta-de-compras-4-icon {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 22.58%;
+    right: 85.14%;
+    bottom: 25.81%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-33 {
+    position: absolute;
+    top: 398px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-33:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.clientes-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 32.97%;
+    top: 0%;
+    right: 53.51%;
+    bottom: 0%;
+    left: 13.51%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.component-31 {
+    position: absolute;
+    top: 518px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-31:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon24 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 3.23%;
+    right: 0%;
+    bottom: 1.61%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.fornecedores-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 32.97%;
+    top: 0%;
+    right: 44.32%;
+    bottom: 0%;
+    left: 22.7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.vector-icon25 {
+    position: absolute;
+    height: 47.26%;
+    width: 8.65%;
+    top: 27.42%;
+    right: 85.14%;
+    bottom: 25.32%;
+    left: 6.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-47 {
+    position: absolute;
+    top: 578px;
+    left: 10px;
+    width: 370px;
+    height: 62px;
+}
+.component-47:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon26 {
+    position: absolute;
+    height: 95.16%;
+    width: 100%;
+    top: 1.61%;
+    right: 0%;
+    bottom: 3.23%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.relatrios-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 40.54%;
+    top: 0%;
+    right: 45.14%;
+    bottom: 0%;
+    left: 14.32%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.contract-fill0-wght400-grad0-o-icon {
+    position: absolute;
+    height: 51.61%;
+    width: 8.65%;
+    top: 24.19%;
+    right: 84.32%;
+    bottom: 24.19%;
+    left: 7.03%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-29 {
+    position: absolute;
+    top: 733px;
+    left: 9px;
+    width: 370px;
+    height: 62px;
+}
+.component-29:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.vector-icon27 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.configuraes {
+    position: absolute;
+    top: 23.73%;
+    left: 18.92%;
+    font-weight: 600;
+}
+.definicoes-2-icon {
+    position: absolute;
+    height: 54.24%;
+    width: 8.65%;
+    top: 23.73%;
+    right: 83.78%;
+    bottom: 22.03%;
+    left: 7.57%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.component-40 {
+    position: absolute;
+    top: 838px;
+    left: 10px;
+    width: 370px;
+    height: 59px;
+    cursor: pointer;
+}
+.component-40:hover{
+    background-color: white;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    color: black;
+    cursor: pointer;
+}
+.adicionar-documento-1-parent {
+    position: absolute;
+    top: 113px;
+    left: 460px;
+    border-radius: 8px;
+    background-color: #6a994e;
+    width: 100px;
+    height: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 7px;
+    color: #efffec;
+}
+.adicionar-documento-1-parent:hover{
+    color: #000;
+    background-color: #77b155;
+    cursor: pointer;
+}
+#pesquise-usuario {
+    width: 100%; /* Faz o input ocupar toda a largura do seu contêiner */
+    padding: 0.2px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 6px; /* Bordas arredondadas */
+    outline: none; /* Remove o contorno padrão */
+    transition: border-color 0.3s ease; /* Transição suave para a borda */
+    position: absolute;
+    top: 113px;
+    left: 580px;
+    border-radius: 8px;
+    width: 520px;
+    height: 47px;
+    align-content: center;
+}
+
+#pesquise-usuario:hover {
+    border-color: #007BFF; /* Borda azul ao focar */
+    box-shadow: 0 0 17px rgba(0, 123, 255, 0.5); /* Sombras suaves ao redor */
+    border-radius: 12px;
+    transition: border-radius 0.6s ease;
+    transition: border-color 0.6s ease;
+}
+.novo-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 1041px;
+    text-align: left;
+    font-size: 24px;
+    color: #efffec;
+    font-family: Quicksand;
+}
+.pesquisa-usuario {
+    width: 100%;
+    position: relative;
+    background-color: #efffec;
+    height: 1024px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Quicksand;
+}
+.container-pesquisa-configuracoes {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 220px;
+    width: 190%;
+    height: 1024px;
+    font-family: Quicksand;
+    object-fit: cover;
+}
+
+
