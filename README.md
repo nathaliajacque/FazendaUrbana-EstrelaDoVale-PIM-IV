@@ -15,9 +15,13 @@ Os diagramas UML (Unified Modeling Language) são fundamentais em projetos de de
 Como alternativa, baixe a documentação de todos os diagramas acima no formato .ASTAH [Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/blob/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Fazenda%20Urbana%20-%20EstrelaDoVale.asta).
 
 ## Planilha da Equipe
-[Clique aqui para acessar][(https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Diagrama%20de%20Sequ%C3%AAncia](https://github.com/nathaliajacque/FazendaUrbana-EstrelaDoVale-PIM-IV/blob/Fazenda_PIMIV/Grupo%20PIM%20IV%20Estrela%20do%20Vale.xlsx)).
+[Clique aqui para acessar](https://github.com/nathaliajacque/Fazenda---PIM-IV/tree/Fazenda_PIMIV/Fazenda%20Urbana%20-%20Estrela%20do%20Vale%20(Diagramas%20UML)/Diagrama%20de%20Sequ%C3%AAncia](https://github.com/nathaliajacque/FazendaUrbana-EstrelaDoVale-PIM-IV/blob/Fazenda_PIMIV/Grupo%20PIM%20IV%20Estrela%20do%20Vale.xlsx)).
 
 
+
+
+
+ 
 ## Requisitos - Back-end
 
 - **Python 3.x**
