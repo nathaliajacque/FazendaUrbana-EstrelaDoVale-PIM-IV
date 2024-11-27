@@ -1,6 +1,22 @@
 # Fazenda Urbana - Estrela do Vale - PIM IV
 Este é um projeto para gerenciar uma fazenda urbana chamada Estrela do Vale, desenvolvido como parte do PIM IV. O backend foi implementado em Python utilizando o framework Django, com o banco de dados SQL Server hospedado em um container Docker para garantir independência e facilitar a implantação em diferentes ambientes. O front-end foi desenvolvido em JavaScript utilizando o Electron, proporcionando uma interface desktop amigável e funcional. O sistema, desenvolvido pela empresa SAPOO :frog:, permite o gerenciamento de usuários, clientes, funcionários, fornecedores, produtos, pedidos e produções, facilitando a administração das operações da fazenda.
 
+## 📫 Diagramas UML desenvolvido para a Fazenda Urbana Estrela do Vale :frog:
+
+Os diagramas UML (Unified Modeling Language) são fundamentais em projetos de desenvolvimento de software, pois facilitam a compreensão, promovem a clareza, reduzem riscos de comunicação, melhoram o planejamento, suportam a implementação e facilitam a manutenção do sistema. Eles ajudam a construir um entendimento comum entre a equipe e garantem que o sistema seja desenvolvido de maneira organizada e alinhada com os requisitos e expectativas do cliente.
+
+1. Diagrama de Caso de Uso e de Classe de Implementação: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Caso%20de%20Uso).
+2. Diagrama de Classe: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Classe).
+3. Diagrama de Sequencia: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Sequ%C3%AAncia).
+4. Diagrama de Atividade: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Atividade%20-%20Collection).
+5. Diagrama de Implantação: [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/tree/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Diagrama%20de%20Implementa%C3%A7%C3%A3o).
+
+
+Como alternativa, baixe a documentação de todos os diagramas acima no formato .ASTAH [Clique aqui para acessar](https://github.com/nathaliajacque/ADS_PIM_QuartoSemestre/blob/main/Fazenda%20Urbana%20-%20EstrelaDoVale/Fazenda%20Urbana%20-%20EstrelaDoVale.asta).
+
+
+
+
 ## Requisitos - (Back-end)
 
 - **Python 3.x**
@@ -71,22 +87,25 @@ O projeto está configurado para ser executado em contêineres Docker. Isso gara
 ## Uso
 Acesse o servidor de desenvolvimento em `http://127.0.0.1:8000/`.
 Use as URLs configuradas no arquivo `urls.py` para acessar as diferentes funcionalidades do projeto.
+Para o front-end utilize `http://localhost:3000.`
 
 
 ## Estrutura do Projeto - Back-end
 
-Diretório Principal do Projeto (estreladovale):
-- **`settings.py`**: Configurações globais do projeto Django.
-- **`urls.py`**: Configurações de roteamento globais do projeto.
+### Diretório Principal do Projeto (estreladovale):
+- `settings.py`: Configurações globais do projeto Django.
+- `urls.py`: Configurações de roteamento globais do projeto.
+ 
 
-Cada diretório de aplicação contém os seguintes arquivos principais:
-- **`apps.py`**: Configurações da aplicação.
-- **`models.py`**: Definições dos modelos de dados.
-- **`serializers.py`**: Serializadores para transformar os dados dos modelos em JSON e vice-versa.
-- **`tests.py`**: Testes automatizados para a aplicação.
-- **`urls.py`**: Configurações de roteamento específicas da aplicação.
-- **`views.py`**: Lógica das views da aplicação.
-- **`migrations/`**: Diretório que contém as migrações do banco de dados para a aplicação.
+### Cada diretório de aplicação contém os seguintes arquivos principais:
+- `apps.py`: Configurações da aplicação.
+- `models.py`: Definições dos modelos de dados.
+- `serializers.py`: Serializadores para transformar os dados dos modelos em JSON e vice-versa.
+- `tests.py`: Testes automatizados para a aplicação.
+- `urls.py`: Configurações de roteamento específicas da aplicação.
+- `views.py`: Lógica das views da aplicação.
+- `migrations/`: Diretório que contém as migrações do banco de dados para a aplicação.
+ 
 
 ## Estrutura do Projeto - Front-end
 - `src/`: Contém o código-fonte do projeto.
@@ -130,3 +149,4 @@ Os testes estão localizados no arquivo tests.py dentro de fornecedor/tests.py e
    pytest
    ```
 
+:frog:
