@@ -52,7 +52,7 @@ Este é um projeto para gerenciar uma fazenda urbana chamada Estrela do Vale, de
    python manage.py runserver
    ```
 
-### Docker
+## Docker
 O projeto está configurado para ser executado em contêineres Docker. Isso garante um ambiente de desenvolvimento consistente e facilita a implantação.
 
 1. Construir a Imagem Docker:
@@ -92,7 +92,7 @@ Use as URLs configuradas no arquivo `urls.py` para acessar as diferentes funcion
 ## Funcionalidades
 Abaixo está um exemplo que como utilizar o objeto `Usuário` que segue para todos os outros objetos deste projeto.
 
-### Usuários
+## Usuários
 
 - **Listar Usuários**: Retorna uma lista de todos os usuários cadastrados.
   - **URL**: `usuario`
@@ -114,7 +114,7 @@ Abaixo está um exemplo que como utilizar o objeto `Usuário` que segue para tod
   - **Método HTTP**: `PUT`
   - **Resposta**: JSON com os detalhes do usuário atualizado.
 
-### Testes
+## Testes
 Os testes estão localizados no arquivo tests.py dentro de fornecedor/tests.py e funcionario/tests.py. Eles verificam a funcionalidade da API para garantir que as operações CRUD funcionem conforme esperado.
 
    ```sh
